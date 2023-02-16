@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController; 
+use App\Http\Controllers\ContactController;
 
- 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/lakes', function () {
+Route::get('/lakes-locations', function () {
     return view('lakes');
 });
 
@@ -28,7 +28,7 @@ Route::get('/production', function () {
     return view('production');
 });
 
-Route::get('/dd', function () {
+Route::get('/dubbing-subtitling', function () {
     return view('dd');
 });
 
@@ -44,30 +44,30 @@ Route::get('/actors', function () {
     return view('actors');
 });
 
-Route::get('/arid', function () {
+Route::get('/arid-locations', function () {
     return view('arid');
 });
 
-Route::get('/soviet', function () {
+Route::get('/soviet-locations', function () {
     return view('soviet');
 });
 
-Route::get('/hist', function () {
+Route::get('/historical-locations', function () {
     return view('hist');
 });
 
-Route::get('/mount', function () {
+Route::get('/mountain-locations', function () {
     return view('mount');
 });
 
-Route::get('/modern', function () {
+Route::get('/modern-locations', function () {
     return view('modern');
 });
 
 
-Route::get('/contact-form', [App\Http\Controllers\ContactFormController::class, 'contactForm'])->name('contact-form'); 
+Route::get('/contact-form', [App\Http\Controllers\ContactFormController::class, 'contactForm'])->name('contact-form');
 
-Route::post('/contact-form', [App\Http\Controllers\ContactFormController::class, 'storeContactForm'])->name('contact-form.store'); 
+Route::post('/contact-form', [App\Http\Controllers\ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
 
 

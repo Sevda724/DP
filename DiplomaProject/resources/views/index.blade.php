@@ -209,7 +209,7 @@
 						<h3>DUBBING&SUBTITLING</h3>
 						<hr>
 						<p>Get the most secure & quick dubbing and subtitling services at the most affordable rates by native language experts.</p>
-						<a href="dd" class="smoothScroll btn btn-default">READ MORE</a>
+						<a href="dubbing-subtitling" class="smoothScroll btn btn-default">READ MORE</a>
 
 				</div>
 
@@ -591,7 +591,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid" style="padding-bottom: 30px;">
 						 <img src="images/arid.jpeg" alt="location" class="img-responsive">
-							<a href="arid" class="transition">
+							<a href="arid-locations" class="transition">
 								<div>
 
 									<h2 class="fh5co-title" style="font-weight: 900;
@@ -612,7 +612,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid" style="padding-bottom: 30px;">
 							<img src="images/urban.jpeg" alt="location" class="img-responsive">
-							<a href="soviet" class="transition">
+							<a href="soviet-locations" class="transition">
 								<div>
 
 									<h2 class="fh5co-title" style="font-weight: 900;
@@ -633,7 +633,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid" style="padding-bottom: 30px;">
 							<img src="images/hist.jpeg" alt="location" class="img-responsive">
-							<a href="hist" class="transition">
+							<a href="/historical-locations" class="transition">
 								<div>
 
 									<h2 class="fh5co-title" style="font-weight: 900;
@@ -652,7 +652,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid">
 							<img src="images/mount.jpeg" alt="location" class="img-responsive">
-							<a href="mount" class="transition">
+							<a href="mountain-locations" class="transition">
 								<div>
 									<h2 class="fh5co-title" style="font-weight: 900;
   color: white;
@@ -670,7 +670,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid">
 							<img src="images/kapch.jpeg" alt="location" class="img-responsive">
-							<a href="lakes" class="transition">
+							<a href="lakes-locations" class="transition">
 								<div>
 
 									<h2 class="fh5co-title" style="font-weight: 900;
@@ -689,7 +689,7 @@
 					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
 						<div class="img-grid">
 							<img src="images/spot.jpeg" alt="location" class="img-responsive">
-							<a href="modern" class="transition">
+							<a href="modern-locations" class="transition">
 								<div>
 
 									<h2 class="fh5co-title" style="font-weight: 900; color: white; text-transform: uppercase;
@@ -721,11 +721,11 @@
 <section id="contact" class="parallax-section">
  <div class="container">
   <div class="row">
-  
+
 
    <!-- Section title
    ================================================== -->
-   
+
    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
     <div class="section-title">
      <h1 class="heading">CONTACT US</h1>
@@ -735,59 +735,59 @@
 
    <!-- Contact form section
    ================================================== -->
-                           @if(Session::has('success')) 
+                           @if(Session::has('success'))
 
-                        <div class="alert alert-success"> 
+                        <div class="alert alert-success">
 
-                            {{ Session::get('success') }} 
+                            {{ Session::get('success') }}
 
-                            @php 
+                            @php
 
-                                Session::forget('success'); 
+                                Session::forget('success');
 
-                            @endphp 
+                            @endphp
 
-                        </div> 
+                        </div>
 
-                        @endif 
+                        @endif
    <div class="col-md-offset-1 col-md-10 col-sm-12">
 
     <form action="{{ route('contact-form.store') }}" method="POST" class="wow fadeInUp" data-wow-delay="0.6s">
-      {{ csrf_field() }} 
+      {{ csrf_field() }}
      <div class="col-md-4 col-sm-6">
       <input type="text" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
-      @if ($errors->has('name')) 
-         <span class="text-danger">{{ $errors->first('name') }}</span> 
-      @endif 
+      @if ($errors->has('name'))
+         <span class="text-danger">{{ $errors->first('name') }}</span>
+      @endif
      </div>
      <div class="col-md-4 col-sm-6">
       <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
-      @if ($errors->has('email')) 
-         <span class="text-danger">{{ $errors->first('email') }}</span> 
-      @endif 
+      @if ($errors->has('email'))
+         <span class="text-danger">{{ $errors->first('email') }}</span>
+      @endif
      </div>
      <div class="col-md-4 col-sm-12">
       <input type="text" class="form-control" placeholder="Subject" name="subject" value="{{ old('subject') }}">
-      @if ($errors->has('subject')) 
-         <span class="text-danger">{{ $errors->first('subject') }}</span> 
-      @endif 
+      @if ($errors->has('subject'))
+         <span class="text-danger">{{ $errors->first('subject') }}</span>
+      @endif
      </div>
      <div class="col-md-12 col-sm-12">
       <textarea class="form-control" placeholder="Message" rows="7" name="message">{{ old('message') }}</textarea>
-      @if ($errors->has('message')) 
-         <span class="text-danger">{{ $errors->first('message') }}</span> 
-      @endif 
+      @if ($errors->has('message'))
+         <span class="text-danger">{{ $errors->first('message') }}</span>
+      @endif
      </div>
      <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
       <input type="submit" class="form-control" value="SEND MESSAGE">
      </div>
     </form>
    </div>
-  
+
 
    <!-- Contact detail section
    ================================================== -->
-   
+
    <div class="contact-detail col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4">
      <h3><i class="icon-envelope medium-icon wow bounceIn" data-wow-delay="0.6s"></i> EMAIL</h3>
