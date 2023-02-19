@@ -79,6 +79,17 @@
 				<li><a href="#portfolio" class="smoothScroll">SHOWCASE</a></li>
 				<li><a href="#locations" class="smoothScroll">LOCATIONS</a></li>
 				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+                <li>
+					<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</a>
+    <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1000px-Flag_of_Kazakhstan.svg.png" style="height:16px;" /> KZ</a>
+     <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px;" /> RU</a>
+
+  </div>
+</div>
+				</li>
 			</ul>
 		</div>
 
@@ -846,6 +857,27 @@
 <script src="js/jquery.parallax.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+
+<script type="text/javascript">
+	function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
