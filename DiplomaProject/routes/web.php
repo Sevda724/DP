@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\App;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\FilmsController;
 
 
 
@@ -15,10 +17,26 @@ use App\Http\Controllers\ContactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//{{__('local.XXXXXXXXXX')}}
+//Route::get('/admin', 'FilmsController@insert');
+Route::get('/admin', [FilmsController::class, 'add']);
+Route::post('/insert-data', [FilmsController::class, 'insert']);
+
+Route::post('/setLocale/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ru'])) {
+        return back()->withCookie(cookie()->forever('locale', $locale));
+    }
+    return back();
+})->name('setLocale');
 
 Route::get('/', function () {
     return view('index');
 });
+
+//Route::get('/{language}', function ($language) {
+//    App::setLocale($language);
+//    return view('index');
+//});
 
 Route::get('/lakes-locations', function () {
     return view('lakes');
@@ -65,9 +83,9 @@ Route::get('/modern-locations', function () {
 });
 
 
-Route::get('/contact-form', [App\Http\Controllers\ContactFormController::class, 'contactForm'])->name('contact-form');
+Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name('contact-form');
 
-Route::post('/contact-form', [App\Http\Controllers\ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
+Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
 
 

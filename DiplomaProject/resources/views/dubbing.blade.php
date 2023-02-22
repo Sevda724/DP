@@ -397,11 +397,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.HOME')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -418,7 +418,7 @@ hr {
 <a href="/" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
 
-<h2 class="slider-name" style="text-align: center;">DUBBING&SUBTITLING</h2>
+<h2 class="slider-name" style="text-align: center;">{{__('local.DUBBING&SUBTITLING')}}</h2>
 <br>
 <br>
  <div class="col-md-offset-2 col-md-8 col-sm-12">
@@ -447,41 +447,41 @@ hr {
 </div>
 <br>
 <br>
-<p class="p-st">Your feature film, documentary, TV series, podcast or cartoon can find an audience anywhere in the world. But you need high-quality localization – dubbing or subtitling – that gives your audience a seamless experience. Power of Kazakhfilm provides language services at every stage of production – from translating contracts and rushes, to getting your production ready for international release in Kazakhstan and other countries of CIS.</p>
+<p class="p-st">{{__('local.Your feature film, documentary, TV series, podcast or cartoon can find an audience anywhere in the world. But you need high-quality localization – dubbing or subtitling – that gives your audience a seamless experience. Power of Kazakhfilm provides language services at every stage of production – from translating contracts and rushes, to getting your production ready for international release in Kazakhstan and other countries of CIS.')}}</p>
 
 <br>
-<h2>What are Dubbing and Subtitling?</h2>
-<p class="p-st">Dubbing, often confused with voice-over services, replaces dialogue with a spoken translation. The process is very technical and involves directors, voice-over actors, translators, sound mixers and more.</p>
-<p class="p-st">Subtitles are the written translation of the dialogue in a piece of content. Subtitles are placed at the bottom of the screen and are timed with the actor’s lines.</p>
+<h2>{{__('local.What are Dubbing and Subtitling?')}}</h2>
+<p class="p-st">{{__('local.Dubbing, often confused with voice-over services, replaces dialogue with a spoken translation. The process is very technical and involves directors, voice-over actors, translators, sound mixers and more.')}}</p>
+<p class="p-st">{{__('local.Subtitles are the written translation of the dialogue in a piece of content. Subtitles are placed at the bottom of the screen and are timed with the actor’s lines.')}}</p>
 
 <br>
-<h2>Dubbing vs Subtitles – What’s best for my content?</h2>
-<p class="p-st">Whether you choose to dub or subtitle your content you should have an understanding of your target audience’s preferences. Unfortunately, it is not a one size fits all situation.</p>
-<p class="p-st">There are advantages and disadvantages to both audiovisual translation services. The main factors that should impact your decision on translation methods are:</p>
+<h2>{{__('local.Dubbing vs Subtitles – What’s best for my content?')}}</h2>
+<p class="p-st">{{__('local.Whether you choose to dub or subtitle your content you should have an understanding of your target audience’s preferences. Unfortunately, it is not a one size fits all situation.')}}</p>
+<p class="p-st">{{__('local.There are advantages and disadvantages to both audiovisual translation services. The main factors that should impact your decision on translation methods are:')}}</p>
 <ul>
-  <li>Cost</li>
-  <li>Timeframe</li>
-  <li>What your target audience prefers</li>
-  <li>The type of content you are translating</li>
+  <li>{{__('local.Cost')}}</li>
+  <li>{{__('local.Timeframe')}}</li>
+  <li>{{__('local.What your target audience prefers')}}</li>
+  <li>{{__('local.The type of content you are translating')}}</li>
 </ul>
-<p class="p-st">There is also a range of exceptions. For example, you wouldn’t be able to add subtitles to content for young children that don’t know how to read yet.</p>
-<p class="p-st">And, whilst subtitles are a quick and cost-effective option, they may not be widely used in the region you’re targeting – so knowing your target audience is key.</p>
+<p class="p-st">{{__('local.There is also a range of exceptions. For example, you wouldn’t be able to add subtitles to content for young children that don’t know how to read yet.')}}</p>
+<p class="p-st">{{__('local.And, whilst subtitles are a quick and cost-effective option, they may not be widely used in the region you’re targeting – so knowing your target audience is key.')}}</p>
 <br>
-<h2>Our Services</h2>
+<h2>{{__('local.Our Services')}}</h2>
 <ul>
-  <li>dubbing of documentaries, feature films, serials, cartoons</li>
-  <li>creating and overlaying subtitles(also for hearing impairments)</li>
-  <li>translation of the films into other languages</li>
-  <li>translation from most European and Asian languages into Kazakh</li>
-  <li>editing and proofreading of the text by a native speaker</li>
-  <li>transcription(text decoding)</li>
-  <li>creating dialogue sheets with timecode overlay for working on a film</li>
-  <li>script translation</li>
-  <li>audio transcription</li>
+  <li>{{__('local.dubbing of documentaries, feature films, serials, cartoons')}}</li>
+  <li>{{__('local.creating and overlaying subtitles(also for hearing impairments)')}}</li>
+  <li>{{__('local.translation of the films into other languages')}}</li>
+  <li>{{__('local.translation from most European and Asian languages into Kazakh')}}</li>
+  <li>{{__('local.editing and proofreading of the text by a native speaker')}}</li>
+  <li>{{__('local.transcription(text decoding)')}}</li>
+  <li>{{__('local.creating dialogue sheets with timecode overlay for working on a film')}}</li>
+  <li>{{__('local.script translation')}}</li>
+  <li>{{__('local.audio transcription')}}</li>
 </ul>
 
 <br>
-<h2>Portfolio of Works</h2>
+<h2>{{__('local.Portfolio of Works')}}</h2>
 <!--
    <section id="slider">
         <div class="container">
@@ -528,47 +528,47 @@ hr {
     </section>
 -->
 
-<p class="p-st">The film studio has extensive experience in the development and production of informational audio and video materials. It also has qualified personnel with higher professional education and work experience.</p>
+<p class="p-st">{{__('local.The film studio has extensive experience in the development and production of informational audio and video materials. It also has qualified personnel with higher professional education and work experience.')}}</p>
 
 <br>
-<h2>Technical information about the voice and sound dubbing studio</h2>
+<h2>{{__('local.Technical information about the voice and sound dubbing studio')}}</h2>
 <ul>
-  <li>Advanced digital image editing powered by Apple Mac Pro</li>
-  <li>Video editing hardware based on Apple Mac Pro Final Cut 7 software without attendants</li>
-  <li>Voice dubbing studio</li>
-  <li>Voice and noise sound studio</li>
-  <li>Voice dubbing with a video projector</li>
-  <li>Sound editing rooms</li>
-  <li>Digital audio editing (Pro Tools HD)</li>
-  <li>Sound editing control room (Pro Tools HD) without attendants</li>
-  <li>Voice Sound Studio (with Viewing Room)</li>
+  <li>{{__('local.Advanced digital image editing powered by Apple Mac Pro')}}</li>
+  <li>{{__('local.Video editing hardware based on Apple Mac Pro Final Cut 7 software without attendants')}}</li>
+  <li>{{__('local.Voice dubbing studio')}}</li>
+  <li>{{__('local.Voice and noise sound studio')}}</li>
+  <li>{{__('local.Voice dubbing with a video projector')}}</li>
+  <li>{{__('local.Sound editing rooms')}}</li>
+  <li>{{__('local.Digital audio editing (Pro Tools HD)')}}</li>
+  <li>{{__('local.Sound editing control room (Pro Tools HD) without attendants')}}</li>
+  <li>{{__('local.Voice Sound Studio (with Viewing Room)')}}</li>
 </ul>
 
 <br>
-<h2>Price List</h2>
+<h2>{{__('local.Price List')}}</h2>
 <ul class="roman">
- <li>Dubbing into the Kazakh language of a full-length feature film(per minute):
+ <li>{{__('local.Dubbing into the Kazakh language of a full-length feature film(per minute):')}}
  <ul class="square">
-  <li>Synchronization – 150$</li>
-  <li>Voice-over (2 voices) – 100$</li>
-  <li>Voice-over (4 voices) – 120$</li>
+  <li>{{__('local.Synchronization – 150$')}}</li>
+  <li>{{__('local.Voice-over (2 voices) – 100$')}}</li>
+  <li>{{__('local.Voice-over (4 voices) – 120$')}}</li>
  </ul>
  </li>
-<li>Dubbing into the Kazakh language of a documentary film(per minute):
+<li>{{__('local.Dubbing into the Kazakh language of a documentary film(per minute):')}}
  <ul class="square">
-  <li>Voice-over (2-3 voices) – 50$</li>
+  <li>{{__('local.Voice-over (2-3 voices) – 50$')}}</li>
  </ul>
  </li>
- <li>Dubbing into the Kazakh language of a full-length cartoon(per minute):
+ <li>{{__('local.Dubbing into the Kazakh language of a full-length cartoon(per minute):')}}
  <ul class="square">
-  <li>Synchronization – 90$</li>
-  <li>Voice-over – 60$</li>
+  <li>{{__('local.Synchronization – 90$')}}</li>
+  <li>{{__('local.Voice-over – 60$')}}</li>
  </ul>
  </li>
-  <li>Dubbing into the Kazakh language of serials(per minute):
+  <li>{{__('local.Dubbing into the Kazakh language of serials(per minute):')}}
  <ul class="square">
-  <li>Voice-over (2 voices) – 130$</li>
-  <li>Voice-over (4 voices) – 140$</li>
+  <li>{{__('local.Voice-over (2 voices) – 130$')}}</li>
+  <li>{{__('local.Voice-over (4 voices) – 140$')}}</li>
  </ul>
  </li>
 </ul>

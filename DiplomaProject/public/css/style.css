@@ -1,5 +1,5 @@
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -66,6 +66,43 @@ hr {
   color: #FC3;
 }
 
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    background: none;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown content a:hover {background-color: white;}
+
+.show {display:block;}
 
 /* All Section styles
 ------------------------------------- */
@@ -100,7 +137,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #services, 
+#work, #about, #services,
 #portfolio, #locations, #contact {
 	padding-top: 120px;
 	padding-bottom: 100px;
@@ -172,8 +209,8 @@ hr {
 }
 
 .custom-navbar .navbar-brand  {
-  
-  
+
+
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -187,8 +224,8 @@ hr {
 }
 
 .custom-navbar .nav li {
-  
-}    
+
+}
 
 .custom-navbar .nav li a {
 	display: block;
@@ -419,7 +456,7 @@ hr {
 }
 }
 
-@media screen and (max-width: 960px){ 
+@media screen and (max-width: 960px){
     .image-cards .image-card {
         height: auto;
         width: 90%;
@@ -440,11 +477,11 @@ hr {
   letter-spacing: 0px;
   position: absolute;
   top: 80%;
-  left: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   }
-  
+
 .image-cards * {
     box-sizing: inherit;
   }
@@ -856,6 +893,35 @@ background-origin: border-box ;
 
 
 
+/* news feed styles
+/* ========================================== */
+
+
+
+
+
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Clearfix (clear floats) */
+.rows::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box;
+}
+input[type = button] {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+
+    cursor: pointer;
+}
 
 
 
@@ -963,7 +1029,7 @@ footer h2 {
 
 
 /*------------------------------------------------------
-  RESPONSIVE STYLES 
+  RESPONSIVE STYLES
 --------------------------------------------------------*/
 @media (max-width: 1200px) {
   .bx-thumbnail-wrapper {
@@ -1005,7 +1071,7 @@ footer h2 {
 }
 
 @media (max-width: 768px) {
-	
+
   .slider-caption {
 	  bottom: 30px;
   }
@@ -1016,11 +1082,11 @@ footer h2 {
 	  font-size: 12px;
 	  line-height: 14px;
   }
-  
+
   .bx-controls-direction {
     bottom: -40px;
   }
-  
+
   #about .mobile-top {
     padding-top: 32px;
   }

@@ -4,7 +4,7 @@
 
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>Kazakhfilm</title>
+	<title>{{__('local.Kazakhfilm')}}</title>
 	<link rel="icon" type="image/x-icon" href ="images/bl_logo.png" />
 	<meta name="keywords" content="">
 	<meta name="description" content="">
@@ -74,11 +74,37 @@
 
 				<!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-				<li><a href="#work" class="smoothScroll">HOME</a></li>
-				<li><a href="#about" class="smoothScroll">ABOUT</a></li>
-				<li><a href="#portfolio" class="smoothScroll">SHOWCASE</a></li>
-				<li><a href="#locations" class="smoothScroll">LOCATIONS</a></li>
-				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
+				<li><a href="#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+				<li><a href="#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+				<li><a href="#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+				<li><a href="#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+				<li><a href="#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <form action="{{ route('setLocale', 'en')}}" method="POST">
+                                @csrf
+                                <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px; margin-right: 5px;" />EN</button>
+                            </form>
+                            <form action="{{ route('setLocale', 'ru')}}" method="POST">
+                                @csrf
+                                <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px; margin-right: 5px;" />RU</button>
+                            </form>
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</a>--}}
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1000px-Flag_of_Kazakhstan.svg.png" style="height:16px;" /> KZ</a>--}}
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px;" /> RU</a>--}}
+                        </div>
+                    </div>
+                </li>
+{{--                <form action="{{ route('setLocale', 'en')}}" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    <button type="submit">English</button>--}}
+{{--                </form>--}}
+{{--                <form action="{{ route('setLocale', 'ru')}}" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    <button type="submit">Русский</button>--}}
+{{--                </form>--}}
 			</ul>
 		</div>
 
@@ -97,8 +123,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>WORK WITH THE BEST</h2>
-                                <p class="color-white">Work with the directory of Kazakhfilm members & government partners</p>
+                                <h2>{{__('local.WORK WITH THE BEST')}}</h2>
+                                <p class="color-white">{{__('local.Work with the directory of Kazakhfilm members & government partners')}}</p>
                             </div>
                         </div>
                     </div>
@@ -108,8 +134,8 @@
                 <img src="images/slider3.jpeg" alt="slider image 2" style="height: 1000px; width:auto;">
                 <div class="container caption-wrapper">
                     <div class="slider-caption">
-                        <h2>FASCINATING LOCATIONS</h2>
-                        <p class="color-white">Scouting Locations? Take a look at our image library of Kazakhstani film locations</p>
+                        <h2>{{__('local.FASCINATING LOCATIONS')}}</h2>
+                        <p class="color-white">{{__('local.Scouting Locations? Take a look at our image library of Kazakhstan film locations')}}</p>
                     </div>
                 </div>
             </li>
@@ -119,8 +145,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>KAZAKHSTANI TALENTS</h2>
-                                <p class="color-white">Kazakhfilm’s screen production community is professional, experienced and talented</p>
+                                <h2>{{__('local.KAZAKHSTAN TALENTS')}}</h2>
+                                <p class="color-white">{{__('local.Kazakhfilm’s screen production community is professional, experienced and talented')}}</p>
                             </div>
                         </div>
                     </div>
@@ -132,8 +158,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>DUBBING AND SUBTITLING</h2>
-                                <p class="color-white">Get the most secure & quick dubbing and subtitling services at the most affordable rates by native language experts</p>
+                                <h2>{{__('local.DUBBING AND SUBTITLING')}}</h2>
+                                <p class="color-white">{{__('local.Get the most secure & quick dubbing and subtitling services at the most affordable rates by native language experts')}}</p>
                             </div>
                         </div>
                     </div>
@@ -145,8 +171,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="slider-caption">
-                                <h2>HUGE EXPERIENCE</h2>
-                               <p class="color-white">Kazakhfilm has a long history of providing pre-production, physical production and post-production services on film & television productions</p>
+                                <h2>{{__('local.HUGE EXPERIENCE')}}</h2>
+                               <p class="color-white">{{__('local.Kazakhfilm has a long history of providing pre-production, physical production and post-production services on film & television productions')}}</p>
                             </div>
                         </div>
                     </div>
@@ -182,7 +208,7 @@
 			================================================== -->
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 				<div class="section-title">
-					<h1 class="heading">WHAT WE DO</h1>
+					<h1 class="heading">{{__('local.WHAT WE DO')}}</h1>
 					<hr style="color: black;">
 				</div>
 			</div>
@@ -194,22 +220,22 @@
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 					<i class="icon-camera medium-icon"></i>
-						<h3>PRODUCTION</h3>
+						<h3>{{__('local.PRODUCTION')}}</h3>
 						<hr>
-						<p>Wide spectrum of film&television equipment and high quality post production services.</p>
+						<p>{{__('local.Wide spectrum of film&television equipment and high quality post production services.')}}</p>
 						<br>
 
-						<a href="production" class="smoothScroll btn btn-default">READ MORE</a>
+						<a href="production" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 				</div>
 
 
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 					<i class="icon-chat medium-icon"></i>
-						<h3>DUBBING&SUBTITLING</h3>
+						<h3>{{__('local.DUBBING&SUBTITLING')}}</h3>
 						<hr>
-						<p>Get the most secure & quick dubbing and subtitling services at the most affordable rates by native language experts.</p>
-						<a href="dubbing-subtitling" class="smoothScroll btn btn-default">READ MORE</a>
+						<p>{{__('local.Get the most secure & quick dubbing and subtitling services at the most affordable rates by native language experts.')}}</p>
+						<a href="dubbing-subtitling" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 
 				</div>
 
@@ -218,38 +244,38 @@
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
 					<i class="icon-tablet medium-icon"></i>
-						<h3>BUDGETING&SCHEDULE</h3>
+						<h3>{{__('local.BUDGETING&SCHEDULE')}}</h3>
 						<hr>
-						<p>Budget-friendly options for every stage of the production process.</p>
+						<p>{{__('local.Budget-friendly options for every stage of the production process.')}}</p>
 						<br>
 						<br>
-						<a href="budget" class="smoothScroll btn btn-default">READ MORE</a>
+						<a href="budget" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 				</div>
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
 					<i class="icon-bike medium-icon"></i>
-						<h3>EQUIPMENT&LOGISTICS</h3>
+						<h3>{{__('local.EQUIPMENT&LOGISTICS')}}</h3>
 						<hr>
-						<p>Modern facilities, filming equipment, and transportation for your production, shooting and post-production stages.</p>
-						<a href="equipment" class="smoothScroll btn btn-default">READ MORE</a>
+						<p>{{__('local.Modern facilities, filming equipment, and transportation for your production, shooting and post-production stages.')}}</p>
+						<a href="equipment" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 				</div>
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
 					<i class="icon-flag medium-icon"></i>
-						<h3>LOCATIONS</h3>
+						<h3>{{__('local.LOCATIONS')}}</h3>
 						<hr>
-						<p>Diverse selection of shooting spots on huge location hub base with regular updating.</p>
+						<p>{{__('local.Diverse selection of shooting spots on huge location hub base with regular updating.')}}</p>
 						<br>
-						<a href="#locations" class="smoothScroll btn btn-default">READ MORE</a>
+						<a href="#locations" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 				</div>
 
 				<div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 					<i class="icon-search medium-icon"></i>
-						<h3>ACTORS&CASTING</h3>
+						<h3>{{__('local.ACTORS&CASTING')}}</h3>
 						<hr>
-						<p>Help on search and making agreement with great actor of Kazakhstan.</p>
+						<p>{{__('local.Help on search and making agreement with great actor of Kazakhstan.')}}</p>
 						<br>
-						<a href="actors" class="smoothScroll btn btn-default">READ MORE</a>
+						<a href="actors" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 
 				</div>
 
@@ -271,34 +297,34 @@
 			================================================== -->
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 				<div class="section-title">
-					<h1 class="heading color-white">WHO WE ARE</h1>
+					<h1 class="heading color-white">{{__('local.WHO WE ARE')}}</h1>
 					<hr>
 				</div>
 			</div>
 
 			<div class="col-md-6 col-sm-12">
-				<h3 class="color-white">OUR STORY</h3>
-				<h2>KAZAKHFILM STUDIO</h2>
-				<p class="color-white">The largest Kazakh film studio of feature, animated and documentary films, located in the Almaty city.</p>
-				<p class="color-white">In 1934, the Alma-Ata newsreel studio was organized. In 1936, documentaries began to be produced on it. In 1939, the first-born Kazakh feature film, the film Amangeldy, was filmed at the Lenfilm studio.</p>
-				<p class="color-white">For many years of work, Kazakhfilm has shot about 900 films of various genres and types, which shows a huge experience in the field of cinematography.</p>
+				<h3 class="color-white">{{__('local.OUR STORY')}}</h3>
+				<h2>{{__('local.KAZAKHFILM STUDIO')}}</h2>
+				<p class="color-white">{{__('local.The largest Kazakh film studio of feature, animated and documentary films, located in the Almaty city.')}}</p>
+				<p class="color-white">{{__('local.In 1934, the Alma-Ata newsreel studio was organized. In 1936, documentaries began to be produced on it. In 1939, the first-born Kazakh feature film, the film Amangeldy, was filmed at the Lenfilm studio.')}}</p>
+				<p class="color-white">{{__('local.For many years of work, Kazakhfilm has shot about 900 films of various genres and types, which shows a huge experience in the field of cinematography.')}}</p>
 			</div>
 
 			<div class="col-md-6 col-sm-12">
-				<h2 class="mobile-top">WHY CHOOSE US?</h2>
+				<h2 class="mobile-top">{{__('local.WHY CHOOSE US?')}}</h2>
 				<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
   					<div class="panel panel-default">
    						<div class="panel-heading" role="tab" id="headingOne">
       						<h4 class="panel-title">
         						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          							Production Services
+                                    {{__('local.PRODUCTION SERVICES')}}
         						</a>
       						</h4>
     					</div>
    						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
       						<div class="panel-body">
-        						<p>Once we’ve determined what your shoot requires, we can set about finding everything necessary to make your production a success. From directors, producers and animators to photographers, actors, animals and translators, our one-stop-shop production house means you’re able to find everything you need in one place.</p>
+        						<p>{{__('local.Once we’ve determined what your shoot requires, we can set about finding everything necessary to make your production a success. From directors, producers and animators to photographers, actors, animals and translators, our one-stop-shop production house means you’re able to find everything you need in one place.')}}</p>
       						</div>
    						 </div>
  					 </div>
@@ -307,13 +333,13 @@
    						<div class="panel-heading" role="tab" id="headingTwo">
       						<h4 class="panel-title">
         						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          							Post-production Services
+                                    {{__('local.POST-PRODUCTION SERVICES')}}
         						</a>
       						</h4>
     					</div>
    						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       						<div class="panel-body">
-        						<p>Once your project has wrapped, using our network, we can connect you with essential services that will help you to put in place the finishing touches. We can facilitate a range of post-production services such as film editing, sound editing, colour grading, scoring and music services, and more.</p>
+        						<p>{{__('local.Once your project has wrapped, using our network, we can connect you with essential services that will help you to put in place the finishing touches. We can facilitate a range of post-production services such as film editing, sound editing, colour grading, scoring and music services, and more.')}}</p>
       						</div>
    						 </div>
  					 </div>
@@ -322,13 +348,13 @@
    						<div class="panel-heading" role="tab" id="headingThree">
       						<h4 class="panel-title">
         						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-          							Fast Delivery
+                                    {{__('local.FAST DELIVERY')}}
         						</a>
       						</h4>
     					</div>
    						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
       						<div class="panel-body">
-        						<p>No matter how fast you need your content completed by, we can make sure it will be done in lightning speed. Our team prides itself on being on time and delivering the greatest results for your business.</p>
+        						<p>{{__('local.No matter how fast you need your content completed by, we can make sure it will be done in lightning speed. Our team prides itself on being on time and delivering the greatest results for your business.')}}</p>
       						</div>
    						 </div>
  					 </div>
@@ -402,7 +428,7 @@
 			================================================== -->
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 				<div class="section-title">
-					<h1 class="heading">SHOWCASE</h1>
+					<h1 class="heading">{{__('local.SHOWCASE')}}</h1>
 					<hr>
 				</div>
 			</div>
@@ -503,9 +529,9 @@
 			================================================== -->
             <div class="col-md-offset-2 col-md-8 col-sm-12">
             	<div class="portfolio-bottom">
-            		<h2>INTERESTED?</h2>
-					<p>Visit our online-catalog to check out more information about our filmography.</p>
-					<a href="#plan" class="smoothScroll btn btn-default">VIEW MORE</a>
+            		<h2>{{__('local.INTERESTED?')}}</h2>
+					<p>{{__('local.Visit our online-catalog to check out more information about our filmography.')}}</p>
+					<a href="#plan" class="smoothScroll btn btn-default">{{__('local.VIEW MORE')}}</a>
             	</div>
             </div>
 
@@ -522,7 +548,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8" style="text-align: center;">
-			<br><h1 class="color-white" class="heading">FACTS</h1>
+			<br><h1 class="color-white" class="heading">{{__('local.FACTS')}}</h1>
 			<hr>
 			</div>
 
@@ -531,7 +557,7 @@
 					<div class="currency-counter count-items">
 					<i class="fa fa-rocket"></i>
 					<span class="currency-count">900+</span>
-					<h2>Movies Produced</h2>
+					<h2>{{__('local.Movies Produced')}}</h2>
 					</div>
 				</div>
 
@@ -539,7 +565,7 @@
 					<div class="currency-counter count-items">
 					<i class="fa fa-users"></i>
 					<span class="currency-count">150+</span>
-					<h2>Workers</h2>
+					<h2>{{__('local.Workers')}}</h2>
 					</div>
 				</div>
 
@@ -547,7 +573,7 @@
 					<div class="currency-counter count-items">
 					<i class="fa fa-calendar"></i>
 					<span class="currency-count">88+</span>
-					<h2>Years of Experience</h2>
+					<h2>{{__('local.Years of Experience')}}</h2>
 					</div>
 				</div>
 
@@ -555,7 +581,7 @@
 					<div class="currency-counter count-items">
 					<i class="fa fa-comment-o"></i>
 					<span class="currency-count">100+</span>
-					<h2>Satisfied Customers</h2>
+					<h2>{{__('local.Satisfied Customers')}}</h2>
 					</div>
 				</div>
 		</div>
@@ -578,9 +604,9 @@
 			================================================== -->
 			<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
 				<div class="section-title">
-					<h1 >FASCINATING LOCATIONS</h1>
+					<h1 >{{__('local.FASCINATING LOCATIONS')}}</h1>
 					<hr>
-					<p>Take a look at our image library of amazing Kazakhstani film locations.</p>
+					<p>{{__('local.Take a look at our image library of amazing Kazakhstani film locations.')}}</p>
 
 				</div>
 			</div>
@@ -602,7 +628,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ARID</h2>
+  transform: translate(-50%, -50%);">{{__('local.ARID')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -623,7 +649,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">SOVIET</h2>
+  transform: translate(-50%, -50%);">{{__('local.SOVIET')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -644,7 +670,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">HISTORICAL</h2>
+  transform: translate(-50%, -50%);">{{__('local.HISTORICAL')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -662,7 +688,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">MOUNTAINS</h2>
+  transform: translate(-50%, -50%);">{{__('local.MOUNTAINS')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -681,7 +707,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">LAKES</h2>
+  transform: translate(-50%, -50%);">{{__('local.LAKES')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -698,7 +724,7 @@
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">MODERN</h2>
+  transform: translate(-50%, -50%);">{{__('local.MODERN')}}</h2>
 								</div>
 							</a>
 						</div>
@@ -846,6 +872,25 @@
 <script src="js/jquery.parallax.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
+
+<script type="text/javascript">
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>

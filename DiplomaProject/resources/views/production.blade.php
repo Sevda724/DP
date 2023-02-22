@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Production</title>
+  <title>{{__('local.Production')}}</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -379,11 +379,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.HOME')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+        <li><a href="/" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -400,7 +400,7 @@ hr {
 <a href="/" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
 
-<h2 class="slider-name" style="text-align: center;">PRODUCTION</h2>
+<h2 class="slider-name" style="text-align: center;">{{__('local.PRODUCTION')}}</h2>
 <br>
  <div class="col-md-offset-2 col-md-8 col-sm-12">
 <div class="w3-content w3-display-container">
@@ -427,10 +427,8 @@ hr {
 
 </div>
 <br>
-<p class="p-st">Whether a simple interview, a large scale commercial, a TV program, a TV series or a Film, we run our productions like clockwork to ensure on time and on budget delivery while maintaining the highest levels of quality. We pride ourselves on using the best personnel in the business.
-From a small minimum crew to a large people crew, we’ve done it all. A well staffed shoot, with the right talents, the right gear and the right preparation makes all the difference in the world when it comes to the quality of the final product.</p>
-<p class="p-st">The shoot part of a live action production being often the most expansive part, we run ours like clockwork, with every hour of the day accounted for and aimed at gathering the best material in the least amount of time. That discipline is what allows us to say that we’re always on budget, and on time.
-In the case of commercial projects, every video production is different however, so your shoot won’t look the same as your competitor. As a nimble and agile enterprise, we can produce at the scale that is right for you, your brand, and your budget.</p>
+<p class="p-st">{{__('local.Whether a simple interview, a large scale commercial, a TV program, a TV series or a Film, we run our productions like clockwork to ensure on time and on budget delivery while maintaining the highest levels of quality. We pride ourselves on using the best personnel in the business. From a small minimum crew to a large people crew, we’ve done it all. A well staffed shoot, with the right talents, the right gear and the right preparation makes all the difference in the world when it comes to the quality of the final product.')}}</p>
+<p class="p-st">{{__('local.The shoot part of a live action production being often the most expansive part, we run ours like clockwork, with every hour of the day accounted for and aimed at gathering the best material in the least amount of time. That discipline is what allows us to say that we’re always on budget, and on time. In the case of commercial projects, every video production is different however, so your shoot won’t look the same as your competitor. As a nimble and agile enterprise, we can produce at the scale that is right for you, your brand, and your budget.')}}</p>
 
 <br>
 <br>
