@@ -74,6 +74,7 @@
 
 				<!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
+<<<<<<< HEAD
 				<li><a href="#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
 				<li><a href="#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
 				<li><a href="#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
