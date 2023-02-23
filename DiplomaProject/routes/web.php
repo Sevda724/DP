@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\FilmsController;
+use App\Http\Controllers\SubscribersController;
 
 
 
@@ -82,12 +83,17 @@ Route::get('/modern-locations', function () {
     return view('modern');
 });
 
+Route::get('/catalog', function () {
+    return view('catalog');
+});
 
 Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name('contact-form');
 
 Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
 
+Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index'); 
 
+Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
 
 
