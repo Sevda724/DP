@@ -536,7 +536,7 @@
             	<div class="portfolio-bottom">
             		<h2>{{__('local.INTERESTED?')}}</h2>
 					<p>{{__('local.Visit our online-catalog to check out more information about our filmography.')}}</p>
-					<a href="#plan" class="smoothScroll btn btn-default">{{__('local.VIEW MORE')}}</a>
+					<a href="catalog" class="smoothScroll btn btn-default">{{__('local.VIEW MORE')}}</a>
             	</div>
             </div>
 
