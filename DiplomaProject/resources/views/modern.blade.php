@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Modern Locations</title>
+	<title>{{__('local.Modern Locations')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -366,11 +366,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -387,7 +387,7 @@ hr {
 <div class="backp">
 <a href="/" class="previous">&#8249;</a>
 </div>
-<h2 class="heading">MODERN LOCATIONS</h2><br>
+<h2 class="heading">{{__('local.MODERN LOCATIONS')}}</h2><br>
 <div class="row">
 	<div class="col-md-4">
 <a href=""  data-toggle="modal" data-target="#myModal">
@@ -405,7 +405,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">BAYTEREK</h2>
+  transform: translate(-50%, -50%);">{{__('local.BAYTEREK')}}</h2>
                 </div>
 </div>
 </a>
@@ -418,14 +418,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Bayterek</h2>
+          <h2 class="modal-title text-center">{{__('local.Bayterek')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img1.jpeg" width="100%" height="100%">
-          <p>"Everyone who climbs the Bayterek Tower, will learn the essense of the steppe" - this is how the President of the Republic of Kazakhstan described the magnificent structure in the very center of our huge country. Undoubtedly, the tower is the landmark of Nur-Sultan. "Bayterek" in Kazakh means "High poplar tree". Its architectural design is inspired by an ancient Turkic myth about a tree of life and a sacred bird: every year the bird, named Samruk, lays its egg (the Sun) in the crevice between the branches of the poplar tree. Bayterek is considered a symbol of modern Kazakhstan. Having visited this unique tower, you will never be able to forget the indescribable atmosphere of this place.</p>
+          <p>{{__('local."Everyone who climbs the Bayterek Tower, will learn the essense of the steppe" - this is how the President of the Republic of Kazakhstan described the magnificent structure in the very center of our huge country. Undoubtedly, the tower is the landmark of Nur-Sultan. "Bayterek" in Kazakh means "High poplar tree". Its architectural design is inspired by an ancient Turkic myth about a tree of life and a sacred bird: every year the bird, named Samruk, lays its egg (the Sun) in the crevice between the branches of the poplar tree. Bayterek is considered a symbol of modern Kazakhstan. Having visited this unique tower, you will never be able to forget the indescribable atmosphere of this place.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -452,7 +452,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ASTANA OPERA</h2>
+  transform: translate(-50%, -50%);">{{__('local.ASTANA OPERA')}}</h2>
                 </div>
 </div>
 
@@ -466,14 +466,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Astana Opera</h2>
+          <h2 class="modal-title text-center">{{__('local.Astana Opera')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img2.jpeg" width="100%" height="100%">
-          <p>This unique theatre has become a landmark of the capital of Kazakhstan. The architecture of this monumental building combines the Kazakh motifs and Greco-Roman style. It was built within a record-breaking short term - 3 years. It opened in 2013 and has already become the architectural heritage of the whole country. In the Astana Opera there are 2 huge auditoriums. The sound quality is great thanks to unique acoustics. Denis Matsuev, Placido Domingo, Svetlana Zakharova, Jose Carreras and many other prominent figures of theatrical art performed on its stage. Famous opera singers constantly give occasional guest performances. The troupe was formed from the singers carefully selected by professionals from world famous theaters.</p>
+          <p>{{__('local.This unique theatre has become a landmark of the capital of Kazakhstan. The architecture of this monumental building combines the Kazakh motifs and Greco-Roman style. It was built within a record-breaking short term - 3 years. It opened in 2013 and has already become the architectural heritage of the whole country. In the Astana Opera there are 2 huge auditoriums. The sound quality is great thanks to unique acoustics. Denis Matsuev, Placido Domingo, Svetlana Zakharova, Jose Carreras and many other prominent figures of theatrical art performed on its stage. Famous opera singers constantly give occasional guest performances. The troupe was formed from the singers carefully selected by professionals from world famous theaters.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -502,7 +502,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">EXPO-2017</h2>
+  transform: translate(-50%, -50%);">{{__('local.EXPO-2017')}}</h2>
                 </div>
 </div>
 
@@ -517,14 +517,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">EXPO-2017</h2>
+          <h2 class="modal-title text-center">{{__('local.EXPO-2017')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img3.jpeg" width="100%" height="100%">
-          <p>Expo 2017 Astana was an International Exposition which took place from June 10 to September 10, 2017 in Astana, Kazakhstan. The expo's theme was "Future Energy", and aimed to create a global debate between countries, nongovernmental organizations, companies and the general public on the crucial question: "How do we ensure safe and sustainable access to energy for all while reducing CO2 emissions?"</p>
+          <p>{{__('local.Expo 2017 Astana was an International Exposition which took place from June 10 to September 10, 2017 in Astana, Kazakhstan. The expo\'s theme was "Future Energy", and aimed to create a global debate between countries, nongovernmental organizations, companies and the general public on the crucial question: "How do we ensure safe and sustainable access to energy for all while reducing CO2 emissions?"')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -556,7 +556,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">KOKTOBE</h2>
+  transform: translate(-50%, -50%);">{{__('local.KOKTOBE')}}</h2>
                 </div>
 </div>
 
@@ -571,14 +571,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Koktobe</h2>
+          <h2 class="modal-title text-center">{{__('local.Koktobe')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img4.jpeg" width="100%" height="100%">
-          <p>TKok Tobe is the highest point in the city of Almaty standing on a 1100 m hill at the south-east edge of the city. It is worth a visit to Kok Tobe because of its panoramic view of the city from all directions. To reach the Kok Tobe hill, one should take a cable car ride which starts near Hotel Kazakhstan and goes over some of the oldest parts of Almaty and the magnificent fruit growing gardens. Once you reach the Kok Tobe hill, you would see the famous 372 m high TV Tower which is visible from far and offers great views of the mountains and the city plus a few attractions at the top.</p>
+          <p>{{__('local.Kok Tobe is the highest point in the city of Almaty standing on a 1100 m hill at the south-east edge of the city. It is worth a visit to Kok Tobe because of its panoramic view of the city from all directions. To reach the Kok Tobe hill, one should take a cable car ride which starts near Hotel Kazakhstan and goes over some of the oldest parts of Almaty and the magnificent fruit growing gardens. Once you reach the Kok Tobe hill, you would see the famous 372 m high TV Tower which is visible from far and offers great views of the mountains and the city plus a few attractions at the top.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -605,7 +605,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">NURLY TAU</h2>
+  transform: translate(-50%, -50%);">{{__('local.NURLY TAU')}}</h2>
                 </div>
 </div>
 
@@ -619,14 +619,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Nurly Tau</h2>
+          <h2 class="modal-title text-center">{{__('local.Nurly Tau')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img5.jpeg" width="100%" height="100%">
-          <p>"Nurly Tau" was built on the principle of "city within a city", every detail of the complex was created for the comfort of people working and living in it - administrative centers, entertainment and sports complexes, as well as clubs, restaurants, cinemas and much more.</p>
+          <p>{{__('local."Nurly Tau" was built on the principle of "city within a city", every detail of the complex was created for the comfort of people working and living in it - administrative centers, entertainment and sports complexes, as well as clubs, restaurants, cinemas and much more.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -656,7 +656,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">KARAVAN SARAY</h2>
+  transform: translate(-50%, -50%);">{{__('local.KARAVAN SARAY')}}</h2>
                 </div>
 </div>
 
@@ -670,16 +670,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Karavan Saray</h2>
+          <h2 class="modal-title text-center">{{__('local.Karavan Saray')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/modern/img6.jpeg" width="100%" height="100%">
-          <p>Complex Karavansaray Turkistan is located 10 minutes from the main attraction of Turkestan - the mausoleum of Khoja Ahmed Yasawi. On the territory of the complex there are two modern hotels, with restaurants, a bar, a premium class spa, a cinema and shopping and entertainment facilities. The capacity of the shopping and family entertainment center is 300,000 visitors per year. The total area of retail buildings, including the open market, is 74 thousand square meters.
-
-</p>
+          <p>{{__('local.Complex Karavansaray Turkistan is located 10 minutes from the main attraction of Turkestan - the mausoleum of Khoja Ahmed Yasawi. On the territory of the complex there are two modern hotels, with restaurants, a bar, a premium class spa, a cinema and shopping and entertainment facilities. The capacity of the shopping and family entertainment center is 300,000 visitors per year. The total area of retail buildings, including the open market, is 74 thousand square meters.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 

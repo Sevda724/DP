@@ -33,11 +33,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-//Route::get('/{language}', function ($language) {
-//    App::setLocale($language);
-//    return view('index');
-//});
-
 Route::get('/lakes-locations', function () {
     return view('lakes');
 });

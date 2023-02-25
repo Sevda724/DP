@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Arid Locations</title>
+	<title>{{__('local.Arid Locations')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -365,11 +365,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+        <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+        <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+        <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+        <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+        <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -387,7 +387,7 @@ hr {
 <div class="backp">
 <a href="/" class="previous">&#8249;</a>
 </div>
-<h2 class="heading">ARID</h2><br>
+<h2 class="heading">{{__('local.ARID')}}</h2><br>
 <div class="row">
 	<div class="col-md-4">
 <a href=""  data-toggle="modal" data-target="#myModal">
@@ -405,7 +405,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">CHARYN CANYON</h2>
+  transform: translate(-50%, -50%);">{{__('local.CHARYN CANYON')}}</h2>
                 </div>
 </div>
 </a>
@@ -418,14 +418,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Charyn Canyon</h2>
+          <h2 class="modal-title text-center">{{__('local.Charyn Canyon')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/charyn.jpeg" width="100%" height="100%">
-          <p>The Charyn Canyon is located in the Charyn National Park  about 215km east of Almaty and approximately a 3 hour drive via the A 351 and A 352.  The Canyon has been described as the Grand Canyon’s little brother.  This is not to detract from the sheer splendor of the canyon itself.  The vista of dramatic erosion made by the river Charyn below and the elements has created a dramatic and impressive landscape.</p>
+          <p>{{__('local.The Charyn Canyon is located in the Charyn National Park about 215km east of Almaty and approximately a 3 hour drive via the A 351 and A 352. The Canyon has been described as the Grand Canyon\’s little brother. This is not to detract from the sheer splendor of the canyon itself. The vista of dramatic erosion made by the river Charyn below and the elements has created a dramatic and impressive landscape.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -452,7 +452,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">SINGING DUNES</h2>
+  transform: translate(-50%, -50%);">{{__('local.SINGING DUNES')}}</h2>
                 </div>
 </div>
 
@@ -466,14 +466,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Singing Dunes</h2>
+          <h2 class="modal-title text-center">{{__('local.Singing Dunes')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/img2.jpeg" width="100%" height="100%">
-          <p>Singing Dunes is a phenomenon of nature, famous for the fact that when the weather is dry the sand dune emits a sound similar to the tune of organ. Also the dune is known for the beautiful views overlooking the surrounding countryside. Singing Dunes is a popular tourist attraction. Singing Dunes is a mountain of sand of light colors, has a length of 3 km and a height of 150 m. The dune is located in the National Park Altyn-Emel in Almaty oblast of Kazakhstan, 182 km north-east of Almaty.</p>
+          <p>{{__('local.Singing Dunes is a phenomenon of nature, famous for the fact that when the weather is dry the sand dune emits a sound similar to the tune of organ. Also the dune is known for the beautiful views overlooking the surrounding countryside. Singing Dunes is a popular tourist attraction. Singing Dunes is a mountain of sand of light colors, has a length of 3 km and a height of 150 m. The dune is located in the National Park Altyn-Emel in Almaty oblast of Kazakhstan, 182 km north-east of Almaty.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -502,7 +502,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">USTYURT PLATEAU</h2>
+  transform: translate(-50%, -50%);">{{__('local.USTYURT PLATEAU')}}</h2>
                 </div>
 </div>
 
@@ -517,14 +517,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Ustyurt Plateau</h2>
+          <h2 class="modal-title text-center">{{__('local.Ustyurt Plateau')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/img3.jpeg" width="100%" height="100%">
-          <p>Ustyurt Plateau is the most mysterious and least researched destination in Kazakhstan. In some records the plateau is called ‘an island’, and it is clear why: within the mass of desert sand chink plateau edge cliffs of over 300 meters in height are rising. The cliffs are so steep that there is only a place or two within the length of over 100 kilometers where a human can go up to the top of them.</p>
+          <p>{{__('local.Ustyurt Plateau is the most mysterious and least researched destination in Kazakhstan. In some records the plateau is called ‘an island’, and it is clear why: within the mass of desert sand chink plateau edge cliffs of over 300 meters in height are rising. The cliffs are so steep that there is only a place or two within the length of over 100 kilometers where a human can go up to the top of them.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -556,7 +556,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">BOZJYRA TRACT</h2>
+  transform: translate(-50%, -50%);">{{__('local.BOZJYRA TRACT')}}</h2>
                 </div>
 </div>
 
@@ -571,14 +571,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Bozjyra Tract</h2>
+          <h2 class="modal-title text-center">{{__('local.Bozjyra Tract')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/img4.jpeg" width="100%" height="100%">
-          <p>Bozjyra is a magnificent creation of weathering and erosion, located on the territory of the Ustyurt Plateau. Here you can see vast clay deserts, limestone mountains, buttes more than 200 meters (650 ft) high. In the Mesozoic Era this area was covered by the Tethys Ocean, so now here you can find a lot of fossilized shells and teeth of prehistoric sharks. Bozjyra is the must-see attraction of the Mangystau Province, that will definitely cause a lot of emotions.</p>
+          <p>{{__('local.Bozjyra is a magnificent creation of weathering and erosion, located on the territory of the Ustyurt Plateau. Here you can see vast clay deserts, limestone mountains, buttes more than 200 meters (650 ft) high. In the Mesozoic Era this area was covered by the Tethys Ocean, so now here you can find a lot of fossilized shells and teeth of prehistoric sharks. Bozjyra is the must-see attraction of the Mangystau Province, that will definitely cause a lot of emotions.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -605,7 +605,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">OTYRAR</h2>
+  transform: translate(-50%, -50%);">{{__('local.OTYRAR')}}</h2>
                 </div>
 </div>
 
@@ -619,14 +619,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Otyrar</h2>
+          <h2 class="modal-title text-center">{{__('local.Otyrar')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/img5.jpeg" width="100%" height="100%">
-          <p>Otyrar, also known as Farab, was a significant cultural and trade center. In addition, it was of great diplomatic and military strategic importance. In the past century, the first studies and excavations were carried out, discovering an ancient palace, mosques, and baths. Antique ceramics, metal tools, coins, and jewelry were also found. Now these artifacts can be seen in museums across the country. The city has a history dating back 2 thousand years. Visitors will be able to learn it thoroughly. The government with the assistance of UNESCO is working on the preservation of historical monuments. </p>
+          <p>{{__('local.Otyrar, also known as Farab, was a significant cultural and trade center. In addition, it was of great diplomatic and military strategic importance. In the past century, the first studies and excavations were carried out, discovering an ancient palace, mosques, and baths. Antique ceramics, metal tools, coins, and jewelry were also found. Now these artifacts can be seen in museums across the country. The city has a history dating back 2 thousand years. Visitors will be able to learn it thoroughly. The government with the assistance of UNESCO is working on the preservation of historical monuments.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -656,7 +656,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">CITY OF NOMADS</h2>
+  transform: translate(-50%, -50%);">{{__('local.CITY OF NOMADS')}}</h2>
                 </div>
 </div>
 
@@ -670,16 +670,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">City of Nomads</h2>
+          <h2 class="modal-title text-center">{{__('local.City of Nomads')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/arid/img6.jpeg" width="100%" height="100%">
-          <p>The City of Nomads in the Almaty Province once served as a filming location for the Kazakh-French historical movie “Nomad: The Warrior” (2005), an adaptation of the second book from the “Nomads” trilogy by the Kazakh writer Ilyas Esenberlin. It was the most expensive Kazakh movie ever made and Kazakhstan's entry for the Best Foreign Language Film for the 79th Academy Awards. The fortress walls and the main gates overlooking the Ili River are visible from afar. The fortress stands on the Ili River bank, near the Tamgaly-Tas Tract, famous for its ancient rock paintings. Nomads have lived there from time immemorial, here the fate of nomadic tribes was decided.
-
-</p>
+          <p>{{__('local.The City of Nomads in the Almaty Province once served as a filming location for the Kazakh-French historical movie “Nomad: The Warrior” (2005), an adaptation of the second book from the “Nomads” trilogy by the Kazakh writer Ilyas Esenberlin. It was the most expensive Kazakh movie ever made and Kazakhstan\'s entry for the Best Foreign Language Film for the 79th Academy Awards. The fortress walls and the main gates overlooking the Ili River are visible from afar. The fortress stands on the Ili River bank, near the Tamgaly-Tas Tract, famous for its ancient rock paintings. Nomads have lived there from time immemorial, here the fate of nomadic tribes was decided.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -705,7 +703,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">KIIN KERISH CANYON</h2>
+  transform: translate(-50%, -50%);">{{__('local.KIIN KERISH CANYON')}}</h2>
                 </div>
 </div>
 
@@ -719,15 +717,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Kiin Kerish Canyon</h2>
+          <h2 class="modal-title text-center">{{__('local.Kiin Kerish Canyon')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/arid/img7.jpeg" width="100%" height="100%">
-          <p>Kiin Kirish, an amazingly picturesque clay canyon, is a unique natural monument located 120 km southeast of the town of Kurshim in the East Kazakhstan region and covers an area of 300 hectares. This place is also known as “The Town of Spirits”. Multicolored clays, eroded by water and wind, form vivid, bizarre landscapes here. The optimal time for a trip is 3-4 days.
-</p>
+          <p>{{__('local.Kiin Kirish, an amazingly picturesque clay canyon, is a unique natural monument located 120 km southeast of the town of Kurshim in the East Kazakhstan region and covers an area of 300 hectares. This place is also known as “The Town of Spirits”. Multicolored clays, eroded by water and wind, form vivid, bizarre landscapes here. The optimal time for a trip is 3-4 days.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -754,7 +751,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">BEKTAU ATA</h2>
+  transform: translate(-50%, -50%);">{{__('local.BEKTAU ATA')}}</h2>
                 </div>
 </div>
 
@@ -768,15 +765,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Bektau Ata</h2>
+          <h2 class="modal-title text-center">{{__('local.Bektau Ata')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/arid/img8.jpeg" width="100%" height="100%">
-          <p>Bektau-Ata is an unusual natural monument located about 70 kilometers north of the town of Balkhash in Karaganda region. This is a meeting place of two different landscapes – granite mountain is surrounded by a flat steppe. The mountain rises above the steppe more than a thousand meters. Pink granite rocks of Bektau-Ata consist of granite lava solidified on the surface and in the cracks of the earth.
-</p>
+          <p>{{__('local.Bektau-Ata is an unusual natural monument located about 70 kilometers north of the town of Balkhash in Karaganda region. This is a meeting place of two different landscapes – granite mountain is surrounded by a flat steppe. The mountain rises above the steppe more than a thousand meters. Pink granite rocks of Bektau-Ata consist of granite lava solidified on the surface and in the cracks of the earth.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -803,7 +799,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ALTYN EMEL</h2>
+  transform: translate(-50%, -50%);">{{__('local.ALTYN EMEL')}}</h2>
                 </div>
 </div>
 
@@ -817,15 +813,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Altyn Emel</h2>
+          <h2 class="modal-title text-center">{{__('local.Altyn Emel')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/arid/img9.jpeg" width="100%" height="100%">
-          <p>Altyn-Emel National Park, located in Almaty Province, is one of the largest national parks in Kazakhstan. It is known for spectacular scenery that includes mountains, sand deserts, sandstone formations, and steppes. The highlight of the park is the Singing Dune, which got its name because wind makes the sand emit a rumbling sound. A light breeze gives a barely audible squeak, while strong gusts produce a more intense sound, similar to that of an organ. There are several archaeological sites here; the biggest of them is Bes Shatyr (“Five Marques”) complex, consisting of Saka (a group of ancient nomadic tribes) burials. You can also explore the Aktau Mountains, multi-colored hills formed from bluish-gray sandstone and red clay.
-</p>
+          <p>{{__('local.Altyn-Emel National Park, located in Almaty Province, is one of the largest national parks in Kazakhstan. It is known for spectacular scenery that includes mountains, and deserts, sandstone formations, and stepped. The highlight of the park is the Singing Dune, which got its name because wind makes the sand emit a rumbling sound. A light breeze gives a barely audible squeak, while strong gusts produce a more intense sound, similar to that of an organ. There are several archaeological sites here; the biggest of them is Bes Shatyr (“Five Marques”) complex, consisting of Saka (a group of ancient nomadic tribes) burials. You can also explore the Aktau Mountains, multi-colored hills formed from bluish-gray sandstone and red clay.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -854,7 +849,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">TAMGALY TAS</h2>
+  transform: translate(-50%, -50%);">{{__('local.TAMGALY TAS')}}</h2>
                 </div>
 </div>
 
@@ -868,15 +863,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Tamgaly Tas</h2>
+          <h2 class="modal-title text-center">{{__('local.Tamgaly Tas')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/arid/img10.jpeg" width="100%" height="100%">
-          <p>Tamgaly-Tas is the stow at the river Ily, 120 km away to the north from Almaty. Here the rocks still preserve many petroglyphs, drawings of mysteries gods, latest Buddhist’s writings. There are around one thousand rock drawings among the petroglyphs, best known are the images of Buddha Shakyamuni, Buddha of Infinite Light Amitabha and Bodhisattva of Compassion Avalokiteshvara. Besides Buddhist writings, there is the stone with Old Turkic runic writings of the VIII—IX century, supposedly left of the cumans.
-</p>
+          <p>{{__('local.Tamgaly-Tas is the stow at the river Ily, 120 km away to the north from Almaty. Here the rocks still preserve many petroglyphs, drawings of mysteries gods, latest Buddhist’s writings. There are around one thousand rock drawings among the petroglyphs, best known are the images of Buddha Shakyamuni, Buddha of Infinite Light Amitabha and Bodhisattva of Compassion Avalokiteshvara. Besides Buddhist writings, there is the stone with Old Turkic runic writings of the VIII—IX century, supposedly left of the cumans.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 

@@ -397,11 +397,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">{{__('local.HOME')}}</a></li>
-        <li><a href="/" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
-        <li><a href="/" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
-        <li><a href="/" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
-        <li><a href="/" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
