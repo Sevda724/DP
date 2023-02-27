@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\SubscribersController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\RequestController;
 
 
 
@@ -91,9 +93,17 @@ Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name
 
 Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
+Route::post('/catalog/{id}/request', [RequestController::class, 'storeRequest'])->name('request.store');
+
 
 Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index'); 
 
 Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
 
+
+Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('index'); 
+
+//Route::get('/all/{id}', [CatalogController::class, 'showPopUp'])->name('index3');
+
+Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show'); 
 

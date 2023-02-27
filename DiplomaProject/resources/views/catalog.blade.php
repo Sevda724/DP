@@ -410,6 +410,14 @@ hr {
 
 
 /* cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: white;
+  padding: 10px;
+  margin: 37px auto 0;
+  width: calc(280px * 4);
+}  
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -421,17 +429,21 @@ hr {
   cursor: pointer;
   height: 280px;
   position: relative;
-  width: 243px;
+  width: 243px;.
 }
 
 .card-img-top{
-  width: 100%;
+  width: 243px;
+  height: 180px;
 }
 
 .card h2 {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card.visited {
@@ -838,84 +850,29 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 <br>
 <br>
 
-<div class="cards">
-  <div class="card" onclick="OpenProduct(1);">
-    <img src="images/posters/tom.jpeg" alt="..." class="card-img-top" >
-    <div class="card-body">
-      <h2 class="card-title">Tomiris</h2>
-      <p>
-        Year, Director</p>
-    </div>
-  </div>
-  
+<div style="text-align: center;">
+<div class="grid-container" >
+@foreach($filmsData as $filmData)
+
   <div class="card">
-    <img src="images/posters/tom.jpeg" alt="..." class="card-img-top">
+    <a href="{{ route('film.show', $filmData->id) }}">
+    <img src={{$filmData->Photo}} alt="..." class="card-img-top" ></a>
     <div class="card-body">
-      <h2 class="card-title">Movie Name</h2>
-      <p>
-        Year, Director</p>
+      <h2 class="card-title">{{$filmData->Title}}</h2>
+      <p>{{$filmData->Description}}</p>
     </div>
   </div>
-  
-  <div class="card">
-    <img src="images/posters/tom.jpeg" alt="..." class="card-img-top">
-    <div class="card-body">
-      <h2 class="card-title">Name</h2>
-      <p>
-       Year, Director</p>
-    </div>
-  </div>
-  
-  <div class="card">
-    <img src="images/posters/tom.jpeg" alt="..." class="card-img-top">
-    <div class="card-body">
-      <h2 class="card-title">Name</h2>
-      <p>
-        Year, Director</p>
-    </div>
-  </div>
+
+      @endforeach
+</div>
+<br>
+  {{$filmsData->links()}}
+
 </div>
 
 
 
-  <div class="lightbox-blanket">
-    <div class="pop-up-container">
-      <div class="pop-up-container-vertical">
-        <div class="pop-up-wrapper">
-          <div class="go-back" onclick="GoBack();"><i class="fa fa-arrow-left"></i>
-          </div>
-          <div class="product-details">
-            <div class="product-left">
-              <div class="product-image">
-                <img src="images/posters/tom.jpeg" />
-              </div>
-            </div>
-            <div class="product-right">
-               <div class="product-info">
-                <div class="product-manufacturer">NAME
-                </div>
-                <div class="product-title">
-                  Year:
-                  Director:
-                  Description:
-                </div>
-              </div>
-              <div class="product-description">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-              </div>
-            </div>
-            <div class="product-bottom">
-              <div class="product-checkout-actions">
-                <a class="request" href="#" onclick="AddToCart(event);">Request</a>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
 
 
 
@@ -946,7 +903,6 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
   </div>
 </div>
 </section>
-
 
 
 
