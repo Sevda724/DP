@@ -103,7 +103,5 @@ Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('s
 
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('index'); 
 
-//Route::get('/all/{id}', [CatalogController::class, 'showPopUp'])->name('index3');
-
 Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show'); 
 

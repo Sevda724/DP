@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mountains</title>
+	<title>{{__('local.Mountains')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -365,11 +365,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -387,7 +387,7 @@ hr {
 <div class="backp">
 <a href="/" class="previous">&#8249;</a>
 </div>
-<h2 class="heading">MOUNTAINS</h2><br>
+<h2 class="heading">{{__('local.MOUNTAINS')}}</h2><br>
 <div class="row">
 	<div class="col-md-4">
 <a href=""  data-toggle="modal" data-target="#myModal">
@@ -405,7 +405,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">TIAN SHAN</h2>
+  transform: translate(-50%, -50%);">{{__('local.TIAN SHAN')}}</h2>
                 </div>
 </div>
 </a>
@@ -418,14 +418,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Tian Shan</h2>
+          <h2 class="modal-title text-center">{{__('local.Tian Shan')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img1.jpeg" width="100%" height="100%">
-          <p>From the fields of wildflowers at lower altitudes to dramatic craggy peaks of winter snow, Kazakhstan's heavenly Western Tien-Shan mountains are some of the most biologically diverse and prosperous regions of the world. Three protected areas make up the World Heritage Site - Karatau Nature Reserve, Aksu-Zhabagly Nature Reserve, and Sairam-Ugam National Park. Together they offer a haven for endemic rare and endangered species. It was also here that some of the first fruits were domesticated centuries ago before spreading out across the world on the trading routes of the Great Silk Road.</p>
+          <p>{{__('local.From the fields of wildflowers at lower altitudes to dramatic craggy peaks of winter snow, Kazakhstan\'s heavenly Western Tien-Shan mountains are some of the most biologically diverse and prosperous regions of the world. Three protected areas make up the World Heritage Site - Karatau Nature Reserve, Aksu-Zhabagly Nature Reserve, and Sairam-Ugam National Park. Together they offer a haven for endemic rare and endangered species. It was also here that some of the first fruits were domesticated centuries ago before spreading out across the world on the trading routes of the Great Silk Road.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -452,7 +452,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ILE ALATAU</h2>
+  transform: translate(-50%, -50%);">{{__('local.ILE ALATAU')}}</h2>
                 </div>
 </div>
 
@@ -466,14 +466,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Ile Alatau</h2>
+          <h2 class="modal-title text-center">{{__('local.Ile Alatau')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img2.jpeg" width="100%" height="100%">
-          <p>Ile-Alatau National Park is a national park in Kazakhstan. It was created in 1996 and covers about 200,000 ha. It is situated in the mountains south of Almaty between Gorge Turgen in the east and Chemolgan River in the west. The National Park borders Almaty Nature Reserve, which is located around Peak Talgar.</p>
+          <p>{{__('local.Ile-Alatau National Park is a national park in Kazakhstan. It was created in 1996 and covers about 200,000 ha. It is situated in the mountains south of Almaty between Gorge Turgen in the east and Chemolgan River in the west. The National Park borders Almaty Nature Reserve, which is located around Peak Talgar.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -502,7 +502,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">SHYMBULAK</h2>
+  transform: translate(-50%, -50%);">{{__('local.SHYMBULAK')}}</h2>
                 </div>
 </div>
 
@@ -517,14 +517,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Shymbulak</h2>
+          <h2 class="modal-title text-center">{{__('local.Shymbulak')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img3.jpeg" width="100%" height="100%">
-          <p>The Shymbulak Ski Resort is located 25km outside Almaty city. There are three ski lifts at the resort with the highest going to 3200 meters above sea  level. There is also a Hotel located at the Resort, enabling those wishing to ski during the day, have a place to stay at night. The resort is located in the upper part of the Medeu Valley in the Zaiilisky Alatau mountain range. It is popular for its mild climate, large quantity of sunny days and great amount of snow through the winter (from November till May).</p>
+          <p>{{__('local.The Shymbulak Ski Resort is located 25km outside Almaty city. There are three ski lifts at the resort with the highest going to 3200 meters above sea level. There is also a Hotel located at the Resort, enabling those wishing to ski during the day, have a place to stay at night. The resort is located in the upper part of the Medeu Valley in the Zaiilisky Alatau mountain range. It is popular for its mild climate, large quantity of sunny days and great amount of snow through the winter (from November till May).')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -556,7 +556,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">BIG ALMATY LAKE</h2>
+  transform: translate(-50%, -50%);">{{__('local.BIG ALMATY LAKE')}}</h2>
                 </div>
 </div>
 
@@ -571,14 +571,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Big Almaty Lake</h2>
+          <h2 class="modal-title text-center">{{__('local.Big Almaty Lake')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img4.jpeg" width="100%" height="100%">
-          <p>Big Almaty Lake is located 28.5km south of Almaty up a gorge of the Bolshaya Almatinka River, 2,511m above sea level.  The lake is within the Alatau – Eliy National park and  both the Gorge and the lake are an attraction for visitors using Almaty as their base.  The lake is used for both hydro electric power, and the water supply for the city, but this does not detract from the magnificent mountain scenery. The mountains, Sovetov to the southeast, Ozyorny to the south and Turist to the southwest form a backdrop on all sides to the lake, producing some spectacular reflections, changing colour throughout the seasons.  All three mountains are around the 4,000 metres high, with a glacial water running down towards the lake.</p>
+          <p>{{__('local.Big Almaty Lake is located 28.5km south of Almaty up a gorge of the Bolshaya Almatinka River, 2,511m above sea level. The lake is within the Alatau – Eliy National park and both the Gorge and the lake are an attraction for visitors using Almaty as their base. The lake is used for both hydro electric power, and the water supply for the city, but this does not detract from the magnificent mountain scenery. The mountains, Sovetov to the southeast, Ozyorny to the south and Turist to the southwest form a backdrop on all sides to the lake, producing some spectacular reflections, changing colour throughout the seasons. All three mountains are around the 4,000 metres high, with a glacial water running down towards the lake.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -605,7 +605,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">TURGEN GORGE</h2>
+  transform: translate(-50%, -50%);">{{__('local.TURGEN GORGE')}}</h2>
                 </div>
 </div>
 
@@ -619,14 +619,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Turgen Gorge</h2>
+          <h2 class="modal-title text-center">{{__('local.Turgen Gorge')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img5.jpeg" width="100%" height="100%">
-          <p>One of the amazing and beautiful places of Kazakhstan is Turgen gorge, located 90 km from Almaty. There are a lot of beautiful waterfalls, pine forests, hot springs, as well as lakes with clear water. Turgen gorge is famous for waterfalls. One of these attractions is the Bear Falls, about 30 meters high. Bozgul waterfall made a real tunnel in the rock. But the most remarkable place in the valley is the Botan-chasseur station. Here Turgen canyon reaches a depth of 920 meters. There are ancient drawings along Asy River. In addition to these attractions, tourists often visit trout farm, ostrich farm, historical and ethnographic open-air museum (the monument of kazakh Batyr, layout of Saks kurgan the holy spring of eternal youth and beauty). </p>
+          <p>{{__('local.One of the amazing and beautiful places of Kazakhstan is Turgen gorge, located 90 km from Almaty. There are a lot of beautiful waterfalls, pine forests, hot springs, as well as lakes with clear water. Turgen gorge is famous for waterfalls. One of these attractions is the Bear Falls, about 30 meters high. Bozgul waterfall made a real tunnel in the rock. But the most remarkable place in the valley is the Botan-chasseur station. Here Turgen canyon reaches a depth of 920 meters. There are ancient drawings along Asy River. In addition to these attractions, tourists often visit trout farm, ostrich farm, historical and ethnographic open-air museum (the monument of kazakh Batyr, layout of Saks kurgan the holy spring of eternal youth and beauty).')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -656,7 +656,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">BURABAI</h2>
+  transform: translate(-50%, -50%);">{{__('local.BURABAI')}}</h2>
                 </div>
 </div>
 
@@ -670,15 +670,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Burabai</h2>
+          <h2 class="modal-title text-center">{{__('local.Burabai')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/mount/img6.jpeg" width="100%" height="100%">
-          <p>Burabai is the pearl of Kazakhstan. Amazing tour that includes mountains, lakes, cliffs and etc. One of the most beautiful sights of the country. Here, one can get spiritual energy and achieve an accord with the nature. We propose you to visit the resort Burabai at the lowest price, with a high comfort level. More details for the hotels (from 3 stars to V.I.P.), and the large choice of sanatoriums can be obtained from our managers.
-</p>
+          <p>{{__('local.Burabai is the pearl of Kazakhstan. Amazing tour that includes mountains, lakes, cliffs and etc. One of the most beautiful sights of the country. Here, one can get spiritual energy and achieve an accord with the nature. We propose you to visit the resort Burabai at the lowest price, with a high comfort level. More details for the hotels (from 3 stars to V.I.P.), and the large choice of sanatoriums can be obtained from our managers.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 

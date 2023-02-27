@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Actors</title>
+	<title>{{__('local.Actors')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -469,11 +469,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -490,7 +490,7 @@ hr {
 <a href="/" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
 
-<h2 class="slider-name" style="text-align: center;">ACTORS&CASTING</h2>
+<h2 class="slider-name" style="text-align: center;">{{__('local.ACTORS&CASTING')}}</h2>
 <br>
 <br>
 
@@ -500,7 +500,7 @@ hr {
             <img src="images/actors/act1.jpeg" alt="images">
         </div>
         <div class="details">
-            <h2>Berik Aitzhanov<br><span>Actor</span></h2>
+            <h2>{{__('local.Berik Aitzhanov')}}<br><span>{{__('local.Actor')}}</span></h2>
         </div>
       </div>
 
@@ -509,7 +509,7 @@ hr {
             <img src="images/actors/act2.png" alt="images">
          </div>
          <div class="details">
-            <h2>Almira Tursyn<br><span>Actress</span></h2>
+            <h2>{{__('local.Almira Tursyn')}}<br><span>{{__('local.Actress')}}</span></h2>
           </div>
        </div>
 
@@ -518,7 +518,7 @@ hr {
             <img src="images/actors/act3.jpeg" alt="images">
          </div>
          <div class="details">
-            <h2>Sanzhar Madi<br><span>Actor</span></h2>
+            <h2>{{__('local.Sanzhar Madi')}}<br><span>{{__('local.Actor')}}</span></h2>
           </div>
        </div>
 
@@ -531,7 +531,7 @@ hr {
             <img src="images/actors/act4.jpeg" alt="images">
         </div>
         <div class="details">
-            <h2>Samal Yeslyamova<br><span>Actress</span></h2>
+            <h2>{{__('local.Samal Yeslyamova')}}<br><span>{{__('local.Actress')}}</span></h2>
         </div>
       </div>
 
@@ -540,7 +540,7 @@ hr {
             <img src="images/actors/act5.jpeg" alt="images">
          </div>
          <div class="details">
-            <h2>Daniyar Alshinov<br><span>Actor</span></h2>
+            <h2>{{__('local.Daniyar Alshinov')}}<br><span>{{__('local.Actor')}}</span></h2>
           </div>
        </div>
 
@@ -549,7 +549,7 @@ hr {
             <img src="images/actors/act6.jpeg" alt="images">
          </div>
          <div class="details">
-            <h2>Aisulu Azimbayeva<br><span>Actress</span></h2>
+            <h2>{{__('local.Aisulu Azimbayeva')}}<br><span>{{__('local.Actress')}}</span></h2>
           </div>
        </div>
 
@@ -560,10 +560,9 @@ hr {
 
 <br>
 <br>
-<p class="p-st">People are always the element that brings any production to life, we have fostered strong relationships with several accomplished talents and talent agencies, and we also focus on discovering new faces with unique and fresh capabilities, the goal is to always align the right talent with the right role.
-In the end it’s always all about the people, in productions the people audiences tend to care the most about are almost always the talent, it is crucial for any kind of project for the talent to bring the role to life, allowing the audience to buy in on what they’re watching.</p>
-<p class="p-st">Kazakhstani screen production community is experienced and talented. Award-winning actors, creative heads of department, efficient crews, skilful technicians and craftspeople are famous throughout the world for their “can-do” attitude.</p>
-<p class="p-st">Young or old, male or female, Middle Eastern, Caucasian, African or Asian, funny or grave, good looking or average, we know how to spot talents who will deliver the best performance while looking on point for the role.</p>
+<p class="p-st">{{__('local.People are always the element that brings any production to life, we have fostered strong relationships with several accomplished talents and talent agencies, and we also focus on discovering new faces with unique and fresh capabilities, the goal is to always align the right talent with the right role. In the end it’s always all about the people, in productions the people audiences tend to care the most about are almost always the talent, it is crucial for any kind of project for the talent to bring the role to life, allowing the audience to buy in on what they’re watching.')}}</p>
+<p class="p-st">{{__('local.Kazakhstani screen production community is experienced and talented. Award-winning actors, creative heads of department, efficient crews, skilful technicians and craftspeople are famous throughout the world for their “can-do” attitude.')}}</p>
+<p class="p-st">{{__('local.Young or old, male or female, Middle Eastern, Caucasian, African or Asian, funny or grave, good looking or average, we know how to spot talents who will deliver the best performance while looking on point for the role.')}}</p>
 
 <br>
 <br>

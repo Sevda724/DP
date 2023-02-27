@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Soviet Locations</title>
+	<title>{{__('local.Soviet Locations')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -365,11 +365,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -387,7 +387,7 @@ hr {
 <div class="backp">
 <a href="/" class="previous">&#8249;</a>
 </div>
-<h2 class="heading">SOVIET ARCHITECTURE</h2><br>
+<h2 class="heading">{{__('local.SOVIET ARCHITECTURE')}}</h2><br>
 <div class="row">
 	<div class="col-md-4">
 <a href=""  data-toggle="modal" data-target="#myModal">
@@ -405,7 +405,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">PALACE OF THE REPUBLIC</h2>
+  transform: translate(-50%, -50%);">{{__('local.PALACE OF THE REPUBLIC')}}</h2>
                 </div>
 </div>
 </a>
@@ -418,14 +418,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Palace of the Republic</h2>
+          <h2 class="modal-title text-center">{{__('local.Palace of the Republic')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img.png" width="100%" height="100%">
-          <p>The Palace of the Republic is located in the Almaty City Centre at the intersection of Dostyk and Abay Streets and is one of main and largest concert halls in not only Almaty but Kazakhstan too. It was built in 1970 and was called the Palace Lenin then and was opened during the 100th birth anniversary celebration of Lenin and ever since has become the main tourist attraction of Almaty. The Palace is close to the square of Abay near the monument of Abay Kunanbayev.</p>
+          <p>{{__('local.The Palace of the Republic is located in the Almaty City Centre at the intersection of Dostyk and Abay Streets and is one of main and largest concert halls in not only Almaty but Kazakhstan too. It was built in 1970 and was called the Palace Lenin then and was opened during the 100th birth anniversary celebration of Lenin and ever since has become the main tourist attraction of Almaty. The Palace is close to the square of Abay near the monument of Abay Kunanbayev.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -452,7 +452,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">KAZAKHSTAN HOTEL</h2>
+  transform: translate(-50%, -50%);">{{__('local.KAZAKHSTAN HOTEL')}}</h2>
                 </div>
 </div>
 
@@ -466,14 +466,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Kazakhstan Hotel</h2>
+          <h2 class="modal-title text-center">{{__('local.Kazakhstan Hotel')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img2.jpeg" width="100%" height="100%">
-          <p>The hotel is situated in the heart of business and cultural center. The area is connected by the main thoroughfares to any point of the city. It will take 20 minutes to reach this hotel from Almaty International Airport. Kazakhstan Hotel is unique historical monument of Almaty city. Hotel is offering 306 comfortable rooms of 5 categories equipped with modern facilities and impeccable service. There are 4 restaurants “The Noodles” restaurant, “The Cosmopolitan bar”, The “Guns&Roses” Pub-Grille and BarFly (26 floor).</p>
+          <p>{{__('local.The hotel is situated in the heart of business and cultural center. The area is connected by the main thoroughfares to any point of the city. It will take 20 minutes to reach this hotel from Almaty International Airport. Kazakhstan Hotel is unique historical monument of Almaty city. Hotel is offering 306 comfortable rooms of 5 categories equipped with modern facilities and impeccable service. There are 4 restaurants “The Noodles” restaurant, “The Cosmopolitan bar”, The “Guns&Roses” Pub-Grille and BarFly (26 floor).')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -502,7 +502,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ARMAN CINEMA</h2>
+  transform: translate(-50%, -50%);">{{__('local.ARMAN CINEMA')}}</h2>
                 </div>
 </div>
 
@@ -517,14 +517,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Arman Cinema</h2>
+          <h2 class="modal-title text-center">{{__('local.Arman Cinema')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img3.jpeg" width="100%" height="100%">
-          <p>The story of Almaty’s Arman Cinema is one of risk-taking and reward. The structure was built in 1968 by Alexander Korzhempo — the architect lauded as “the first Almaty modernist” — in what was then the capital of Soviet Kazakhstan. While concrete and symbolism-heavy modernist architecture was already common in other Soviet cities, the style hadn’t yet arrived in Almaty, and Korzhempo’s ideas were revolutionary for the time. Rumour says that bulldozers lurked just around the corner throughout the building’s public inauguration, in case city officials were unhappy with its design. Luckily, both for Korzhempo and Almaty’s architectural legacy, the authorities approved the building. The Arman Cinema stands to this day.</p>
+          <p>{{__('local.The story of Almaty’s Arman Cinema is one of risk-taking and reward. The structure was built in 1968 by Alexander Korzhempo — the architect lauded as “the first Almaty modernist” — in what was then the capital of Soviet Kazakhstan. While concrete and symbolism-heavy modernist architecture was already common in other Soviet cities, the style hadn’t yet arrived in Almaty, and Korzhempo’s ideas were revolutionary for the time. Rumour says that bulldozers lurked just around the corner throughout the building’s public inauguration, in case city officials were unhappy with its design. Luckily, both for Korzhempo and Almaty’s architectural legacy, the authorities approved the building. The Arman Cinema stands to this day.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -556,7 +556,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">AUETHOV THEATRE</h2>
+  transform: translate(-50%, -50%);">{{__('local.AUEZOV THEATER')}}</h2>
                 </div>
 </div>
 
@@ -571,14 +571,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Auethov Theatre</h2>
+          <h2 class="modal-title text-center">{{__('local.Auezov Theatre')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img4.jpeg" width="100%" height="100%">
-          <p>Kazakh State Academic Drama Theatre named after M.Auezov is considered as one of the main scenes of our country for many years. This theater became a kind of cradle of the Kazakh national theater art. The theater was organized and planned to be a major national theater in the country. That is why it was located in the capital of the Kazakh ASSR Kyzyl-Orda. It opened in January 13, 1926, and the premiere staging of the theater was the play written by Koshke Kemengerov "Altyn Sakina" ("Golden Ring"). Seraly Kozhamkulova became a producer of this play. A big concert in which almost all known Kazakh masters of art of that time participated was performed for numerous spectators on the day of the premiere.</p>
+          <p>{{__('local.Kazakh State Academic Drama Theatre named after M.Auezov is considered as one of the main scenes of our country for many years. This theater became a kind of cradle of the Kazakh national theater art. The theater was organized and planned to be a major national theater in the country. That is why it was located in the capital of the Kazakh ASSR Kyzyl-Orda. It opened in January 13, 1926, and the premiere staging of the theater was the play written by Koshke Kemengerov "Altyn Sakina" ("Golden Ring"). Seraly Kozhamkulova became a producer of this play. A big concert in which almost all known Kazakh masters of art of that time participated was performed for numerous spectators on the day of the premiere.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -605,7 +605,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">KAZAKH STATE CIRCUS</h2>
+  transform: translate(-50%, -50%);">{{__('local.KAZAKH STATE CIRCUS')}}</h2>
                 </div>
 </div>
 
@@ -619,14 +619,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Kazakh State Circus</h2>
+          <h2 class="modal-title text-center">{{__('local.Kazakh State Circus')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img5.jpeg" width="100%" height="100%">
-          <p>A spaceship, a traditional Kazakh yurt or a circus tent? This building at one time was one of the business cards of the city, and even now Almaty residents like to walk around it and enjoy pleasant sunny days on the benches at their favorite circus. The building was built with the initiative of the first secretary of the Kazakh SSR Central Committee Dinmukhamed Kunaev in 1972, his project was developed by specially invited architects from Ukraine: Katsev and Slonov. </p>
+          <p>{{__('local.A spaceship, a traditional Kazakh yurt or a circus tent? This building at one time was one of the business cards of the city, and even now Almaty residents like to walk around it and enjoy pleasant sunny days on the benches at their favorite circus. The building was built with the initiative of the first secretary of the Kazakh SSR Central Committee Dinmukhamed Kunaev in 1972, his project was developed by specially invited architects from Ukraine: Katsev and Slonov.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -656,7 +656,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">WEDDING PALACE</h2>
+  transform: translate(-50%, -50%);">{{__('local.WEDDING PALACE')}}</h2>
                 </div>
 </div>
 
@@ -670,16 +670,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Wedding Palace</h2>
+          <h2 class="modal-title text-center">{{__('local.Wedding Palace')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/soviet/img6.jpeg" width="100%" height="100%">
-          <p>The wedding palace is a two-story, round building. It consists of cylindrical bodies, symbolizing two wedding rings, one inside the other. The basis of the structure is a hollow reinforced concrete frame of round shape, with a diameter of 34 meters. The walls and the roof are monolithic on ledgers, in a reinforced concrete frame. The facade is faced with white marble, divided by circular continuous glazing. The plinth on the north side, hidden in relief, finished in polished granite. The sun protection devices (grids), which surround the windows in a continuous ring, the geometric pattern of which is executed in the form of a national ornament, give the building a light, elegant solemnity and expressiveness. The interior of the building is in the form of a Kazakh yurt.
-
-</p>
+          <p>{{__('local.The wedding palace is a two-story, round building. It consists of cylindrical bodies, symbolizing two wedding rings, one inside the other. The basis of the structure is a hollow reinforced concrete frame of round shape, with a diameter of 34 meters. The walls and the roof are monolithic on ledgers, in a reinforced concrete frame. The facade is faced with white marble, divided by circular continuous glazing. The plinth on the north side, hidden in relief, finished in polished granite. The sun protection devices (grids), which surround the windows in a continuous ring, the geometric pattern of which is executed in the form of a national ornament, give the building a light, elegant solemnity and expressiveness. The interior of the building is in the form of a Kazakh yurt.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -705,7 +703,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">REPUBLIC SQUARE</h2>
+  transform: translate(-50%, -50%);">{{__('local.REPUBLIC SQUARE')}}</h2>
                 </div>
 </div>
 
@@ -719,15 +717,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Republic Square</h2>
+          <h2 class="modal-title text-center">{{__('local.Republic Square')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/soviet/img7.jpeg" width="100%" height="100%">
-          <p>Any large city obligatory has the central square, where all significant events, holidays, meetings and etc. are held. In Almaty, former capital of Kazakhstan, this role is entrusted to the Republic Square (former New Square). It is located on the crossing of central streets – Bayseitov and Saptaev. It is the size of two football fields, and on its territory there is the complex, consisting of sculptures, texts of various aphorisms, architecturally connected. And the central place of the complex is the Monument to Independence.
-</p>
+          <p>{{__('local.Any large city obligatory has the central square, where all significant events, holidays, meetings and etc. are held. In Almaty, former capital of Kazakhstan, this role is entrusted to the Republic Square (former New Square). It is located on the crossing of central streets – Bayseitov and Saptaev. It is the size of two football fields, and on its territory there is the complex, consisting of sculptures, texts of various aphorisms, architecturally connected. And the central place of the complex is the Monument to Independence.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 

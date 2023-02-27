@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Equipment</title>
+	<title>{{__('local.Equipment')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -379,11 +379,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -400,7 +400,7 @@ hr {
 <a href="/" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
 
-<h2 class="slider-name" style="text-align: center;">EQUIPMENT&LOGISTICS</h2>
+<h2 class="slider-name" style="text-align: center;">{{__('local.EQUIPMENT&LOGISTICS')}}</h2>
 <br>
  <div class="col-md-offset-2 col-md-8 col-sm-12">
 <div class="w3-content w3-display-container">
@@ -427,7 +427,7 @@ hr {
 
 </div>
 <br>
-<p class="p-st">Kazakhfilm provides the right and the best equipments that is needed for the project. From an action movie project to a Tabletop commercial shoot we know which right team and equipments are needed for a successful project. We listen to you and we work with you as partners to understand the target amd goal of the project so it could be produced excellently.</p>
+<p class="p-st">{{__('local.Kazakhfilm provides the right and the best equipments that is needed for the project. From an action movie project to a Tabletop commercial shoot we know which right team and equipments are needed for a successful project. We listen to you and we work with you as partners to understand the target amd goal of the project so it could be produced excellently.')}}</p>
 
 <br>
 <br>

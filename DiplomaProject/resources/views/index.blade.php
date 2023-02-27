@@ -74,7 +74,7 @@
 
 				<!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-<<<<<<< HEAD
+
 				<li><a href="#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
 				<li><a href="#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
 				<li><a href="#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
@@ -82,7 +82,11 @@
 				<li><a href="#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
                 <li>
                     <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</button>
+                        <button onclick="myFunction()" class="dropbtn">
+                            @php $current_locale = request()->cookie('locale') @endphp
+                            <img src="{{ $current_locale == 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png' : 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png' }}" style="height:16px;" />
+                            {{ $current_locale == 'en' ? 'EN' : 'RU' }}
+                        </button>
                         <div id="myDropdown" class="dropdown-content">
                             <form action="{{ route('setLocale', 'en')}}" method="POST">
                                 @csrf
@@ -439,7 +443,7 @@
               		<figure class="effect-zoe">
 						<img src="images/posters/udt.png" alt="portfolio img"/>
 							<figcaption>
-								<h2>Uly Dala Tany</h2>
+								<h2>{{__('local.Uly Dala Tany')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/udt.png" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -453,7 +457,7 @@
               		<figure class="effect-zoe">
 						<a href="https://youtu.be/G1YFwzswPzI"><img src="images/posters/tomiris.jpeg" alt="portfolio img"/></a>
 							<figcaption>
-								<h2>Tomiris</h2>
+								<h2>{{__('local.Tomiris')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/tomiris.jpeg" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -467,7 +471,7 @@
               		<figure class="effect-zoe">
 						<img src="images/posters/muk.png" alt="portfolio img"/>
 							<figcaption>
-								<h2>Mukagali</h2>
+								<h2>{{__('local.Mukagali')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/muk.png" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -483,7 +487,7 @@
               		<figure class="effect-zoe">
 						<img src="images/posters/te.jpeg" alt="img" />
 							<figcaption>
-								<h2>Amangeldy</h2>
+								<h2>{{__('local.Amangeldy')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/.jpeg" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -497,7 +501,7 @@
               		<figure class="effect-zoe">
 						<img src="images/posters/kyz.jpeg" alt="portfolio img"  />
 							<figcaption>
-								<h2>Kyz Zhibek</h2>
+								<h2>{{__('local.Kyz Zhibek')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/kyz.jpeg" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -511,7 +515,7 @@
               		<figure class="effect-zoe">
 						<img src="images/posters/mzk.jpeg" alt="img" />
 							<figcaption>
-								<h2>My name is Kozha</h2>
+								<h2>{{__('local.My name is Kozha')}}</h2>
 								<p class="icon-links">
 									<a href="images/posters/mzk2.jpeg" data-lightbox-gallery="portfolio-gallery"><span class="icon icon-attachment"></span></a>
 								</p>
@@ -755,7 +759,7 @@
 
    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
     <div class="section-title">
-     <h1 class="heading">CONTACT US</h1>
+     <h1 class="heading">{{__('local.CONTACT US')}}</h1>
      <hr>
     </div>
    </div>
@@ -782,7 +786,7 @@
     <form action="{{ route('contact-form.store') }}" method="POST" class="wow fadeInUp" data-wow-delay="0.6s">
       {{ csrf_field() }}
      <div class="col-md-4 col-sm-6">
-      <input type="text" class="form-control" placeholder="Name" name="name" value="{{ old('name') }}">
+      <input type="text" class="form-control" placeholder="{{__('local.Name')}}" name="name" value="{{ old('name') }}">
       @if ($errors->has('name'))
          <span class="text-danger">{{ $errors->first('name') }}</span>
       @endif
@@ -794,19 +798,19 @@
       @endif
      </div>
      <div class="col-md-4 col-sm-12">
-      <input type="text" class="form-control" placeholder="Subject" name="subject" value="{{ old('subject') }}">
+      <input type="text" class="form-control" placeholder="{{__('local.Subject')}}" name="subject" value="{{ old('subject') }}">
       @if ($errors->has('subject'))
          <span class="text-danger">{{ $errors->first('subject') }}</span>
       @endif
      </div>
      <div class="col-md-12 col-sm-12">
-      <textarea class="form-control" placeholder="Message" rows="7" name="message">{{ old('message') }}</textarea>
+      <textarea class="form-control" placeholder="{{__('local.Message')}}" rows="7" name="message">{{ old('message') }}</textarea>
       @if ($errors->has('message'))
          <span class="text-danger">{{ $errors->first('message') }}</span>
       @endif
      </div>
      <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
-      <input type="submit" class="form-control" value="SEND MESSAGE">
+      <input type="submit" class="form-control" value="{{__('local.SEND MESSAGE')}}">
      </div>
     </form>
    </div>
@@ -817,17 +821,17 @@
 
    <div class="contact-detail col-md-12 col-sm-12">
     <div class="col-md-4 col-sm-4">
-     <h3><i class="icon-envelope medium-icon wow bounceIn" data-wow-delay="0.6s"></i> EMAIL</h3>
+     <h3><i class="icon-envelope medium-icon wow bounceIn" data-wow-delay="0.6s"></i>EMAIL</h3>
      <p>sales@kazakhfilmstudios.kz</p>
      <br>
     </div>
     <div class="col-md-4 col-sm-4">
-     <h3><i class="icon-flag medium-icon wow bounceIn" data-wow-delay="0.6s"></i> ADDRESS</h3>
-     <p>Kazakhstan, Almaty, Al-Farabi Ave, 176</p>
+     <h3><i class="icon-flag medium-icon wow bounceIn" data-wow-delay="0.6s"></i>{{__('local.ADDRESS')}}</h3>
+     <p>{{__('local.Kazakhstan, Almaty, Al-Farabi Ave, 176')}}</p>
      <br>
     </div>
     <div class="col-md-4 col-sm-4">
-     <h3><i class="icon-phone medium-icon wow bounceIn" data-wow-delay="0.6s"></i> PHONE</h3>
+     <h3><i class="icon-phone medium-icon wow bounceIn" data-wow-delay="0.6s"></i>{{__('local.PHONE')}}</h3>
      <p>+ 7 702 000 1610</p>
      <br>
     </div>
@@ -859,7 +863,7 @@
  </div>
 </footer>
 
-
+<!-- {{__('local.HOME')}} -->
 
 <!-- Javascript
 ================================================== -->
@@ -875,6 +879,13 @@
 <script src="js/custom.js"></script>
 
 <script type="text/javascript">
+
+	window.onload = setTimeout(function() {
+	history.replaceState({}, document.title, window.location.href.split('#')[0]);
+	}, 500);
+
+
+
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

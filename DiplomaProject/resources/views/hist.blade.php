@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Historical Locations</title>
+	<title>{{__('local.Historical Locations')}}</title>
 	  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -365,11 +365,11 @@ hr {
 
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
 
-        <li><a href="/" class="smoothScroll">HOME</a></li>
-        <li><a href="/" class="smoothScroll">ABOUT</a></li>
-        <li><a href="/" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="/" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="/" class="smoothScroll">CONTACT</a></li>
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
       </ul>
     </div>
 
@@ -387,7 +387,7 @@ hr {
 <div class="backp">
 <a href="/" class="previous">&#8249;</a>
 </div>
-<h2 class="heading">HISTORICAL LOCATIONS</h2><br>
+<h2 class="heading">{{__('local.HISTORICAL LOCATIONS')}}</h2><br>
 <div class="row">
 	<div class="col-md-4">
 <a href=""  data-toggle="modal" data-target="#myModal">
@@ -405,7 +405,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ARYSTAN BAB</h2>
+  transform: translate(-50%, -50%);">{{__('local.ARYSTAN BAB')}}</h2>
                 </div>
 </div>
 </a>
@@ -418,14 +418,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Arystan Bab</h2>
+          <h2 class="modal-title text-center">{{__('local.Arystan Bab')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist/img1.jpeg" width="100%" height="100%">
-          <p>One of the holiest places in the Turkistan Province is the Mausoleum of Arystan Bab, founded in the 12th century. Arystan Bab was a spiritual mentor of Khoja Ahmed Yasawi, and also, according to legends, an associate of the Prophet Muhammad. The exterior of the mausoleum is unusual: the minarets (towers), from where the Adhan (a call to prayer) is recited, are similar to the observation towers. The most striking feature is the so-called “portal” - a wide arch, in which Islamic architectural tradition intertwines with European and Russian ones. The ancient handwritten Quran, an example of medieval calligraphic art, is dispalyed here.</p>
+          <p>{{__('local.One of the holiest places in the Turkistan Province is the Mausoleum of Arystan Bab, founded in the 12th century. Arystan Bab was a spiritual mentor of Khoja Ahmed Yasawi, and also, according to legends, an associate of the Prophet Muhammad. The exterior of the mausoleum is unusual: the minarets (towers), from where the Adhan (a call to prayer) is recited, are similar to the observation towers. The most striking feature is the so-called “portal” - a wide arch, in which Islamic architectural tradition intertwines with European and Russian ones. The ancient handwritten Quran, an example of medieval calligraphic art, is displayed here.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -452,7 +452,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">MAUSOLEUM</h2>
+  transform: translate(-50%, -50%);">{{__('local.MAUSOLEUM')}}</h2>
                 </div>
 </div>
 
@@ -466,14 +466,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Mausoleum of Khoja Ahmed Yasawi</h2>
+          <h2 class="modal-title text-center">{{__('local.Mausoleum of Khoja Ahmed Yasawi')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist.jpeg" width="100%" height="100%">
-          <p>The Mausoleum of Khoja Ahmed Yasawi, in the town of Yasi, now Turkestan, was built at the time of Timur (Tamerlane), from 1389 to 1405. In this partly unfinished building, Persian master builders experimented with architectural and structural solutions later used in the construction of Samarkand, the capital of the Timurid Empire. Today, it is one of the largest and best-preserved constructions of the Timurid period.</p>
+          <p>{{__('local.The Mausoleum of Khoja Ahmed Yasawi, in the town of Yasi, now Turkestan, was built at the time of Timur (Tamerlane), from 1389 to 1405. In this partly unfinished building, Persian master builders experimented with architectural and structural solutions later used in the construction of Samarkand, the capital of the Timurid Empire. Today, it is one of the largest and best-preserved constructions of the Timurid period.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -502,7 +502,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">AISHA BIBI</h2>
+  transform: translate(-50%, -50%);">{{__('local.AISHA BIBI')}}</h2>
                 </div>
 </div>
 
@@ -517,14 +517,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Aisha Bibi</h2>
+          <h2 class="modal-title text-center">{{__('local.Aisha Bibi')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist/img2.jpeg" width="100%" height="100%">
-          <p>The Mausoleum of Aisha Bibi, the larger of the two Karakhanid buildings in the compound, is a heavily, but finely, restored square-based building, originally dating from the 11th or 12th century, with a conical roof. The external decoration is stunning: every spare piece of wall is covered with carved terracotta in a wide range of geometric designs. It is the only monument in central Asia fully covered with carved terracotta tilework. The main entrance is on the eastern side of the building, set in a niche. Niches on the other three walls enclose latticed wooden windows. There is a cloth-covered tomb inside. </p>
+          <p>{{__('local.The Mausoleum of Aisha Bibi, the larger of the two Karakhanid buildings in the compound, is a heavily, but finely, restored square-based building, originally dating from the 11th or 12th century, with a conical roof. The external decoration is stunning: every spare piece of wall is covered with carved terracotta in a wide range of geometric designs. It is the only monument in central Asia fully covered with carved terracotta tilework. The main entrance is on the eastern side of the building, set in a niche. Niches on the other three walls enclose latticed wooden windows. There is a cloth-covered tomb inside.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -556,7 +556,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">SHAKPAK ATA</h2>
+  transform: translate(-50%, -50%);">{{__('local.SHAKPAK ATA')}}</h2>
                 </div>
 </div>
 
@@ -571,14 +571,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Shakpak Ata</h2>
+          <h2 class="modal-title text-center">{{__('local.Shakpak Ata')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist/img3.jpeg" width="100%" height="100%">
-          <p>The inner walls of the mosque are white, because it is cut inside a chalk rock. The mosque consists of several halls, all of them are connected by passages. There is a spiral stone staircase leading to a pavilion located on a flat cliff. Rock carvings of various eras are depicted on the walls, while the central part and the ceiling are decorated with Arabic writings. Owing to such an unusual rock-cut structure and location, the mosque is regularly visited by pilgrims and tourists not only from Kazakhstan, but from all over the world.</p>
+          <p>{{__('local.The inner walls of the mosque are white, because it is cut inside a chalk rock. The mosque consists of several halls, all of them are connected by passages. There is a spiral stone staircase leading to a pavilion located on a flat cliff. Rock carvings of various eras are depicted on the walls, while the central part and the ceiling are decorated with Arabic writings. Owing to such an unusual rock-cut structure and location, the mosque is regularly visited by pilgrims and tourists not only from Kazakhstan, but from all over the world.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -605,7 +605,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">SAURAN</h2>
+  transform: translate(-50%, -50%);">{{__('local.SAURAN')}}</h2>
                 </div>
 </div>
 
@@ -619,14 +619,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Sauran</h2>
+          <h2 class="modal-title text-center">{{__('local.Sauran')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist/img4.jpeg" width="100%" height="100%">
-          <p>In the Turkistan Province, there once was a thriving medieval city, Sauran. One of the earliest mentions of the city was made in the 10th century. From these records it can be judged that the city was very advanced and served as a major administrative center. According to the ancient chronicles, the residents were engaged in craft and the improvement of the city, built fortifications and a plumbing system. The city had underground water pipelines with a total length of almost 110 km (68 mi). At the moment, archaeological excavations are being carried out on the territory of the ancient settlement of Sauran and some restoration works are being done under the auspices of the Government of the Republic of Kazakhstan. This is an exceptional place that is worth visiting in order to see its picturesque ruins, and learn how people lived in ancient times. </p>
+          <p>{{__('local.In the Turkistan Province, there once was a thriving medieval city, Sauran. One of the earliest mentions of the city was made in the 10th century. From these records it can be judged that the city was very advanced and served as a major administrative center. According to the ancient chronicles, the residents were engaged in craft and the improvement of the city, built fortifications and a plumbing system. The city had underground water pipelines with a total length of almost 110 km (68 mi). At the moment, archaeological excavations are being carried out on the territory of the ancient settlement of Sauran and some restoration works are being done under the auspices of the Government of the Republic of Kazakhstan. This is an exceptional place that is worth visiting in order to see its picturesque ruins, and learn how people lived in ancient times.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -656,7 +656,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">ARAL SEA</h2>
+  transform: translate(-50%, -50%);">{{__('local.ARAL SEA')}}</h2>
                 </div>
 </div>
 
@@ -670,15 +670,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Aral Sea</h2>
+          <h2 class="modal-title text-center">{{__('local.Aral Sea')}}</h2>
         </div>
         <div class="modal-body">
         	<img src="images/hist/img5.jpeg" width="100%" height="100%">
-          <p>The shallow Aral Sea was once the world’s fourth largest body of inland water. The remnants of it nestle in the climatically inhospitable heart of Central Asia, to the east of the Caspian Sea. The Aral Sea and its demise are of great interest and increasing concern to scientists because of the remarkable shrinkage of its area and volume that began in the second half of the 20th century—when the region was part of the Soviet Union—and continued into the 21st. That change resulted primarily because of the diversion (for purposes of irrigation) of the riverine waters of the Syr Darya (ancient Jaxartes River) in the north and the Amu Darya (ancient Oxus River) in the south, which discharged into the Aral Sea and were its main sources of inflowing water.
-</p>
+          <p>{{__('local.The shallow Aral Sea was once the world’s fourth largest body of inland water. The remnants of it nestle in the climatically inhospitable heart of Central Asia, to the east of the Caspian Sea. The Aral Sea and its demise are of great interest and increasing concern to scientists because of the remarkable shrinkage of its area and volume that began in the second half of the 20th century—when the region was part of the Soviet Union—and continued into the 21st. That change resulted primarily because of the diversion (for purposes of irrigation) of the riverine waters of the Syr Darya (ancient Jaxartes River) in the north and the Amu Darya (ancient Oxus River) in the south, which discharged into the Aral Sea and were its main sources of inflowing water.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -704,7 +703,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">AKMESHIT</h2>
+  transform: translate(-50%, -50%);">{{__('local.AKMESHIT')}}</h2>
                 </div>
 </div>
 
@@ -718,15 +717,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Akmeshit</h2>
+          <h2 class="modal-title text-center">{{__('local.Akmeshit')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/hist/img6.png" width="100%" height="100%">
-          <p>Akmeshit Cave, an unusual spot with captivating views accompanied by legends, is perfect for a pilgrim’s journey. The cave is located 90 kilometres north of Shymkent and can be accessed year-round. The outer entrance opened in the early 20th century when part of the dome collapsed. The stories and legends surrounding it, however, existed much earlier. Many generations of locals told the story of Akmeshit – an unusual cave or underground mosque without external exits that could only be accessed through underground tunnels from nearby neighbourhoods. The tunnels were eventually sealed under rocks and for a long time the cave was merely a legend.
-</p>
+          <p>{{__('local.Akmeshit Cave, an unusual spot with captivating views accompanied by legends, is perfect for a pilgrim’s journey. The cave is located 90 kilometres north of Shymkent and can be accessed year-round. The outer entrance opened in the early 20th century when part of the dome collapsed. The stories and legends surrounding it, however, existed much earlier. Many generations of locals told the story of Akmeshit – an unusual cave or underground mosque without external exits that could only be accessed through underground tunnels from nearby neighbourhoods. The tunnels were eventually sealed under rocks and for a long time the cave was merely a legend.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
@@ -753,7 +751,7 @@ hr {
   top: 50%;
   left: 50%;
   font-size: 2rem;
-  transform: translate(-50%, -50%);">MERKE SANCTUARY</h2>
+  transform: translate(-50%, -50%);">{{__('local.MERKE SANCTUARY')}}</h2>
                 </div>
 </div>
 
@@ -767,15 +765,14 @@ hr {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Merke Sanctuary</h2>
+          <h2 class="modal-title text-center">{{__('local.Merke Sanctuary')}}</h2>
         </div>
         <div class="modal-body">
           <img src="images/hist/img7.jpeg" width="100%" height="100%">
-          <p>Merke is a sanctuary located near the village of Merke in the Zhambyl region of Kazakhstan. Due to its location in an inaccessible place, the sanctuary has been preserved in good condition and allows tracing the development of the culture of the Turkic nomads for almost a millennium. In 1998, the Merke sanctuary was included in the provisional UNESCO World Heritage List. The sanctuary is located in the Kyrgyz Alatau and covers an area of about 250 km². It is located at an altitude of 3000 m and covers several plateaus: Sandyk, Shaisandyk, Araltobe, Kashkasu, Ulysay.
-</p>
+          <p>{{__('local.Merke is a sanctuary located near the village of Merke in the Zhambyl region of Kazakhstan. Due to its location in an inaccessible place, the sanctuary has been preserved in good condition and allows tracing the development of the culture of the Turkic nomads for almost a millennium. In 1998, the Merke sanctuary was included in the provisional UNESCO World Heritage List. The sanctuary is located in the Kyrgyz Alatau and covers an area of about 250 km². It is located at an altitude of 3000 m and covers several plateaus: Sandyk, Shaisandyk, Araltobe, Kashkasu, Ulysay.')}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">{{__('local.Close')}}</button>
         </div>
       </div>
 
