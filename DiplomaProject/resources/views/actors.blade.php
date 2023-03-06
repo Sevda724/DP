@@ -460,7 +460,6 @@ hr {
 ================================================== -->
 <section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color: black;">
   <div class="container">
-
     <div class="navbar-header">
       <a href="/" class="smoothScroll navbar-brand"><img src="images/logo.png" style="height: 50px; width: auto; margin-top: -10px;"></a>
     </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\SubscribersController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -18,10 +19,6 @@ use App\Http\Controllers\SubscribersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//{{__('local.XXXXXXXXXX')}}
-//Route::get('/admin', 'FilmsController@insert');
-Route::get('/admin', [FilmsController::class, 'add']);
-Route::post('/insert-data', [FilmsController::class, 'insert']);
 
 Route::post('/setLocale/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'ru'])) {
@@ -87,8 +84,17 @@ Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name
 Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
 
-Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index'); 
+Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index');
 
 Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
 
 
+
+Auth::routes();
+
+ROute::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
+Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
+Route::get('/addingFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
+Route::post('/insert-data', [FilmsController::class, 'insert']);
+
+Route::get('/admin', [HomeController::class, 'index'])->name('admin');

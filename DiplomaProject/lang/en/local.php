@@ -51,6 +51,7 @@ return [
     'Message' => 'Message' ,
     'SEND MESSAGE' => 'SEND MESSAGE' ,
     'Modern Locations' => 'Современные Локации' ,
+    'MODERN LOCATIONS' => 'MODERN LOCATIONS',
     'KOKTOBE' => 'KOKTOBE' ,
     'BAYTEREK' => 'BAYTEREK' ,
     'ASTANA OPERA' => 'ASTANA OPERA' ,

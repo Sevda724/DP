@@ -995,7 +995,7 @@ input[type = button] {
     background-color: black;
     padding: 10px 20px;
     color: white;
-  
+
     cursor: pointer;
 }
 
@@ -1223,3 +1223,27 @@ footer h2 {
     font-size: 11px;
   }
 }
+
+/* Subscribers block
+------------------------------------- */
+
+.subscribers {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.subscribers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subscribers li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.subscribers li:last-child {
+    border-bottom: none;
+}
+
