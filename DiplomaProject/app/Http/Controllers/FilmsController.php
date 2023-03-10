@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalog;
+<<<<<<< HEAD
+=======
+use App\Models\Film;
+>>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
 use Illuminate\Http\Request;
 
 class FilmsController extends Controller
@@ -12,6 +16,7 @@ class FilmsController extends Controller
         return view('insertData');
     }
 
+<<<<<<< HEAD
     public function insert(Request $request)
     {
         $films = new Catalog();
@@ -38,63 +43,9 @@ class FilmsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+=======
+>>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
     public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Films  $films
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Films $films)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Films  $films
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Films $films)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Films  $films
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Films $films)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Films  $films
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Films $films)
     {
         //
     }

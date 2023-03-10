@@ -102,14 +102,6 @@
                         </div>
                     </div>
                 </li>
-{{--                <form action="{{ route('setLocale', 'en')}}" method="POST">--}}
-{{--                    @csrf--}}
-{{--                    <button type="submit">English</button>--}}
-{{--                </form>--}}
-{{--                <form action="{{ route('setLocale', 'ru')}}" method="POST">--}}
-{{--                    @csrf--}}
-{{--                    <button type="submit">Русский</button>--}}
-{{--                </form>--}}
 			</ul>
 		</div>
 

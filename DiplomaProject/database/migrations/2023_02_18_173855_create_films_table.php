@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('category');
             $table->string('description');
             $table->string('photo');
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 
