@@ -23,7 +23,7 @@ use App\Http\Controllers\RequestController;
 //{{__('local.XXXXXXXXXX')}}
 //Route::get('/admin', 'FilmsController@insert');
 Route::get('/admin', [FilmsController::class, 'add']);
-Route::post('/insert-data', [FilmsController::class, 'insert']);
+Route::post('/insert-data', [CatalogController::class, 'insert'])->name("insert-data");
 
 Route::post('/setLocale/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'ru'])) {
@@ -101,7 +101,8 @@ Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index');
 Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
 
 
-Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('index'); 
+Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get'); 
 
-Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show'); 
+Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show'); 
 
+Route::get('/catalog/filter/{filter}', [CatalogController::class, 'filter'])->name('filter');

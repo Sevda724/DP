@@ -7,7 +7,7 @@
 </head>
 
 <style type="text/css">
-	
+
 body {
 	margin: 0;
 	padding: 0;
@@ -180,17 +180,108 @@ div#success {
     border: #e66262 1px solid;
 }
 
+.custom-navbar {
+    background: #000000;
+    border: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.custom-navbar .navbar-brand  {
+  
+  font-weight: 600;
+  font-size: 24px;
+  padding-top: 11px;
+}
+
+.custom-navbar .navbar-brand .navbar-toggle {
+    background: #ffa400;
+     padding: 4px 6px;
+    font-size: 16px;
+    color: #000000;
+}
+
+
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: black;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 10px;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid black; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid black; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+
 </style>
 
 <body>
+
+
 <br>
 <br>
 <br>
 	<div class="backp">
-<a href="catalog.html" class="previous">&#8249;</a>
+<a href='{{ url()->previous() }}' class="previous">&#8249;</a>
 </div>
 
 	<main>
+    @if(app()->getLocale() == 'en')
 		<div class="movie-poster">
 			<img src={{$filmInfo->Photo}} alt="Movie Poster">
 		</div>
@@ -210,7 +301,28 @@ div#success {
 			<div id="request">
 <button class="button button5" data-toggle="modal" data-target="#exampleModal">Request</button>
     </div>
-
+    @endif
+        @if(app()->getLocale() == 'ru')
+    <div class="movie-poster">
+      <img src={{$filmInfo->Photo}} alt="Movie Poster">
+    </div>
+    <div class="movie-details">
+      <h2>{{$filmInfo->Title_ru}}</h2>
+      <table>
+        <tr>
+          <th>Year:</th>
+          <td>{{$filmInfo->Year}}</td>
+        </tr>
+        <tr>
+          <th>Director:</th>
+          <td>{{$filmInfo->Director}}</td>
+        </tr>
+      </table>
+      <p>{{$filmInfo->Text}}</p>
+      <div id="request">
+<button class="button button5" data-toggle="modal" data-target="#exampleModal">Request</button>
+    </div>
+    @endif
     <!--Request Form-->
 
 <!-- Modal -->
@@ -306,91 +418,38 @@ div#success {
 		</div>-->
 
 	</main>
-   <div class="col-xs-9">
-                    <ul class="menu-items">
-                        <li class="active">Awards</li>
-                        <li>Trailer</li>
-                    </ul>
-                    <div style="width:100%;border-top:1px solid silver">
-                        <p style="padding:15px;">
-                            <small>
-                            List of awards the movie has won or been nominated for.
-                            </small>
-                        </p>
-                    </div>
-                </div>
+  <div class="tabs">
+  <div class="tab-2">
+    <label for="tab2-1">Awards</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div>
+      <h4 style="margin-left: 40px;">Awards</h4>
+        <p style="margin-left: 40px;"><?php  
+    echo nl2br($filmInfo->Awards);  
+?></p>
+    </div>
+  </div>
+  <div class="tab-2">
+    <label for="tab2-2">Trailer</label>
+    <input id="tab2-2" name="tabs-two" type="radio">
+    <div>
+      <h4 style="margin-left: 40px;">Trailer</h4>
+      <br>
+
+     
+@if ($filmInfo->Trailer !== ""): 
+<iframe width="420" height="315"
+src="{{$filmInfo->Trailer}}" style="margin-left: 40px;">
+</iframe>>
+@endif;
+      
+      
+    </div>
+  </div>
+</div>
 
 
-	<script>
-		/*function openTab(evt, tabName) {
-		  var i, tabcontent, tablinks;
-		  tabcontent = document.getElementsByClassName("tabcontent");
-		  for (i = 0; i < tabcontent.length; i++) {
-		    tabcontent[i].style.display = "none";
-		  }
-		  tablinks = document.getElementsByClassName("tablinks");
-		  for (i = 0; i < tablinks.length; i++) {
-		    tablinks[i].className = tablinks[i].className.replace(" active", "");
-		  }
-		  document.getElementById(tabName).style.display = "block";
-		  evt.currentTarget.className += " active";
-		}
-
-		   $(document).ready(function(){
-            //-- Click on detail
-            $("ul.menu-items > li").on("click",function(){
-                $("ul.menu-items > li").removeClass("active");
-                $(this).addClass("active");
-            });
-                                  
-        }); 
-
-$(document).ready(function () {
-    $("#request").click(function () {
-        $("#contact-popup").show();
-    });
-    //Contact Form validation on click event
-    $("#contact-form").on("submit", function () {
-        var valid = true;
-        $(".info").html("");
-        $("inputBox").removeClass("input-error");
-        
-        var userName = $("#userName").val();
-        var userEmail = $("#userEmail").val();
-        var subject = $("#subject").val();
-        var message = $("#message").val();
-
-        if (userName == "") {
-            $("#userName-info").html("required.");
-            $("#userName").addClass("input-error");
-        }
-        if (userEmail == "") {
-            $("#userEmail-info").html("required.");
-            $("#userEmail").addClass("input-error");
-            valid = false;
-        }
-        if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
-        {
-            $("#userEmail-info").html("invalid.");
-            $("#userEmail").addClass("input-error");
-            valid = false;
-        }
-
-        if (subject == "") {
-            $("#subject-info").html("required.");
-            $("#subject").addClass("input-error");
-            valid = false;
-        }
-        if (message == "") {
-            $("#userMessage-info").html("required.");
-            $("#message").addClass("input-error");
-            valid = false;
-        }
-        return valid;
-    });
-});*/
-	</script>
-	<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

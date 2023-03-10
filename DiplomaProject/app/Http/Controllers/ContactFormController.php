@@ -11,13 +11,14 @@ class ContactFormController extends Controller
 {
     public function contactForm()
     {
-        return view("index");
+       return redirect()->to(url()->previous())->withFragment('contact');
 
 
     }
 
     public function storeContactForm(Request $request)
     {
+        if($request->filled('email') && $request->filled('name') && $request->filled('subject') && $request->filled('message')) {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -46,6 +47,9 @@ class ContactFormController extends Controller
             $message->from($request->email);
             $message->to($request->input('email'))->subject('Kazakhfilm');
         });
-        return redirect()->to(url()->previous())->withFragment('contact');
+        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', 'Contact Form Submit Successfully!');
+        } else{
+        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!');
+        }
     }
 }

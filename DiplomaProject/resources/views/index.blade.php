@@ -766,23 +766,24 @@
 
    <!-- Contact form section
    ================================================== -->
-                           @if(Session::has('success'))
-
-                        <div class="alert alert-success">
-
-                            {{ Session::get('success') }}
-
-                            @php
-
-                                Session::forget('success');
-
-                            @endphp
-
-                        </div>
-
-                        @endif
+                                                 
    <div class="col-md-offset-1 col-md-10 col-sm-12">
-
+    @if(Session::has('status-mess')) 
+        <div class="alert alert-success"> 
+            {{ Session::get('status-mess') }} 
+                @php 
+                    Session::forget('status-mess'); 
+                @endphp 
+        </div> 
+    @endif 
+    @if(Session::has('status-mess-err')) 
+        <div class="alert alert-danger"> 
+            {{ Session::get('status-mess-err') }} 
+                @php 
+                    Session::forget('status-mess-err'); 
+                @endphp 
+        </div> 
+    @endif 
     <form action="{{ route('contact-form.store') }}" method="POST" class="wow fadeInUp" data-wow-delay="0.6s">
       {{ csrf_field() }}
      <div class="col-md-4 col-sm-6">

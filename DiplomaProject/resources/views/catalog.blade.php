@@ -122,7 +122,15 @@ p, li {
   letter-spacing: 0.9px;
   line-height: 28px;
 }
-
+label{
+   display: flex;
+ position: relative;
+  background-color: white;
+  width: auto;
+  float: left;
+  max-width: 100%;
+  border: 1px solid black;
+}
 a {
   outline: none !important;
 }
@@ -398,11 +406,11 @@ hr {
 
 
 .product-filter {
-  display: flex;
+  display: inline;
+  margin-left: 100px;
+
 }
-.sort {
-  display: flex;
-}
+
 .collection-sort {
   display: flex;
   flex-direction: column;
@@ -410,7 +418,7 @@ hr {
 
 
 /* cards */
-.grid-container {
+.cards {
   display: grid;
   grid-template-columns: auto auto auto auto;
   background-color: white;
@@ -418,12 +426,13 @@ hr {
   margin: 37px auto 0;
   width: calc(280px * 4);
 }  
-.cards {
+
+/*.cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin: 37px auto 0;
   width: calc(280px * 4);
-}
+}*/
 
 .card {
   cursor: pointer;
@@ -481,14 +490,50 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
+  select {
+font-size: 1rem;
+    font-weight: 200;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: 1px;
+    background-color: transparent;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  select:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aaa;
+  }
 input {}
 
 input:focus {}
 
 input[type="submit"],
 input[type="button"] {}
-
+input[type="text"] {
+  margin-left: 480px;
+      border: 1px solid black;
+      padding: 8px;
+      font-size: 16px;
+      width: 300px;
+    }
+    input[type="submit"] {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
 /*wrappers, cards, etc. */
 
@@ -726,6 +771,42 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
         <li><a href="index.html" class="smoothScroll">SHOWCASE</a></li>
         <li><a href="index.html" class="smoothScroll">LOCATIONS</a></li>
         <li><a href="index.html" class="smoothScroll">CONTACT</a></li>
+                        <li>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">
+                            @php $current_locale = request()->cookie('locale') @endphp
+                            <img src="{{ $current_locale == 'en' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png' : 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png' }}" style="height:16px;" />
+                            {{ $current_locale == 'en' ? 'EN' : 'RU' }}
+                        </button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <form action="{{ route('setLocale', 'en')}}" method="POST">
+                                @csrf
+                                <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px; margin-right: 5px;" />EN</button>
+                            </form>
+                            <form action="{{ route('setLocale', 'ru')}}" method="POST">
+                                @csrf
+                                <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px; margin-right: 5px;" />RU</button>
+                            </form>
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</a>--}}
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1000px-Flag_of_Kazakhstan.svg.png" style="height:16px;" /> KZ</a>--}}
+{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px;" /> RU</a>--}}
+                        </div>
+                    </div>
+                </li>
+{{--                <form action="{{ route('setLocale', 'en')}}" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    <button type="submit">English</button>--}}
+{{--                </form>--}}
+{{--                <form action="{{ route('setLocale', 'ru')}}" method="POST">--}}
+{{--                    @csrf--}}
+{{--                    <button type="submit">Русский</button>--}}
+{{--                </form>--}}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
       </ul>
     </div>
 
@@ -738,20 +819,20 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 <div id="home">
   <div class="site-slider">
         <ul class="bxslider">
-      <li>
-                <img src="images/posters/bsh.jpeg" alt="slider image 1 " style="height: 1000px; width:100%;">
+            <!--<li>
+                <img src="images/port/bsh.jpeg" alt="slider image 1 " style="height: 1000px; width:100%;">
+            </li>-->
+            <li>
+                <img src="images/port/amre.jpeg" alt="slider image 2" style="height: 1000px; width:auto;">
             </li>
             <li>
-                <img src="images/posters/amre.jpeg" alt="slider image 2" style="height: 1000px; width:auto;">
+                <img src="images/port/tom.jpeg" alt="slider image 3" style="height: 1000px; width:auto;">
             </li>
+            <!--<li>
+                <img src="images/port/shyrakshy.jpeg" alt="slider image 4" style="height: 1000px; width:auto;">
+            </li>-->
             <li>
-                <img src="images/posters/tom.jpeg" alt="slider image 3" style="height: 1000px; width:auto;">
-            </li>
-            <li>
-                <img src="images/posters/shyrakshy.jpeg" alt="slider image 4" style="height: 1000px; width:auto;">
-            </li>
-            <li>
-                <img src="images/posters/myn.jpeg" alt="slider image 5" style="height: 1000px; width:auto;">
+                <img src="images/port/myn.jpeg" alt="slider image 5" style="height: 1000px; width:auto;">
             </li>
         </ul> 
     </div> 
@@ -809,49 +890,82 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 <nav class="product-filter">
   <div class="sort">
 
-    <div class="collection-sort">
-      <label>Filter by:</label>
-      <select>
-        <option value="/">All</option>
-        <option value="/">Action</option>
-        <option value="/">Comedy</option>
-        <option value="/">Crime</option>
-        <option value="/">Detective</option>
-        <option value="/">Documental</option>
-        <option value="/">Drama</option>
-        <option value="/">Family</option>
-        <option value="/">Fantasy</option>
-        <option value="/">Historical</option>
-        <option value="/">Melodrama</option>
-        <option value="/">Musical</option>
-        <option value="/">Serial</option>
-        <option value="/">Short</option>
-        <option value="/">Sport</option>
-        <option value="/">USSR</option>
-        <option value="/">War</option>
-        <option value="/">Full-length</option>
-      </select>
-    </div>
 
-    <div class="collection-sort">
-      <label>Sort by:</label>
-      <select>
-        <option value="/">Newest first</option>
-        <option value="/">Oldest first</option>
+ <!--     <label style="margin-left: 160px;">
+      <SELECT id='filter' name='filter'>
+        <option value="">All</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="crime">Crime</option>
+        <option value="detective">Detective</option>
+        <option value="Documental">Documental</option>
+        <option value="drama">Drama</option>
+        <option value="family">Family</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Historical">Historical</option>
+        <option value="Melodrama">Melodrama</option>
+        <option value="Musical">Musical</option>
+        <option value="Serial">Serial</option>
+        <option value="Short">Short</option>
+        <option value="Sport">Sport</option>
+        <option value="USSR">USSR</option>
+        <option value="War">War</option>
+        <option value="Full-length">Full-length</option>
+      </SELECT>
+      </label>
+
+<script>
+  document.getElementById('filter').addEventListener('change', function() {
+    var filterValue = this.value;
+    var url = "{{ route('filter', ['filter' => ':filterValue']) }}".replace(':filterValue', filterValue);
+    window.location.href = url;
+  });
+</script>-->
+
+      <label style="margin-left: 160px;">
+      <SELECT onchange="window.location.href=this.options [this.selectedIndex].value" id='filter' name='filter'>
+        <option value="catalog">All</option>
+        <option value="catalog?Category=action">Action</option>
+        <option value="catalog?Category=comedy">Comedy</option>
+        <option value="catalog?Category=crime">Crime</option>
+        <option value="catalog?Category=detective">Detective</option>
+        <option value="catalog?Category=Documental">Documental</option>
+        <option value="catalog?Category=drama">Drama</option>
+        <option value="catalog?Category=family">Family</option>
+        <option value="catalog?Category=Fantasy">Fantasy</option>
+        <option value="catalog?Category=Historical">Historical</option>
+        <option value="catalog?Category=Melodrama">Melodrama</option>
+        <option value="catalog?Category=Musical">Musical</option>
+        <option value="catalog?Category=Serial">Serial</option>
+        <option value="catalog?Category=Short">Short</option>
+        <option value="catalog?Category=Sport">Sport</option>
+        <option value="catalog?Category=USSR">USSR</option>
+        <option value="catalog?Category=War">War</option>
+        <option value="catalog?Category=Full-length">Full-length</option>
+      </SELECT>
+      </label>
+
+      <label style="margin-left: 20px;">
+      <select onchange="window.location.href=this.options [this.selectedIndex].value">
+        <option></option>
+        <option value="catalog?Year=desc">Newest first</option>
+        <option value="catalog?Year=asc">Oldest first</option>
       </select>
-    </div>
+   </label>
+   <form method="GET" action="{{ route('catalogData.get') }}">
+    {{ csrf_field() }} 
+    <input name='search' type="text" placeholder="Search..." value="">
+    <input type="submit" value="Go">
+  </form>
   </div>
-
-
-
 </nav>
-
 <br>
 <br>
 <br>
 
+@if(app()->getLocale() == 'en')
 <div style="text-align: center;">
-<div class="grid-container" >
+<div class="cards" >
 @foreach($filmsData as $filmData)
 
   <div class="card">
@@ -866,10 +980,31 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
       @endforeach
 </div>
 <br>
-  {{$filmsData->links()}}
+  {{$filmsData-> withQueryString() -> links()}}
 
 </div>
+@endif
+@if(app()->getLocale() == 'ru')
+<div style="text-align: center;">
+<div class="cards" >
+@foreach($filmsData as $filmData)
 
+  <div class="card">
+    <a href="{{ route('film.show', $filmData->id) }}">
+    <img src={{$filmData->Photo}} alt="..." class="card-img-top" ></a>
+    <div class="card-body">
+      <h2 class="card-title">{{$filmData->Title_ru}}</h2>
+      <p>{{$filmData->Description_ru}}</p>
+    </div>
+  </div>
+
+      @endforeach
+</div>
+<br>
+  {{$filmsData-> withQueryString() -> links()}}
+
+</div>
+@endif
 
 
 
@@ -883,7 +1018,17 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 <br>
 <!-- subs section -->
 
+  @if(session('status_good')))
+  <div class="alert alert-success" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
+    {{ session('status_good') }}
+  </div>
+@endif
 
+@if(session('status_bad')))
+  <div class="alert alert-danger" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
+     {{ session('status_bad') }}
+  </div>
+@endif
 <section id="subs" class="parallax-section">
   <div class="container">
     <div class="row" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
@@ -912,7 +1057,9 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <script type="text/javascript">
   clickAndSelect()
-
+ function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 function clickAndSelect() {
   let cards = Array.from( document.querySelectorAll('.card') ),
       elements = []
@@ -977,6 +1124,16 @@ function GoBack(){
   $(".lightbox-blanket").toggle();
 }
 
+
+document.addEventListener('DOMContentLoaded', function () {
+   var input = document.getElementById('job');
+   if (localStorage['filter']) { // if job is set
+       input.value = localStorage['filter']; // set the value
+   }
+   input.onchange = function () {
+        localStorage['filter'] = this.value; // change localStorage on change
+    }
+});
 
 </script>
 

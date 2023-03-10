@@ -28,7 +28,6 @@ class RequestController extends Controller
 
         $input = new userRequest();
         $input->filmTitle = $film;
-        //$input->filmTitle =Catalog::where('id', $id)->pluck('Title');
         $input->userName = $request->input('userName');
         $input->userEmail = $request->input('userEmail');
         $input->userSubject = $request->input('userSubject');
@@ -36,10 +35,7 @@ class RequestController extends Controller
 
 
         $input -> save();
-        //$input = $request->all();
-        //$input => filmTitle =  {{$filmFromCatalog->Title}}
-        //userRequest::create($input, 'customer_id' => Customers::where('code',$request->session()->get('customer_code'))->first()->id);
-
+       
         \Mail::send('RequestMailTemplate', array(
             'filmTitle' => $film,
             'userName' => $input['userName'],
@@ -51,13 +47,6 @@ class RequestController extends Controller
             $message->to('190103364@stu.sdu.edu.kz', 'Admin')->subject($request->userSubject);
         });
 
-        /*\Mail::send('thanks', array(
-            'name' => $input['name'],
-            'email' => $input['email'],
-        ), function($message) use ($request){
-            $message->from($request->email);
-            $message->to($request->input('email'))->subject('Kazakhfilm');
-        });*/
         return redirect()->back();
     }
 }

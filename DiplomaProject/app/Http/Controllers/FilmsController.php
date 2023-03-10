@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Film;
+use App\Models\Catalog;
 use Illuminate\Http\Request;
 
 class FilmsController extends Controller
@@ -14,11 +14,20 @@ class FilmsController extends Controller
 
     public function insert(Request $request)
     {
-        $films = new Film();
-        $films->title = $request->input('title');
-        $films->category = $request->input('category');
-        $films->description = $request->input('description');
-        $films->photo = $request->input('photo');
+        $films = new Catalog();
+        $films->Title = $request->input('title');
+        $films->Category = $request->input('category');
+        $films->Description = $request->input('description');
+        $films->Photo = $request->input('photo');
+        $films->Text= "some text";
+        $films->Year = "1990";
+        $films->Director = "some director";
+        $films->Trailer = 'some link';
+        $films->Awards = 'some awards';
+        //$films->id = 1000;
+
+
+
         $films->save();
         return redirect('/')->with('status',' Inserted Succesfully');
     }
