@@ -6,6 +6,9 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\SubscribersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\RequestController;
+
 
 
 
@@ -30,6 +33,11 @@ Route::post('/setLocale/{locale}', function ($locale) {
 Route::get('/', function () {
     return view('index');
 });
+
+//Route::get('/{language}', function ($language) {
+//    App::setLocale($language);
+//    return view('index');
+//});
 
 Route::get('/lakes-locations', function () {
     return view('lakes');
@@ -83,18 +91,22 @@ Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name
 
 Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
 
+Route::post('/catalog/{id}/request', [RequestController::class, 'storeRequest'])->name('request.store');
+
 
 Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index');
 
 Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
-
-
 
 Auth::routes();
 
 ROute::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
 Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
 Route::get('/addingFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
-Route::post('/insert-data', [FilmsController::class, 'insert']);
+Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+
+Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('index');
+
+Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show');

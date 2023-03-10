@@ -372,7 +372,11 @@ hr {
   <div class="container">
 
     <div class="navbar-header">
+<<<<<<< HEAD
+      <a href='' class="smoothScroll navbar-brand"><img src="images/logo.png" style="height: 50px; width: auto; margin-top: -10px;"></a>
+=======
       <a href="/" class="smoothScroll navbar-brand"><img src="images/logo.png" style="height: 50px; width: auto; margin-top: -10px;"></a>
+>>>>>>> a4d06c88e830e909a168a3a53b4bebec0a01bb5f
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
