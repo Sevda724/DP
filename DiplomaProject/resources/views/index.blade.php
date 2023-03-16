@@ -96,9 +96,6 @@
                                 @csrf
                                 <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px; margin-right: 5px;" />RU</button>
                             </form>
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</a>--}}
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1000px-Flag_of_Kazakhstan.svg.png" style="height:16px;" /> KZ</a>--}}
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px;" /> RU</a>--}}
                         </div>
                     </div>
                 </li>
@@ -758,24 +755,24 @@
 
    <!-- Contact form section
    ================================================== -->
-                                                 
+
    <div class="col-md-offset-1 col-md-10 col-sm-12">
-    @if(Session::has('status-mess')) 
-        <div class="alert alert-success"> 
-            {{ Session::get('status-mess') }} 
-                @php 
-                    Session::forget('status-mess'); 
-                @endphp 
-        </div> 
-    @endif 
-    @if(Session::has('status-mess-err')) 
-        <div class="alert alert-danger"> 
-            {{ Session::get('status-mess-err') }} 
-                @php 
-                    Session::forget('status-mess-err'); 
-                @endphp 
-        </div> 
-    @endif 
+    @if(Session::has('status-mess'))
+        <div class="alert alert-success">
+            {{ Session::get('status-mess') }}
+                @php
+                    Session::forget('status-mess');
+                @endphp
+        </div>
+    @endif
+    @if(Session::has('status-mess-err'))
+        <div class="alert alert-danger">
+            {{ Session::get('status-mess-err') }}
+                @php
+                    Session::forget('status-mess-err');
+                @endphp
+        </div>
+    @endif
     <form action="{{ route('contact-form.store') }}" method="POST" class="wow fadeInUp" data-wow-delay="0.6s">
       {{ csrf_field() }}
      <div class="col-md-4 col-sm-6">

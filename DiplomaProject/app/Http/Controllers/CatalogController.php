@@ -3,17 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Post\FilterRequest;
 use App\Models\Catalog;
-<<<<<<< HEAD
 use App\Http\Requests\Post\FilterRequest;
 use App\Http\Filters\CatalogFilter;
-
-class CatalogController extends Controller
-{
-    public function catalogData(FilterRequest $request)
-=======
-use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
@@ -30,19 +22,6 @@ class CatalogController extends Controller
         $trailer = $request->input('trailer');
         $awards = $request->input('awards');
 
-
-        // DB::table('catalogs')->insert([
-        //     'Category' => $category,
-        //     'Title' => $title,
-        //     'Description' => $description,
-        //     'Text' => $text,
-        //     'Photo' => $photo,
-        //     'Year' => $year,
-        //     'Director' => $director,
-        //     'Trailer' => $trailer,
-        //     'Awards' => $awards,
-        // ]);
-
         $catalogs = new Catalog;
         $catalogs->category = $category;
         $catalogs->title = $title;
@@ -57,8 +36,25 @@ class CatalogController extends Controller
 
         return redirect()->back()->with('status',' Inserted Succesfully');
     }
-    public function catalogData()
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
+
+    public function update(Request $request, $id)
+    {
+        $catalogs = Catalog::find($id);
+
+        $catalogs->category = $request->input('category');
+        $catalogs->title = $request->input('title');
+        $catalogs->description = $request->input('description');
+        $catalogs->text = $request->input('text');
+        $catalogs->photo = $request->input('photo');
+        $catalogs->year = $request->input('year');
+        $catalogs->director = $request->input('director');
+        $catalogs->trailer = $request->input('trailer');
+        $catalogs->awards = $request->input('awards');
+        $catalogs->save();
+
+        return redirect()->back()->with('status','Updated Successfully');
+    }
+    public function catalogData(FilterRequest $request)
     {
         $query = Catalog::query();
         $data = $request -> validated();
@@ -97,7 +93,7 @@ class CatalogController extends Controller
     	return view('catalog', ['filmsData' => Catalog::paginate(20)]);
     }
 
-<<<<<<< HEAD
+
     public function filter($filter)
     {
         //$filter = $request->input('filter');
@@ -111,36 +107,33 @@ class CatalogController extends Controller
             dd($filter);
             //return view('catalog', ['filmsData' => Catalog::paginate(20)]);
         }
-  
+
     }
-=======
-    public function showPopUp($id){
-        //$filmFromCatalog = Catalog::find($id);
-
-        //return response()->json($filmFromCatalog);
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
-
     public function show($id){
         return view('moviepage', ['filmInfo' => Catalog::find($id)]);
     }
-
-    public function insert(Request $request)
+    public function index()
     {
-        $films = new Catalog();
-        $films->Title = $request->input('title');
-        $films->Category = $request->input('category');
-        $films->Description = $request->input('description');
-        $films->Photo = $request->input('photo');
-        $films->Text= $request->input('text');
-        $films->Year = $request->input('year');
-        $films->Director = $request->input('director');
-        $films->Trailer = $request->input('trailer');
-        $films->Awards = $request->input('awards');
-        //$films->id = 1000;
+        // Получаем все фильмы из БД
+        $catalogs = Catalog::all();
 
+        // Отображаем страницу с фильмами
+        return view('updateData', compact('catalogs'));
+    }
 
+    public function edit($id)
+    {
+        // Получаем данные фильма из БД
+        $catalog = (new Catalog())->findOrFail($id);
 
-        $films->save();
-        return redirect('/')->with('status',' Inserted Succesfully');
+        // Отображаем страницу для редактирования фильма
+        return view('edit', compact('catalog'));
+    }
+
+    public function destroy($id)
+    {
+        $catalog = (new Catalog())->findOrFail($id);
+        $catalog->delete();
+        return redirect()->back()->with('status', 'Deleted Successfully');
     }
 }
