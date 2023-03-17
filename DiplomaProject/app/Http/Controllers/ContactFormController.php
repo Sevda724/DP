@@ -49,7 +49,7 @@ class ContactFormController extends Controller
         });
         return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', 'Contact Form Submit Successfully!');
         } else{
-        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!');
+        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!')->withInput();
         }
     }
 }

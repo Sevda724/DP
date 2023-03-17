@@ -22,13 +22,12 @@ use App\Http\Controllers\RequestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
+
 //{{__('local.XXXXXXXXXX')}}
 //Route::get('/admin', 'FilmsController@insert');
-Route::get('/admin', [FilmsController::class, 'add']);
-Route::post('/insert-data', [CatalogController::class, 'insert'])->name("insert-data");
-=======
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
+//Route::get('/admin', [FilmsController::class, 'add']);
+//Route::post('/insert-data', [CatalogController::class, 'insert'])->name("insert-data");
+
 
 Route::post('/setLocale/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'ru'])) {
@@ -107,21 +106,25 @@ Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('s
 
 Auth::routes();
 
-<<<<<<< HEAD
+
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get'); 
 
 Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show'); 
 
-Route::get('/catalog/filter/{filter}', [CatalogController::class, 'filter'])->name('filter');
-=======
-ROute::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
+//Route::get('/catalog/filter/{filter}', [CatalogController::class, 'filter'])->name('filter');
+
+
+Route::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
 Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
 Route::get('/addingFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
 Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 
-Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('index');
+Route::get('/filter', [CatalogController::class, 'catalogData'])->name('filter.index');
 
-Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show');
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
+//Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show');
+
+
+
+

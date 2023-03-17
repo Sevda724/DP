@@ -455,6 +455,12 @@ hr {
   overflow: hidden;
 }
 
+.card-description{
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 .card.visited {
   box-shadow: 0 3px 10px 2px #444;
 }
@@ -889,72 +895,39 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <nav class="product-filter">
   <div class="sort">
+<form method="GET" action="{{ route('filter.index') }}">
 
-
- <!--     <label style="margin-left: 160px;">
-      <SELECT id='filter' name='filter'>
+    <label style="margin-left: 160px;">
+      <SELECT id='filter' name='filter' onchange='filter'>
         <option value="">All</option>
-        <option value="action">Action</option>
-        <option value="comedy">Comedy</option>
-        <option value="crime">Crime</option>
-        <option value="detective">Detective</option>
-        <option value="Documental">Documental</option>
-        <option value="drama">Drama</option>
-        <option value="family">Family</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Historical">Historical</option>
-        <option value="Melodrama">Melodrama</option>
-        <option value="Musical">Musical</option>
-        <option value="Serial">Serial</option>
-        <option value="Short">Short</option>
-        <option value="Sport">Sport</option>
-        <option value="USSR">USSR</option>
-        <option value="War">War</option>
-        <option value="Full-length">Full-length</option>
-      </SELECT>
-      </label>
-
-<script>
-  document.getElementById('filter').addEventListener('change', function() {
-    var filterValue = this.value;
-    var url = "{{ route('filter', ['filter' => ':filterValue']) }}".replace(':filterValue', filterValue);
-    window.location.href = url;
-  });
-</script>-->
-
-      <label style="margin-left: 160px;">
-      <SELECT onchange="window.location.href=this.options [this.selectedIndex].value" id='filter' name='filter'>
-        <option value="catalog">All</option>
-        <option value="catalog?Category=action">Action</option>
-        <option value="catalog?Category=comedy">Comedy</option>
-        <option value="catalog?Category=crime">Crime</option>
-        <option value="catalog?Category=detective">Detective</option>
-        <option value="catalog?Category=Documental">Documental</option>
-        <option value="catalog?Category=drama">Drama</option>
-        <option value="catalog?Category=family">Family</option>
-        <option value="catalog?Category=Fantasy">Fantasy</option>
-        <option value="catalog?Category=Historical">Historical</option>
-        <option value="catalog?Category=Melodrama">Melodrama</option>
-        <option value="catalog?Category=Musical">Musical</option>
-        <option value="catalog?Category=Serial">Serial</option>
-        <option value="catalog?Category=Short">Short</option>
-        <option value="catalog?Category=Sport">Sport</option>
-        <option value="catalog?Category=USSR">USSR</option>
-        <option value="catalog?Category=War">War</option>
-        <option value="catalog?Category=Full-length">Full-length</option>
+        <option value="action" {{ $selectedCategory == 'action' ? 'selected="selected"' : '' }}>Action</option>
+        <option value="comedy" {{ $selectedCategory == 'comedy' ? 'selected="selected"' : '' }}>Comedy</option>
+        <option value="crime" {{ $selectedCategory == 'crime' ? 'selected="selected"' : '' }}>Crime</option>
+        <option value="detective" {{ $selectedCategory == 'detective' ? 'selected="selected"' : '' }}>Detective</option>
+        <option value="Documental" {{ $selectedCategory == 'Documental' ? 'selected="selected"' : '' }}>Documental</option>
+        <option value="drama" {{ $selectedCategory == 'drama' ? 'selected="selected"' : '' }}>Drama</option>
+        <option value="family" {{ $selectedCategory == 'family' ? 'selected="selected"' : '' }}>Family</option>
+        <option value="Fantasy" {{ $selectedCategory == 'Fantasy' ? 'selected="selected"' : '' }}>Fantasy</option>
+        <option value="Historical" {{ $selectedCategory == 'Historical' ? 'selected="selected"' : '' }}>Historical</option>
+        <option value="Melodrama" {{ $selectedCategory == 'Melodrama' ? 'selected="selected"' : '' }}>Melodrama</option>
+        <option value="Musical" {{ $selectedCategory == 'Musical' ? 'selected="selected"' : '' }}>Musical</option>
+        <option value="Serial" {{ $selectedCategory == 'Serial' ? 'selected="selected"' : '' }}>Serial</option>
+        <option value="Short" {{ $selectedCategory == 'Short' ? 'selected="selected"' : '' }}>Short</option>
+        <option value="Sport" {{ $selectedCategory == 'Sport' ? 'selected="selected"' : '' }}>Sport</option>
+        <option value="USSR" {{ $selectedCategory == 'USSR' ? 'selected="selected"' : '' }}>USSR</option>
+        <option value="War" {{ $selectedCategory == 'War' ? 'selected="selected"' : '' }}>War</option>
+        <option value="Full-length" {{ $selectedCategory == 'Full-length' ? 'selected="selected"' : '' }}>Full-length</option>
       </SELECT>
       </label>
 
       <label style="margin-left: 20px;">
-      <select onchange="window.location.href=this.options [this.selectedIndex].value">
-        <option></option>
-        <option value="catalog?Year=desc">Newest first</option>
-        <option value="catalog?Year=asc">Oldest first</option>
+      <select  id='sort' name="sort">
+        <option value="desc" {{ $selectedSortOrder == 'desc' ? 'selected="selected"' : '' }}>Newest first</option>
+        <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>Oldest first</option>
       </select>
-   </label>
-   <form method="GET" action="{{ route('catalogData.get') }}">
+   </label> 
     {{ csrf_field() }} 
-    <input name='search' type="text" placeholder="Search..." value="">
+    <input name='search' type="text" placeholder="Search..." value="{{ $q }}">
     <input type="submit" value="Go">
   </form>
   </div>
@@ -973,7 +946,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
     <img src={{$filmData->Photo}} alt="..." class="card-img-top" ></a>
     <div class="card-body">
       <h2 class="card-title">{{$filmData->Title}}</h2>
-      <p>{{$filmData->Description}}</p>
+      <p class="card-description">{{$filmData->Description}}</p>
     </div>
   </div>
 
@@ -984,6 +957,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 </div>
 @endif
+
 @if(app()->getLocale() == 'ru')
 <div style="text-align: center;">
 <div class="cards" >
@@ -994,7 +968,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
     <img src={{$filmData->Photo}} alt="..." class="card-img-top" ></a>
     <div class="card-body">
       <h2 class="card-title">{{$filmData->Title_ru}}</h2>
-      <p>{{$filmData->Description_ru}}</p>
+      <p class="card-description">{{$filmData->Director_ru}}. {{$filmData->Year}}</p>
     </div>
   </div>
 

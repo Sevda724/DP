@@ -47,6 +47,6 @@ class RequestController extends Controller
             $message->to('190103364@stu.sdu.edu.kz', 'Admin')->subject($request->userSubject);
         });
 
-        return redirect()->back();
+        redirect()->to(url()->previous())->with('status-mess1111', 'Contact Form Submit Successfully!')->withInput();;
     }
 }

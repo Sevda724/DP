@@ -571,8 +571,7 @@ input[type="text"] {
             </li>
             <li>
                 <img src="images/port/tom.jpeg" alt="slider image 3" style="height: 1000px; width:auto;">
-            </li>
-            
+            </li>          
             <li>
                 <img src="images/port/myn.jpeg" alt="slider image 5" style="height: 1000px; width:auto;">
             </li>

@@ -315,10 +315,10 @@ div#success {
         </tr>
         <tr>
           <th>Director:</th>
-          <td>{{$filmInfo->Director}}</td>
+          <td>{{$filmInfo->Director_ru}}</td>
         </tr>
       </table>
-      <p>{{$filmInfo->Text}}</p>
+      <p>{{$filmInfo->Text_ru}}</p>
       <div id="request">
 <button class="button button5" data-toggle="modal" data-target="#exampleModal">Request</button>
     </div>
@@ -419,6 +419,7 @@ div#success {
 
 	</main>
   <div class="tabs">
+  @if(app()->getLocale() == 'en')
   <div class="tab-2">
     <label for="tab2-1">Awards</label>
     <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
@@ -429,6 +430,20 @@ div#success {
 ?></p>
     </div>
   </div>
+  @endif
+
+  @if(app()->getLocale() == 'ru')
+  <div class="tab-2">
+    <label for="tab2-1">Awards</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div>
+      <h4 style="margin-left: 40px;">Awards</h4>
+        <p style="margin-left: 40px;"><?php  
+    echo nl2br($filmInfo->Awards_ru);  
+?></p>
+    </div>
+  </div>
+  @endif
   <div class="tab-2">
     <label for="tab2-2">Trailer</label>
     <input id="tab2-2" name="tabs-two" type="radio">

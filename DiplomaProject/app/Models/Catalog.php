@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Catalog extends Model
 {
-<<<<<<< HEAD
+/*	
 	use HasFactory;
     use Filterable;
     protected $guarded = false;
@@ -25,10 +25,9 @@ class Catalog extends Model
         'Awards',
     ];
 
-}
-=======
+}*/
     use HasFactory;
-//    use Filterable;
+    use Filterable;
     protected $guarded = false;
     public $timestamps = false;
 
@@ -45,4 +44,3 @@ class Catalog extends Model
     ];
 
 }
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f

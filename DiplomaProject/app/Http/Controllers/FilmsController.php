@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+/*namespace App\Http\Controllers;
 
 use App\Models\Catalog;
 <<<<<<< HEAD
@@ -42,11 +42,9 @@ class FilmsController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
-=======
->>>>>>> e449bbc49d0ae6fb9b8e3466787a4afd4148728f
+     
     public function create()
     {
         //
     }
-}
+}*/

@@ -737,6 +737,23 @@
 </div>
 </section>
 
+
+<div class="container" style="width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;">
+
+        <video autoplay muted>
+  <source src="images/shc.mp4" type="video/mp4">
+</video>
+
+        <div class="content">
+            <h1>EXPLORE MORE</h1>
+            <a href="https://youtu.be/6PryBPSeHos">WATCH</a>
+        </div>
+    </div>
+
 <!-- Contact section
 ================================================== -->
 
