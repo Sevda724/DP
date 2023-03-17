@@ -5,13 +5,16 @@ namespace App\Models;
 use App\Models\Traits\Filterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 class Catalog extends Model
 {
-/*	
-	use HasFactory;
+
+    use HasFactory;
     use Filterable;
     protected $guarded = false;
+    public $timestamps = false;
 
     protected $fillable = [
         'Title',
@@ -25,22 +28,13 @@ class Catalog extends Model
         'Awards',
     ];
 
-}*/
-    use HasFactory;
-    use Filterable;
-    protected $guarded = false;
-    public $timestamps = false;
-
-    protected $fillable = [
-        'title',
-        'category',
-        'description',
-        'photo',
-        'text',
-        'year',
-        'director',
-        'trailer',
-        'awards',
-    ];
+    public function findOrFail($id)
+    {
+        $result = $this->find($id);
+        if (!$result) {
+            throw new ModelNotFoundException();
+        }
+        return $result;
+    }
 
 }

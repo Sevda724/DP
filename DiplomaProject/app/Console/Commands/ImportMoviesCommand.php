@@ -17,37 +17,9 @@ class ImportMoviesCommand extends Command
 
     public function handle()
     {
-        /*if (Schema::hasTable('catalogs')) {
-            Schema::dropIfExists('catalogs');
-        }  else {
-            Schema::create('catalogs', function (Blueprint $table) {
-                $table->bigIncrements('id')->autoIncrement();
-                $table->string('Category')->nullable();
-                $table->string('Title')->nullable();
-                $table->text('Description')->nullable();
-                $table->text('Text')->nullable();
-                $table->string('Photo')->nullable();
-                $table->integer('Year')->nullable();
-                $table->string('Director')->nullable();
-                $table->string('Trailer')->nullable();
-                $table->string('Awards')->nullable();
-            });
-
-        }*/
-
-        Schema::create('catalogs', function (Blueprint $table) {
-                $table->bigIncrements('id')->autoIncrement();
-                $table->string('Category')->nullable();
-                $table->string('Title')->nullable();
-                $table->text('Description')->nullable();
-                $table->text('Text')->nullable();
-                $table->string('Photo')->nullable();
-                $table->integer('Year')->nullable();
-                $table->string('Director')->nullable();
-                $table->string('Trailer')->nullable();
-                $table->text('Awards')->nullable();
-            });
-
+        if (Schema::hasTable('catalogs')) {
+            DB::table('catalogs')->truncate();
+        }
 
         $file = public_path('catalogsData/csv_data.csv');
 

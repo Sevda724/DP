@@ -35,7 +35,7 @@
 
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('add') }}">{{ __('Profile') }}</a>
+                                <a class="nav-link" href="{{ route('filmsList') }}">{{ __('Films List') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('add') }}">{{ __('Add film') }}</a>
@@ -89,5 +89,6 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

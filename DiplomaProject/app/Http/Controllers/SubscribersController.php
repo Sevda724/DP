@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
-use App\config\Mail; 
+use App\config\Mail;
 
 
 class SubscribersController extends Controller
 {
-    public function Subscribe()
+    public function subscribe()
     {
         return redirect()->to(url()->previous())->withFragment('subs');
     }
 
     public function storeSubscribers(Request $request)
     {
-        
+
         if($request->filled('email')) {
             $request->validate([
                 'email' => 'required|email',
@@ -40,6 +40,13 @@ class SubscribersController extends Controller
             return redirect()->to(url()->previous())->withFragment('subs')->with('status_good', 'Thanks for subscribing!');
         } else {
                  return redirect()->back()->with('status_bad', 'Please fill out the field!')->withFragment('subs');;
-        }       
+        }
+    }
+
+    public function destroy(Subscriber $subscriber)
+    {
+        $subscriber->delete();
+
+        return redirect()->route('subscribers')->with('success', 'Subscriber deleted successfully');
     }
 }

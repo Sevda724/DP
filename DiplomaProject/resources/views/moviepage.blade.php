@@ -188,7 +188,7 @@ div#success {
 }
 
 .custom-navbar .navbar-brand  {
-  
+
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -289,17 +289,17 @@ div#success {
 			<h2>{{$filmInfo->Title}}</h2>
 			<table>
 				<tr>
-					<th>Year:</th>
+					<th>{{__('local.Year:')}}</th>
 					<td>{{$filmInfo->Year}}</td>
 				</tr>
 				<tr>
-					<th>Director:</th>
+					<th>{{__('local.Director:')}}</th>
 					<td>{{$filmInfo->Director}}</td>
 				</tr>
 			</table>
 			<p>{{$filmInfo->Text}}</p>
 			<div id="request">
-<button class="button button5" data-toggle="modal" data-target="#exampleModal">Request</button>
+<button class="button button5" data-toggle="modal" data-target="#exampleModal">{{__('local.Request')}}</button>
     </div>
     @endif
         @if(app()->getLocale() == 'ru')
@@ -310,17 +310,17 @@ div#success {
       <h2>{{$filmInfo->Title_ru}}</h2>
       <table>
         <tr>
-          <th>Year:</th>
+          <th>{{__('local.Year:')}}</th>
           <td>{{$filmInfo->Year}}</td>
         </tr>
         <tr>
-          <th>Director:</th>
+          <th>{{__('local.Director:')}}</th>
           <td>{{$filmInfo->Director_ru}}</td>
         </tr>
       </table>
       <p>{{$filmInfo->Text_ru}}</p>
       <div id="request">
-<button class="button button5" data-toggle="modal" data-target="#exampleModal">Request</button>
+<button class="button button5" data-toggle="modal" data-target="#exampleModal">{{__('local.Request')}}</button>
     </div>
     @endif
     <!--Request Form-->
@@ -330,34 +330,34 @@ div#success {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Make a Request</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{__('local.Make a Request')}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="{{ route('request.store', $filmInfo->id) }}" method="POST">
        {{ csrf_field() }}
-      <div class="modal-body"> 
+      <div class="modal-body">
             <div class="form-group">
-                <label>Name: </label>
-                <input type="text" name='userName' class="form-control" placeholder="Enter Name">
+                <label>{{__('local.Name:')}} </label>
+                <input type="text" name='userName' class="form-control" placeholder="{{__('local.Enter Name')}}">
             </div>
             <div class="form-group">
-                <label>Email: </label>
-                <input type="email" name='userEmail' class="form-control" placeholder="Enter Email">
+                <label>{{__('local.Email:')}} </label>
+                <input type="email" name='userEmail' class="form-control" placeholder="{{__('local.Enter Email')}}">
             </div>
             <div class="form-group">
-                <label>Subject: </label>
-                <input type="text" name='userSubject' class="form-control" placeholder="Enter Subject" >
+                <label>{{__('local.Subject:')}} </label>
+                <input type="text" name='userSubject' class="form-control" placeholder="{{__('local.Enter Subject')}}" >
             </div>
             <div class="form-group">
-                <label>Message: </label>
-                <input type="text" name='userMessage' class="form-control" placeholder="Enter Message">
+                <label>{{__('local.Message:')}} </label>
+                <input type="text" name='userMessage' class="form-control" placeholder="{{__('local.Enter Message')}}">
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('local.Close')}}</button>
+        <button type="submit" class="btn btn-primary">{{__('local.Send')}}</button>
       </div>
       </form>
     </div>
@@ -421,12 +421,12 @@ div#success {
   <div class="tabs">
   @if(app()->getLocale() == 'en')
   <div class="tab-2">
-    <label for="tab2-1">Awards</label>
+    <label for="tab2-1">{{__('local.Awards')}}</label>
     <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
     <div>
-      <h4 style="margin-left: 40px;">Awards</h4>
-        <p style="margin-left: 40px;"><?php  
-    echo nl2br($filmInfo->Awards);  
+      <h4 style="margin-left: 40px;">{{__('local.Awards')}}</h4>
+        <p style="margin-left: 40px;"><?php
+    echo nl2br($filmInfo->Awards);
 ?></p>
     </div>
   </div>
@@ -434,7 +434,7 @@ div#success {
 
   @if(app()->getLocale() == 'ru')
   <div class="tab-2">
-    <label for="tab2-1">Awards</label>
+    <label for="tab2-1">{{__('local.Awards')}}</label>
     <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
     <div>
       <h4 style="margin-left: 40px;">Awards</h4>
@@ -445,20 +445,20 @@ div#success {
   </div>
   @endif
   <div class="tab-2">
-    <label for="tab2-2">Trailer</label>
+    <label for="tab2-2">{{__('local.Trailer')}}</label>
     <input id="tab2-2" name="tabs-two" type="radio">
     <div>
-      <h4 style="margin-left: 40px;">Trailer</h4>
+      <h4 style="margin-left: 40px;">{{__('local.Trailer')}}</h4>
       <br>
 
-     
-@if ($filmInfo->Trailer !== ""): 
+
+@if ($filmInfo->Trailer !== ""):
 <iframe width="420" height="315"
 src="{{$filmInfo->Trailer}}" style="margin-left: 40px;">
 </iframe>>
 @endif;
-      
-      
+
+
     </div>
   </div>
 </div>

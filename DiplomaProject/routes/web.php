@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\ContactFormController;
-use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\SubscribersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
@@ -22,11 +21,6 @@ use App\Http\Controllers\RequestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//{{__('local.XXXXXXXXXX')}}
-//Route::get('/admin', 'FilmsController@insert');
-//Route::get('/admin', [FilmsController::class, 'add']);
-//Route::post('/insert-data', [CatalogController::class, 'insert'])->name("insert-data");
 
 
 Route::post('/setLocale/{locale}', function ($locale) {
@@ -89,9 +83,9 @@ Route::get('/modern-locations', function () {
     return view('modern');
 });
 
-Route::get('/catalog', function () {
-    return view('catalog');
-});
+//Route::get('/catalog', function () {
+//    return view('catalog');
+//});
 
 Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name('contact-form');
 
@@ -107,23 +101,29 @@ Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('s
 Auth::routes();
 
 
+
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get'); 
+Route::delete('/subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->name('subscribers.destroy');
 
-Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show'); 
+Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
 
-//Route::get('/catalog/filter/{filter}', [CatalogController::class, 'filter'])->name('filter');
+Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show');
 
+ROute::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
 
-Route::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
 Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
 Route::get('/addingFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
 Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
-Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+Route::get('/home', [HomeController::class, 'index'])->name('admin');
+Route::get('/admin', [HomeController::class, 'index']);
+
+Route::delete('/catalogs/{id}', [CatalogController::class, 'destroy'])->name('catalogs.destroy');
+Route::get('/updatingFilm', [CatalogController::class, 'index'])->name('filmsList');
+Route::get('/catalogs/{id}/edit', [CatalogController::class, 'edit'])->name('catalogs.edit');
+Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update');
 
 Route::get('/filter', [CatalogController::class, 'catalogData'])->name('filter.index');
-
-//Route::get('/catalog/{id}', [CatalogController::class, 'showPopUp'])->name('film.show');
 
 
 

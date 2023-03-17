@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Post\FilterRequest;
 use App\Models\Catalog;
 use App\Http\Filters\CatalogFilter;
-
+use App\Http\Requests\Post\FilterRequest;
 
 class CatalogController extends Controller
 {
@@ -23,8 +22,6 @@ class CatalogController extends Controller
         $trailer = $request->input('trailer');
         $awards = $request->input('awards');
 
-
-
         $catalogs = new Catalog;
         $catalogs->category = $category;
         $catalogs->title = $title;
@@ -39,7 +36,24 @@ class CatalogController extends Controller
 
         return redirect()->back()->with('status',' Inserted Succesfully');
     }
-    
+
+    public function update(Request $request, $id)
+    {
+        $catalogs = Catalog::find($id);
+
+        $catalogs->category = $request->input('category');
+        $catalogs->title = $request->input('title');
+        $catalogs->description = $request->input('description');
+        $catalogs->text = $request->input('text');
+        $catalogs->photo = $request->input('photo');
+        $catalogs->year = $request->input('year');
+        $catalogs->director = $request->input('director');
+        $catalogs->trailer = $request->input('trailer');
+        $catalogs->awards = $request->input('awards');
+        $catalogs->save();
+
+        return redirect()->back()->with('status','Updated Successfully');
+    }
     public function catalogData(FilterRequest $request)
     {
         $query = Catalog::query();
@@ -61,7 +75,34 @@ class CatalogController extends Controller
         return view('catalog', compact('selectedCategory','selectedSortOrder','q','filmsData'));
     }
 
+
     public function show($id){
         return view('moviepage', ['filmInfo' => Catalog::find($id)]);
+    }
+
+
+    public function index()
+    {
+        // Получаем все фильмы из БД
+        $catalogs = Catalog::all();
+
+        // Отображаем страницу с фильмами
+        return view('updateData', compact('catalogs'));
+    }
+
+    public function edit($id)
+    {
+        // Получаем данные фильма из БД
+        $catalog = (new Catalog())->findOrFail($id);
+
+        // Отображаем страницу для редактирования фильма
+        return view('edit', compact('catalog'));
+    }
+
+    public function destroy($id)
+    {
+        $catalog = (new Catalog())->findOrFail($id);
+        $catalog->delete();
+        return redirect()->back()->with('status', 'Deleted Successfully');
     }
 }

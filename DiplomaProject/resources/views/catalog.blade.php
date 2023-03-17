@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Catalog</title>
+  <title>{{__('local.Catalog')}}</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -53,7 +53,7 @@
 .img-responsive{
   margin: 8px;
   transition: 0.5s ease;
-} 
+}
 
 
 .heading{
@@ -61,7 +61,7 @@
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 35px;
-   
+
 }
 
 
@@ -72,7 +72,7 @@ p{
 }
 
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -181,7 +181,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #services, 
+#work, #about, #services,
 #portfolio {
   padding-top: 120px;
   padding-bottom: 100px;
@@ -249,7 +249,7 @@ hr {
 }
 
 .custom-navbar .navbar-brand  {
-  
+
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -357,9 +357,9 @@ hr {
 
 
 .p-st{
-  text-align: left; 
-  display:flex; 
-  flex-direction: column; 
+  text-align: left;
+  display:flex;
+  flex-direction: column;
   align-items: center
 }
 
@@ -425,7 +425,7 @@ hr {
   padding: 10px;
   margin: 37px auto 0;
   width: calc(280px * 4);
-}  
+}
 
 /*.cards {
   display: grid;
@@ -513,8 +513,8 @@ font-size: 1rem;
     top: 50%;
     margin-top: -2px;
     right: 8px;
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid #aaa;
@@ -554,9 +554,9 @@ input[type="text"] {
   width: 100vw;
 }
 
-.itemlist{ 
-  max-width:1024px;  
-  margin:auto; 
+.itemlist{
+  max-width:1024px;
+  margin:auto;
   padding:20px;
   display:flex;
   flex-wrap: wrap;
@@ -769,14 +769,14 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-            
+
         <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
-                
-        <li><a href="index.html" class="smoothScroll">HOME</a></li>
-        <li><a href="index.html" class="smoothScroll">ABOUT</a></li>
-        <li><a href="index.html" class="smoothScroll">SHOWCASE</a></li>
-        <li><a href="index.html" class="smoothScroll">LOCATIONS</a></li>
-        <li><a href="index.html" class="smoothScroll">CONTACT</a></li>
+
+          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
+          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
+          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
+          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
                         <li>
                     <div class="dropdown">
                         <button onclick="myFunction()" class="dropbtn">
@@ -793,32 +793,14 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
                                 @csrf
                                 <button type="submit" style="border: none; background-color: transparent; color: #FFFFFF; padding: 7px 15px; " ><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px; margin-right: 5px;" />RU</button>
                             </form>
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_the_United_Kingdom.png/1200px-Flag_of_the_United_Kingdom.png" style="height:16px;" /> EN</a>--}}
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kazakhstan.svg/1000px-Flag_of_Kazakhstan.svg.png" style="height:16px;" /> KZ</a>--}}
-{{--                            <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png" style="height:16px;" /> RU</a>--}}
                         </div>
                     </div>
                 </li>
-{{--                <form action="{{ route('setLocale', 'en')}}" method="POST">--}}
-{{--                    @csrf--}}
-{{--                    <button type="submit">English</button>--}}
-{{--                </form>--}}
-{{--                <form action="{{ route('setLocale', 'ru')}}" method="POST">--}}
-{{--                    @csrf--}}
-{{--                    <button type="submit">Русский</button>--}}
-{{--                </form>--}}
       </ul>
     </div>
 
   </div>
 </section>
-
-      </ul>
-    </div>
-
-  </div>
-</section>
-
 
 <!-- Homepage section
 ================================================== -->
@@ -840,14 +822,14 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
             <li>
                 <img src="images/port/myn.jpeg" alt="slider image 5" style="height: 1000px; width:auto;">
             </li>
-        </ul> 
-    </div> 
+        </ul>
+    </div>
 </div>
 <br>
 <br>
 <br>
 
-<h2 class="slider-name" style="text-align: center;">HOW TO PURCHASE MOVIE?</h2>
+<h2 class="slider-name" style="text-align: center;">{{__('local.HOW TO PURCHASE MOVIE?')}}</h2>
 
 <br>
 <br>
@@ -861,21 +843,21 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
                 <div class="row">
                     <div id="transparency" class="col-lg-4">
                         <div class="circle"><br>1</div>
-                        <h5>Choose</h5>
-                        <p> Choose the movie of any genre from the catalog.</p>
+                        <h5>{{__('local.Choose')}}</h5>
+                        <p>{{__('local.Choose the movie of any genre from the catalog.')}}</p>
 
 
                     </div>
                     <div id="healthy" class="col-lg-4">
                         <div class="circle"><br>2</div>
-                        <h5>Make a Request</h5>
-                        <p>Click the Request button and fill in information about yourself in order to obtain the relevant information about ordering by e-mail.</p>
+                        <h5>{{__('local.Make a Request')}}</h5>
+                        <p>{{__('local.Click the Request button and fill in information about yourself in order to obtain the relevant information about ordering by e-mail.')}}</p>
 
                     </div>
                     <div id="guidance" class="col-lg-4">
                         <div class="circle"><br>3</div>
-                        <h5>Receive</h5>
-                        <p>Our team will email you screening links of your request. And, lastly enjoy watching movies.</p>
+                        <h5>{{__('local.Receive')}}</h5>
+                        <p>{{__('local.Our team will email you screening links of your request. And, lastly enjoy watching movies.')}}</p>
 
                     </div>
                 </div>
@@ -886,7 +868,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 <br>
 <br>
 <div class="inf" style="background: black; color: white;">
-  <p style="text-align:center; color: white; padding-top: 2%; padding-bottom: 2%;">Kazakhfilm is the main film platform in Kazakhstan,which is engaged in the production and post-productionof feature, documentary and animation films.</p>
+  <p style="text-align:center; color: white; padding-top: 2%; padding-bottom: 2%;">{{__('local.Kazakhfilm is the main film platform in Kazakhstan,which is engaged in the production and post-productionof feature, documentary and animation films.')}}</p>
 </div>
 
 
@@ -895,38 +877,38 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <nav class="product-filter">
   <div class="sort">
+        {{ csrf_field() }} 
+
 <form method="GET" action="{{ route('filter.index') }}">
 
     <label style="margin-left: 160px;">
       <SELECT id='filter' name='filter' onchange='filter'>
-        <option value="">All</option>
-        <option value="action" {{ $selectedCategory == 'action' ? 'selected="selected"' : '' }}>Action</option>
-        <option value="comedy" {{ $selectedCategory == 'comedy' ? 'selected="selected"' : '' }}>Comedy</option>
-        <option value="crime" {{ $selectedCategory == 'crime' ? 'selected="selected"' : '' }}>Crime</option>
-        <option value="detective" {{ $selectedCategory == 'detective' ? 'selected="selected"' : '' }}>Detective</option>
-        <option value="Documental" {{ $selectedCategory == 'Documental' ? 'selected="selected"' : '' }}>Documental</option>
-        <option value="drama" {{ $selectedCategory == 'drama' ? 'selected="selected"' : '' }}>Drama</option>
-        <option value="family" {{ $selectedCategory == 'family' ? 'selected="selected"' : '' }}>Family</option>
-        <option value="Fantasy" {{ $selectedCategory == 'Fantasy' ? 'selected="selected"' : '' }}>Fantasy</option>
-        <option value="Historical" {{ $selectedCategory == 'Historical' ? 'selected="selected"' : '' }}>Historical</option>
-        <option value="Melodrama" {{ $selectedCategory == 'Melodrama' ? 'selected="selected"' : '' }}>Melodrama</option>
-        <option value="Musical" {{ $selectedCategory == 'Musical' ? 'selected="selected"' : '' }}>Musical</option>
-        <option value="Serial" {{ $selectedCategory == 'Serial' ? 'selected="selected"' : '' }}>Serial</option>
-        <option value="Short" {{ $selectedCategory == 'Short' ? 'selected="selected"' : '' }}>Short</option>
-        <option value="Sport" {{ $selectedCategory == 'Sport' ? 'selected="selected"' : '' }}>Sport</option>
-        <option value="USSR" {{ $selectedCategory == 'USSR' ? 'selected="selected"' : '' }}>USSR</option>
-        <option value="War" {{ $selectedCategory == 'War' ? 'selected="selected"' : '' }}>War</option>
-        <option value="Full-length" {{ $selectedCategory == 'Full-length' ? 'selected="selected"' : '' }}>Full-length</option>
+        <option value="">{{__('local.All')}}</option>
+        <option value="action" {{ $selectedCategory == 'action' ? 'selected="selected"' : '' }}>{{__('local.Action')}}</option>
+        <option value="comedy" {{ $selectedCategory == 'comedy' ? 'selected="selected"' : '' }}>{{__('local.Comedy')}}</option>
+        <option value="crime" {{ $selectedCategory == 'crime' ? 'selected="selected"' : '' }}>{{__('local.Crime')}}</option>
+        <option value="detective" {{ $selectedCategory == 'detective' ? 'selected="selected"' : '' }}>{{__('local.Detective')}}</option>
+        <option value="Documental" {{ $selectedCategory == 'Documental' ? 'selected="selected"' : '' }}>{{__('local.Documental')}}</option>
+        <option value="drama" {{ $selectedCategory == 'drama' ? 'selected="selected"' : '' }}>{{__('local.Drama')}}</option>
+        <option value="family" {{ $selectedCategory == 'family' ? 'selected="selected"' : '' }}>{{__('local.Family')}}</option>
+        <option value="Fantasy" {{ $selectedCategory == 'Fantasy' ? 'selected="selected"' : '' }}>{{__('local.Fantasy')}}</option>
+        <option value="Historical" {{ $selectedCategory == 'Historical' ? 'selected="selected"' : '' }}>{{__('local.Historical')}}</option>
+        <option value="Melodrama" {{ $selectedCategory == 'Melodrama' ? 'selected="selected"' : '' }}>{{__('local.Melodrama')}}</option>
+        <option value="Musical" {{ $selectedCategory == 'Musical' ? 'selected="selected"' : '' }}>{{__('local.Musical')}}</option>
+        <option value="Serial" {{ $selectedCategory == 'Serial' ? 'selected="selected"' : '' }}>{{__('local.Serial')}}</option>
+        <option value="Short" {{ $selectedCategory == 'Short' ? 'selected="selected"' : '' }}>{{__('local.Short')}}</option>
+        <option value="Sport" {{ $selectedCategory == 'Sport' ? 'selected="selected"' : '' }}>{{__('local.Sport')}}</option>
+        <option value="USSR" {{ $selectedCategory == 'USSR' ? 'selected="selected"' : '' }}>{{__('local.USSR')}}</option>
+        <option value="War" {{ $selectedCategory == 'War' ? 'selected="selected"' : '' }}>{{__('local.War')}}</option>
+        <option value="Full-length" {{ $selectedCategory == 'Full-length' ? 'selected="selected"' : '' }}>{{__('local.Full-length')}}</option>
       </SELECT>
-      </label>
-
-      <label style="margin-left: 20px;">
+ </label>
+    <label style="margin-left: 20px;">
       <select  id='sort' name="sort">
-        <option value="desc" {{ $selectedSortOrder == 'desc' ? 'selected="selected"' : '' }}>Newest first</option>
-        <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>Oldest first</option>
+        <option value="desc" {{ $selectedSortOrder == 'desc' ? 'selected="selected"' : '' }}>{{__('local.Newest first')}}</option>
+        <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
       </select>
-   </label> 
-    {{ csrf_field() }} 
+    </label> 
     <input name='search' type="text" placeholder="Search..." value="{{ $q }}">
     <input type="submit" value="Go">
   </form>
@@ -1007,15 +989,15 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
   <div class="container">
     <div class="row" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
   <br>
-        <h2 class="subscribe__title">LET'S KEEP IN TOUCH</h2>
-  <p class="subscribe__copy">Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!</p>
+        <h2 class="subscribe__title">{{__('local.LET\'S KEEP IN TOUCH')}}</h2>
+  <p class="subscribe__copy">{{__('local.Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!')}}</p>
   <form method="POST" action="{{ route('subscribers.store') }}">
-  {{ csrf_field() }} 
-  <input name = "email" type="email" class="form__email" placeholder="Enter your email address" value="{{ old('email') }}"/>
-  @if ($errors->has('email')) 
-    <span class="text-danger">{{ $errors->first('email') }}</span> 
-  @endif 
-  <button class="form__button">SEND</button>
+  {{ csrf_field() }}
+  <input name = "email" type="email" class="form__email" placeholder="{{__('local.Enter your email address')}}" value="{{ old('email') }}"/>
+  @if ($errors->has('email'))
+    <span class="text-danger">{{ $errors->first('email') }}</span>
+  @endif
+  <button class="form__button">{{__('local.SEND')}}</button>
 </form>
 </div>
 <br>
@@ -1037,7 +1019,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 function clickAndSelect() {
   let cards = Array.from( document.querySelectorAll('.card') ),
       elements = []
-  
+
 
   cards.forEach(card => {
     elements = elements.concat( Array.from(card.children) )
@@ -1045,7 +1027,7 @@ function clickAndSelect() {
 
 
   elements.forEach(element => {
-    
+
 
     element.addEventListener('click', e => e.preventDefault())
 
@@ -1055,7 +1037,7 @@ function clickAndSelect() {
     })
 
     element.addEventListener('mouseup', e => {
-      
+
 
       e.stopPropagation();
 
@@ -1065,18 +1047,18 @@ function clickAndSelect() {
 
 
       if(now - then < 200) {
-        
+
 
         window.location = card.querySelector('a').href
-    
+
 
         card.classList.add('visited')
         console.log(card.querySelector('a').href)
-        
+
       }
-  
+
       card.removeAttribute('data-md')
-      
+
     })
   })
 }
@@ -1087,12 +1069,12 @@ function OpenProduct(i){
   var i = $('.product-image[item-data="'+i+'"] img');
   var lbi = $('.lightbox-blanket .product-image img');
   console.log($(i).attr("src"));
-  $(lbi).attr("src", $(i).attr("src"));  
+  $(lbi).attr("src", $(i).attr("src"));
   $(".lightbox-blanket").toggle();
-    
+
   $("#product-quantity-input").val("0");
   CalcPrice (0);
-  
+
 }
 function GoBack(){
   $(".lightbox-blanket").toggle();
