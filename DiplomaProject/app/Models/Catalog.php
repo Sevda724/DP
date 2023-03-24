@@ -17,15 +17,19 @@ class Catalog extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'Title',
-        'Category',
-        'Description',
-        'Photo',
-        'Text',
-        'Year',
-        'Director',
-        'Trailer',
-        'Awards',
+        'category',
+        'title',
+        'description',
+        'text',
+        'photo',
+        'year',
+        'director',
+        'trailer',
+        'awards',
+        'title_ru',
+        'text_ru',
+        'director_ru',
+        'awards_ru'
     ];
 
     public function findOrFail($id)

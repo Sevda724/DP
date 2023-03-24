@@ -11,55 +11,38 @@ class CatalogController extends Controller
 {
     public function insert(Request $request)
     {
+        if (Catalog::where('title', $request->input('title'))->exists()) {
+            return redirect()->back()->with('status_error', 'This title already exists!')->withInput();
+        }
 
-        $category = $request->input('category');
-        $title = $request->input('title');
-        $description = $request->input('description');
-        $text = $request->input('text');
-        $photo = $request->input('photo');
-        $year = $request->input('year');
-        $director = $request->input('director');
-        $trailer = $request->input('trailer');
-        $awards = $request->input('awards');
+        $catalog = new Catalog;
+        $catalog->fill($request->all());
+        $catalog->save();
 
-        $catalogs = new Catalog;
-        $catalogs->category = $category;
-        $catalogs->title = $title;
-        $catalogs->description = $description;
-        $catalogs->text = $text;
-        $catalogs->photo = $photo;
-        $catalogs->year = $year;
-        $catalogs->director = $director;
-        $catalogs->trailer = $trailer;
-        $catalogs->awards = $awards;
-        $catalogs->save();
-
-        return redirect()->back()->with('status',' Inserted Succesfully');
+        return redirect()->back()->with('status_success', 'Inserted Successfully');
     }
+
+
 
     public function update(Request $request, $id)
     {
-        $catalogs = Catalog::find($id);
+        $inputs = $request->only([
+            'category', 'title', 'description', 'text', 'photo', 'year', 'director', 'trailer', 'awards',
+            'title_ru', 'text_ru', 'director_ru', 'awards_ru'
+        ]);
 
-        $catalogs->category = $request->input('category');
-        $catalogs->title = $request->input('title');
-        $catalogs->description = $request->input('description');
-        $catalogs->text = $request->input('text');
-        $catalogs->photo = $request->input('photo');
-        $catalogs->year = $request->input('year');
-        $catalogs->director = $request->input('director');
-        $catalogs->trailer = $request->input('trailer');
-        $catalogs->awards = $request->input('awards');
+        $catalogs = Catalog::find($id);
+        $catalogs->fill($inputs);
         $catalogs->save();
 
-        return redirect()->back()->with('status','Updated Successfully');
+        return redirect()->back()->with('status', 'Updated Successfully');
     }
     public function catalogData(FilterRequest $request)
     {
         $query = Catalog::query();
         $data = $request -> validated();
         $selectedSortOrder = 'desc';
-        $q = '';  
+        $q = '';
         if($request->filled('search')) {
         $q = $request->input('search');
         $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%");
@@ -81,22 +64,36 @@ class CatalogController extends Controller
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        // Получаем все фильмы из БД
-        $catalogs = Catalog::all();
+        $catalogs = Catalog::query();
 
-        // Отображаем страницу с фильмами
-        return view('updateData', compact('catalogs'));
+        $sortOptions = [
+            'id' => 'ID',
+            'category' => 'Category',
+            'title' => 'Title',
+            'year' => 'Year',
+        ];
+
+        $sortColumn = 'id';
+        $sortDirection = 'asc';
+
+        if ($request->has('sort')) {
+            $sort = explode('|', $request->sort);
+            $sortColumn = $sort[0];
+            $sortDirection = $sort[1];
+        }
+        $catalogs->orderBy($sortColumn, $sortDirection);
+
+        $catalogs = $catalogs->paginate(18);
+        return view('updateFilm', compact('catalogs', 'sortOptions', 'sortColumn', 'sortDirection'));
     }
+
 
     public function edit($id)
     {
-        // Получаем данные фильма из БД
         $catalog = (new Catalog())->findOrFail($id);
-
-        // Отображаем страницу для редактирования фильма
-        return view('edit', compact('catalog'));
+        return view('editFilm', compact('catalog'));
     }
 
     public function destroy($id)
@@ -104,5 +101,25 @@ class CatalogController extends Controller
         $catalog = (new Catalog())->findOrFail($id);
         $catalog->delete();
         return redirect()->back()->with('status', 'Deleted Successfully');
+    }
+
+    public function searchFilm(Request $request)
+    {
+        $search = $request->input('search');
+        $sortColumn = $request->input('sortColumn', 'id');
+        $sortDirection = $request->input('sortDirection', 'asc');
+
+        $query = Catalog::query();
+
+        if ($search) {
+            $query->where('id', 'like', '%'.$search.'%')
+                ->orWhere('title', 'like', '%'.$search.'%')
+                ->orWhere('category', 'like', '%'.$search.'%')
+                ->orWhere('year', 'like', '%'.$search.'%');
+        }
+
+        $catalogs = $query->orderBy($sortColumn, $sortDirection)->paginate(10);
+
+        return view('updateFilm', compact('catalogs', 'sortColumn', 'sortDirection'));
     }
 }

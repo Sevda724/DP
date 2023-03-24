@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
-@section('head')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            @if(session('status_error'))
+                <div class="alert alert-danger">{{ session('status_error') }}</div>
+            @endif
+
+            @if(session('status_success'))
+                <div class="alert alert-success">{{ session('status_success') }}</div>
+            @endif
             <div class="card">
                 <div class="card-header">
                     <h2>Insert data into Database</h2>
@@ -51,7 +54,23 @@
                             <label class="form-label">Awards</label>
                             <input type="text" class="form-control" name="awards" placeholder="Enter awards">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="mb-3">
+                            <label class="form-label">Title_ru</label>
+                            <input type="text" class="form-control" name="title_ru" placeholder="Enter title_ru">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Text_ru</label>
+                            <input type="text" class="form-control" name="text_ru" placeholder="Enter text_ru">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Director_ru</label>
+                            <input type="text" class="form-control" name="director_ru" placeholder="Enter directure_ru">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Awards_ru</label>
+                            <input type="text" class="form-control" name="awards_ru" placeholder="Enter awards_ru">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </form>
                 </div>
             </div>

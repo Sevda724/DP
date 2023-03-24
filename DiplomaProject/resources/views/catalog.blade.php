@@ -877,7 +877,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <nav class="product-filter">
   <div class="sort">
-        {{ csrf_field() }} 
+        {{ csrf_field() }}
 
 <form method="GET" action="{{ route('filter.index') }}">
 
@@ -908,7 +908,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
         <option value="desc" {{ $selectedSortOrder == 'desc' ? 'selected="selected"' : '' }}>{{__('local.Newest first')}}</option>
         <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
       </select>
-    </label> 
+    </label>
     <input name='search' type="text" placeholder="Search..." value="{{ $q }}">
     <input type="submit" value="Go">
   </form>
@@ -958,16 +958,8 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 </div>
 <br>
   {{$filmsData-> withQueryString() -> links()}}
-
 </div>
 @endif
-
-
-
-
-
-
-
 
 <br>
 <br>
@@ -1002,7 +994,6 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 </div>
 <br>
   </div>
-</div>
 </section>
 
 

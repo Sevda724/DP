@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('Director')->nullable();
             $table->string('Trailer')->nullable();
             $table->string('Awards')->nullable();
+            $table->string('Title_ru')->nullable();
+            $table->text('Text_ru')->nullable();
+            $table->string('Director_ru')->nullable();
+            $table->string('Awards_ru')->nullable();
+
         });
     }
 

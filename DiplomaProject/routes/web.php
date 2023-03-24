@@ -9,20 +9,6 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\RequestController;
 
 
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Route::post('/setLocale/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'ru'])) {
         return back()->withCookie(cookie()->forever('locale', $locale));
@@ -33,11 +19,6 @@ Route::post('/setLocale/{locale}', function ($locale) {
 Route::get('/', function () {
     return view('index');
 });
-
-//Route::get('/{language}', function ($language) {
-//    App::setLocale($language);
-//    return view('index');
-//});
 
 Route::get('/lakes-locations', function () {
     return view('lakes');
@@ -102,17 +83,17 @@ Auth::routes();
 
 
 
-Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get'); 
+Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
 Route::delete('/subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->name('subscribers.destroy');
 
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
 
 Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show');
 
-ROute::get('/subscribers', [HomeController::class, 'subscribers'])->middleware('auth')->name('subscribers');
+ROute::get('/subscribers', [SubscribersController::class, 'index'])->middleware('auth')->name('subscribers');
 
 Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
-Route::get('/addingFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
+Route::get('/insertFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
 Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
 Route::get('/home', [HomeController::class, 'index'])->name('admin');
@@ -124,6 +105,8 @@ Route::get('/catalogs/{id}/edit', [CatalogController::class, 'edit'])->name('cat
 Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update');
 
 Route::get('/filter', [CatalogController::class, 'catalogData'])->name('filter.index');
+
+Route::get('/search', [CatalogController::class, 'searchFilm'])->name('search.index');
 
 
 

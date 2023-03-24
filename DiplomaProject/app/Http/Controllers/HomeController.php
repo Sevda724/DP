@@ -27,11 +27,6 @@ class HomeController extends Controller
     }
 
     public function add() {
-        return view('insertData');
+        return view('insertFilm');
     }
-
-    public function subscribers() {
-        return view('subscribers');
-    }
-
 }

@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        @if (session('status'))
+            <div class="alert alert-primary">
+                {{ session('status') }}
+            </div>
+        @endif
         <h1>Edit Movie</h1>
         <form action="{{ route('catalogs.update', $catalog->id) }}" method="POST">
             @csrf

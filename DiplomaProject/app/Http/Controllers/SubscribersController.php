@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
 use App\config\Mail;
+use Illuminate\Support\Facades\DB;
 
 
 class SubscribersController extends Controller
 {
+    public function index() {
+
+        $subscribers = DB::table('subscribers')->get()->reverse();
+        return view('subscribers', compact('subscribers'));
+    }
+
     public function subscribe()
     {
         return redirect()->to(url()->previous())->withFragment('subs');
@@ -46,7 +53,6 @@ class SubscribersController extends Controller
     public function destroy(Subscriber $subscriber)
     {
         $subscriber->delete();
-
-        return redirect()->route('subscribers')->with('success', 'Subscriber deleted successfully');
+        return redirect()->back()->with('status', 'Subscriber deleted successfully');
     }
 }
