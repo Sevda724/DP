@@ -12,7 +12,6 @@ class Catalog extends Model
 {
 
     use HasFactory;
-    use Filterable;
     protected $guarded = false;
     public $timestamps = false;
 
