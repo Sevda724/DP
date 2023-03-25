@@ -47,12 +47,12 @@ class CatalogController extends Controller
         $q = $request->input('search');
         $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%");
         }
-            $selectedCategory = $request->input('filter');
-            $query->where('Category','like', "%{$request->input('filter')}%");
-            if($request->filled('sort')){
-               $selectedSortOrder =  $request->input('sort');
-            }
-            $query -> orderBy('Year',  $selectedSortOrder);
+        $selectedCategory = $request->input('filter');
+        $query->where('Category','like', "%{$request->input('filter')}%");
+        if($request->filled('sort')){
+            $selectedSortOrder =  $request->input('sort');
+        }
+        $query -> orderBy('Year',  $selectedSortOrder);
 
         $filmsData = $query->paginate(20)->withQueryString();
         return view('catalog', compact('selectedCategory','selectedSortOrder','q','filmsData'));

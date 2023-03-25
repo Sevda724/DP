@@ -18,7 +18,7 @@ Route::post('/setLocale/{locale}', function ($locale) {
 
 Route::get('/', function () {
     return view('index');
-});
+}) ->name('indexpage');;
 
 Route::get('/lakes-locations', function () {
     return view('lakes');

@@ -368,31 +368,8 @@ hr {
 
 <!-- Navigation section
 ================================================== -->
-<section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color: black;">
-  <div class="container">
+@include('layouts.navbar-2-type')
 
-    <div class="navbar-header">
-<<<<<<< HEAD
-      <a href='' class="smoothScroll navbar-brand"><img src="images/logo.png" style="height: 50px; width: auto; margin-top: -10px;"></a>
-=======
-      <a href="/" class="smoothScroll navbar-brand"><img src="images/logo.png" style="height: 50px; width: auto; margin-top: -10px;"></a>
->>>>>>> a4d06c88e830e909a168a3a53b4bebec0a01bb5f
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-
-        <!-- <li><a href="#home" class="smoothScroll">HOME</a></li> -->
-
-          <li><a href="/#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
-          <li><a href="/#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
-          <li><a href="/#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
-          <li><a href="/#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
-          <li><a href="/#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
 
 <br>
@@ -401,7 +378,7 @@ hr {
 <br>
 
 <div class="backp">
-<a href="/" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
+<a href="{{ route('indexpage') }}#work" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
 
 <h2 class="slider-name" style="text-align: center;">{{__('local.BUDGETING&SCHEDULE')}}</h2>
