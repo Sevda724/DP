@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Catalog;
 use App\Http\Filters\CatalogFilter;
-use App\Http\Requests\Post\FilterRequest;
+use App\Http\Requests\Catalog\FilterRequest;
 
 class CatalogController extends Controller
 {
@@ -45,14 +45,15 @@ class CatalogController extends Controller
         $q = '';
         if($request->filled('search')) {
         $q = $request->input('search');
-        $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%");
+        $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%")
+        ->orWhere('Director_ru','like', "%{$request->input('search')}%")->orWhere('Director','like', "%{$request->input('search')}%");
         }
         $selectedCategory = $request->input('filter');
         $query->where('Category','like', "%{$request->input('filter')}%");
         if($request->filled('sort')){
             $selectedSortOrder =  $request->input('sort');
         }
-        $query -> orderBy('Year',  $selectedSortOrder);
+            $query -> orderBy('Year',  $selectedSortOrder);
 
         $filmsData = $query->paginate(20)->withQueryString();
         return view('catalog', compact('selectedCategory','selectedSortOrder','q','filmsData'));

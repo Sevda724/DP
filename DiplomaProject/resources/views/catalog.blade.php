@@ -438,14 +438,16 @@ hr {
   cursor: pointer;
   height: 280px;
   position: relative;
-  width: 243px;.
+  width: 260px;.
 }
 
 .card-img-top{
-  width: 243px;
-  height: 180px;
-}
+   /*float: left;*/
+    width:  260px;
+    height: 160px;
+    object-fit: cover;
 
+}
 .card h2 {
   font-size: 20px;
   font-weight: bold;

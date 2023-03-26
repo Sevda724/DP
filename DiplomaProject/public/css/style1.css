@@ -1,5 +1,5 @@
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -66,6 +66,43 @@ hr {
   color: #FC3;
 }
 
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    background: none;
+
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown content a:hover {background-color: white;}
+
+.show {display:block;}
 
 
 .dropbtn {
@@ -145,7 +182,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #services, 
+#work, #about, #services,
 #portfolio, #locations, #contact {
 	padding-top: 120px;
 	padding-bottom: 100px;
@@ -217,8 +254,8 @@ hr {
 }
 
 .custom-navbar .navbar-brand  {
-  
-  
+
+
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -232,8 +269,8 @@ hr {
 }
 
 .custom-navbar .nav li {
-  
-}    
+
+}
 
 .custom-navbar .nav li a {
 	display: block;
@@ -464,7 +501,7 @@ hr {
 }
 }
 
-@media screen and (max-width: 960px){ 
+@media screen and (max-width: 960px){
     .image-cards .image-card {
         height: auto;
         width: 90%;
@@ -485,11 +522,11 @@ hr {
   letter-spacing: 0px;
   position: absolute;
   top: 80%;
-  left: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   }
-  
+
 .image-cards * {
     box-sizing: inherit;
   }
@@ -553,6 +590,8 @@ hr {
 #portfolio .col-md-4 {
   padding: 5px;
 }
+
+
 
 
 .grid {
@@ -897,9 +936,88 @@ background-origin: border-box ;
   border-color: transparent;
 }
 
+/*showcase*/
+.container video {
+    position:absolute;
+    z-index:0;
+}
+
+.content{
+ position: absolute;
+    display: inline-block;
+    transform: translate(-50%,-50%);
+    top: 70%;
+    left: 50%;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+}
+
+.content h1{
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.content a{
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 15px 25px;
+    transition: 0.3s;
+}
+
+.content a:hover{
+    background-color: #fff;
+    color: #000;
+}
 
 
 
+@media (min-aspect-ratio:16/9) {
+    .background-clip{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .background-clip{
+        width: auto;
+        height: 100%;
+    }
+}
+/* news feed styles
+/* ========================================== */
+
+
+
+
+
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Clearfix (clear floats) */
+.rows::after {
+    content: "";
+    clear: both;
+    display: table;
+    box-sizing: border-box;
+}
+input[type = button] {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+
+    cursor: pointer;
+}
 
 
 /* news feed styles
@@ -928,7 +1046,7 @@ input[type = button] {
     background-color: black;
     padding: 10px 20px;
     color: white;
-  
+
     cursor: pointer;
 }
 
@@ -1037,7 +1155,7 @@ footer h2 {
 
 
 /*------------------------------------------------------
-  RESPONSIVE STYLES 
+  RESPONSIVE STYLES
 --------------------------------------------------------*/
 @media (max-width: 1200px) {
   .bx-thumbnail-wrapper {
@@ -1079,7 +1197,7 @@ footer h2 {
 }
 
 @media (max-width: 768px) {
-	
+
   .slider-caption {
 	  bottom: 30px;
   }
@@ -1090,11 +1208,11 @@ footer h2 {
 	  font-size: 12px;
 	  line-height: 14px;
   }
-  
+
   .bx-controls-direction {
     bottom: -40px;
   }
-  
+
   #about .mobile-top {
     padding-top: 32px;
   }
@@ -1155,59 +1273,4 @@ footer h2 {
   h5 {
     font-size: 11px;
   }
-}
-
-
-
-.container video {
-    position:absolute;
-    z-index:0;
-}
-
-.content{
- position: absolute;
-    display: inline-block;
-    transform: translate(-50%,-50%);
-    top: 70%;
-    left: 50%;
-    color: #FFF;
-    width: 100%;
-    text-align: center;
-    z-index: 999;
-}
-
-.content h1{
-    font-size: 80px;
-    color: #fff;
-    margin-bottom: 50px;
-}
-
-.content a{
-    font-size: 23px;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
-    padding: 15px 25px;
-    transition: 0.3s;
-}
-
-.content a:hover{
-    background-color: #fff;
-    color: #000;
-}
-
-
-
-@media (min-aspect-ratio:16/9) {
-    .background-clip{
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-aspect-ratio:16/9) {
-    .background-clip{
-        width: auto;
-        height: 100%;
-    }
 }
