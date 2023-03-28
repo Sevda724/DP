@@ -748,15 +748,14 @@
       <br>
 
 <div class="rows">
-  )
   <div class="rows">
   @foreach($newsInfo as $news)
 
   <div class="column">
      <center>
-    <img src="{{$news->Photo1}}" alt="img" style="width:80%">
+    <img src="{{$news->Photo1}}" alt="img" style="width:80%; height: 60%">
             @if(app()->getLocale() == 'en')
-            <p> {{$news->Title_en}}</p>
+            <p style="width: 50%"> {{$news->Title_en}}</p>
             @endif
             @if(app()->getLocale() == 'ru')
             <p> {{$news->Title_ru}}</p>
