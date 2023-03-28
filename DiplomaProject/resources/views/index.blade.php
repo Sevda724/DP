@@ -48,6 +48,18 @@
 	<link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 
 </head>
+<style type="text/css">
+  @media screen and (min-width: 1200px){
+.grid figure img {
+   float: left;
+    width:  340px;
+    height: 200px;
+    object-fit: cover;
+
+}
+}
+
+</style>
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -695,24 +707,66 @@
 </div>
 </section>
 
-
+<!--video-->
 
 <div class="container" style="width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;">
-
+<div class="content">
+            <h1>EXPLORE MORE</h1>
+            <a href="https://youtu.be/6PryBPSeHos">WATCH</a>
+        </div>
         <video autoplay muted>
   <source src="images/shc.mp4" type="video/mp4">
 </video>
 
-        <div class="content">
-            <h1>EXPLORE MORE</h1>
-            <a href="https://youtu.be/6PryBPSeHos">WATCH</a>
-        </div>
+        
     </div>
+<!-- News Feed
+  ============================================ -->
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+        <div class="section-title">
+          <h1 class="heading">NEWS</h1>
+          <hr>
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+<div class="rows">
+  )
+  <div class="rows">
+  @foreach($newsInfo as $news)
+
+  <div class="column">
+     <center>
+    <img src="{{$news->Photo1}}" alt="img" style="width:80%">
+            @if(app()->getLocale() == 'en')
+            <p> {{$news->Title_en}}</p>
+            @endif
+            @if(app()->getLocale() == 'ru')
+            <p> {{$news->Title_ru}}</p>
+            @endif
+          <a href="{{ route('news.show', $news->id) }}"><input type = "button" value = " READ MORE "/></a>
+          </center>
+  </div>
+  @endforeach
+</div>
+</div>
 <!-- Contact section
 ================================================== -->
 

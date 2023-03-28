@@ -585,6 +585,15 @@ hr {
     object-fit: cover;
 
 }
+@media screen and (min-width: 1200px){
+.grid figure img {
+   float: left;
+    width:  340px;
+    height: 200px;
+    object-fit: cover;
+
+}
+}
 
 .grid figure figcaption {
   padding: 2em;

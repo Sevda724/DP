@@ -7,6 +7,8 @@ use App\Http\Controllers\SubscribersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\NewsController;
+
 
 
 Route::post('/setLocale/{locale}', function ($locale) {
@@ -64,6 +66,10 @@ Route::get('/modern-locations', function () {
     return view('modern');
 });
 
+Route::get('/news', function () {
+    return view('news');
+});
+
 //Route::get('/catalog', function () {
 //    return view('catalog');
 //});
@@ -104,7 +110,16 @@ Route::get('/updatingFilm', [CatalogController::class, 'index'])->name('filmsLis
 Route::get('/catalogs/{id}/edit', [CatalogController::class, 'edit'])->name('catalogs.edit');
 Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update');
 
-Route::get('/filter', [CatalogController::class, 'catalogData'])->name('filter.index');
+//Route::get('/newslist', [NewsController::class, 'list'])->middleware('auth')->name('news.list');
+Route::get('/newslist', [NewsController::class, 'list'])->name('news.list');
+Route::get('/newslist/update/{id}', [NewsController::class, 'showForEdit'])->name('news.update.form');
+Route::post('/newslist/update/{id}', [NewsController::class, 'update'])->name('news.update');
+Route::get('/newslist/{id}', [NewsController::class, 'delete'])->name('news.delete');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+Route::get('/', [NewsController::class, 'newsInfo'])->name('indexpage'); 
+Route::post('/newslist/insert', [NewsController::class, 'insert'])->name('news.insert');
+
+//Route::get('/catalog-', [CatalogController::class, 'catalogData'])->name('filter.index');
 
 Route::get('/search', [CatalogController::class, 'searchFilm'])->name('search.index');
 

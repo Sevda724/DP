@@ -42,9 +42,9 @@ class CatalogController extends Controller
         $query = Catalog::query();
         $data = $request -> validated();
         $selectedSortOrder = 'desc';
-        $q = '';
+        $searchValue = '';
         if($request->filled('search')) {
-        $q = $request->input('search');
+        $searchValue = $request->input('search');
         $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%")
         ->orWhere('Director_ru','like', "%{$request->input('search')}%")->orWhere('Director','like', "%{$request->input('search')}%");
         }
@@ -56,7 +56,8 @@ class CatalogController extends Controller
             $query -> orderBy('Year',  $selectedSortOrder);
 
         $filmsData = $query->paginate(20)->withQueryString();
-        return view('catalog', compact('selectedCategory','selectedSortOrder','q','filmsData'));
+        
+        return view('catalog', compact('selectedCategory','selectedSortOrder','searchValue','filmsData'));
     }
 
 

@@ -50,7 +50,7 @@ return [
     'Subject' => 'Subject' ,
     'Message' => 'Message' ,
     'SEND MESSAGE' => 'SEND MESSAGE' ,
-    'Modern Locations' => 'Современные Локации' ,
+    'Modern Locations' => 'Modern Locations' ,
     'MODERN LOCATIONS' => 'MODERN LOCATIONS',
     'KOKTOBE' => 'KOKTOBE' ,
     'BAYTEREK' => 'BAYTEREK' ,
@@ -327,7 +327,7 @@ return [
     'Trailer' => 'Trailer',
     'Go' => 'Go',
     'Search' => 'Search',
-    '' => '',
+    'Nothing_found' => 'Nothing found',
 
 
 ];

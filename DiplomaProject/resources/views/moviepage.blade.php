@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>{{$filmInfo->Title}}</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href ="{{ asset('images/bl_logo.png') }}" />
+  
 </head>
 
 <style type="text/css">
@@ -49,7 +53,7 @@ main {
 	display: flex;
 }
 
-.movie-poster {
+.movie-poster {1
 	flex: 0 0 300px;
 	margin-right: 100px;
 }
@@ -188,7 +192,7 @@ div#success {
 }
 
 .custom-navbar .navbar-brand  {
-
+  
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -271,6 +275,8 @@ div#success {
 </style>
 
 <body>
+
+@include('layouts.navbar-2-type')
 
 
 <br>
@@ -356,8 +362,7 @@ div#success {
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('local.Close')}}</button>
-        <button type="submit" class="btn btn-primary">{{__('local.Send')}}</button>
+        <button type="submit" class="btn btn-dark">{{__('local.Send')}}</button>
       </div>
       </form>
     </div>

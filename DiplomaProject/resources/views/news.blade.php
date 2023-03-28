@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{{__('local.Production')}}</title>
+  <title>Production</title>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="icon" type="image/x-icon" href ="images/bl_logo.png" />
-
+  <link rel="icon" type="image/x-icon" href ="{{ asset('images/bl_logo.png') }}" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -41,7 +40,7 @@
 
     <!-- Main CSS
     ================================================== -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   <!-- Google web font
    ================================================== -->
@@ -52,7 +51,7 @@
 .img-responsive{
   margin: 8px;
   transition: 0.5s ease;
-}
+} 
 
 
 .heading{
@@ -60,7 +59,7 @@
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 35px;
-
+   
 }
 
 
@@ -71,7 +70,7 @@ p{
 }
 
 
-/* Body
+/* Body 
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -172,7 +171,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #services,
+#work, #about, #services, 
 #portfolio {
   padding-top: 120px;
   padding-bottom: 100px;
@@ -240,7 +239,7 @@ hr {
 }
 
 .custom-navbar .navbar-brand  {
-
+  
   font-weight: 600;
   font-size: 24px;
   padding-top: 11px;
@@ -348,9 +347,9 @@ hr {
 
 
 .p-st{
-  text-align: left;
-  display:flex;
-  flex-direction: column;
+  text-align: left; 
+  display:flex; 
+  flex-direction: column; 
   align-items: center
 }
 
@@ -360,16 +359,17 @@ hr {
 
 <!-- Preloader section
 ================================================== -->
-<section  class="preloader">
+<!--<section  class="preloader">
 
   <div class="sk-rotating-plane"></div>
 
-</section>
+</section>-->
 
 
 <!-- Navigation section
 ================================================== -->
 @include('layouts.navbar-2-type')
+
 
 
 <br>
@@ -378,29 +378,32 @@ hr {
 <br>
 
 <div class="backp">
-<a href="{{ route('indexpage') }}#work" class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
+<a href='{{ url()->previous() }}' class="previous" style="margin-left: 20px; margin-top: 20px;">&#8249;</a>
 </div>
-
-<h2 class="slider-name" style="text-align: center;">{{__('local.PRODUCTION')}}</h2>
+@if(app()->getLocale() == 'en')
+<h2 class="slider-name" style="text-align: center;">{{$newsInfo->Title_en}}</h2>
+@endif
+@if(app()->getLocale() == 'ru')
+<h2 class="slider-name" style="text-align: center;">{{$newsInfo->Title_ru}}</h2>
+@endif
 <br>
  <div class="col-md-offset-2 col-md-8 col-sm-12">
 <div class="w3-content w3-display-container">
 
 <div class="w3-display-container mySlides">
-  <img src="images/dub/back6.jpeg" style="width:100%">
+  <img src="{{$newsInfo->Photo1}}" style="width:100%">
 </div>
-
+@if ($newsInfo->Photo2 !== ""):
 <div class="w3-display-container mySlides">
-  <img src="images/dub/back3.jpeg" style="width:100%">
+  <img src="{{$newsInfo->Photo2}}" style="width:100%">
 </div>
-
+@endif;
+@if ($newsInfo->Photo3 !== ""):
 <div class="w3-display-container mySlides">
-  <img src="images/dub/back1.jpeg" style="width:100%">
+  <img src="{{$newsInfo->Photo3}}" style="width:100%">
 </div>
+@endif;
 
-<div class="w3-display-container mySlides">
-  <img src="images/dub/back5.jpeg" style="width:100%">
-</div>
 
 
 <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
@@ -408,9 +411,12 @@ hr {
 
 </div>
 <br>
-<p class="p-st">{{__('local.Whether a simple interview, a large scale commercial, a TV program, a TV series or a Film, we run our productions like clockwork to ensure on time and on budget delivery while maintaining the highest levels of quality. We pride ourselves on using the best personnel in the business. From a small minimum crew to a large people crew, we’ve done it all. A well staffed shoot, with the right talents, the right gear and the right preparation makes all the difference in the world when it comes to the quality of the final product.')}}</p>
-<p class="p-st">{{__('local.The shoot part of a live action production being often the most expansive part, we run ours like clockwork, with every hour of the day accounted for and aimed at gathering the best material in the least amount of time. That discipline is what allows us to say that we’re always on budget, and on time. In the case of commercial projects, every video production is different however, so your shoot won’t look the same as your competitor. As a nimble and agile enterprise, we can produce at the scale that is right for you, your brand, and your budget.')}}</p>
-
+@if(app()->getLocale() == 'en')
+<p class="p-st">{{$newsInfo->Description_en}}</p>
+@endif
+@if(app()->getLocale() == 'ru')
+<p class="p-st">{{$newsInfo->Description_ru}}</p>
+@endif
 <br>
 <br>
 <br>
@@ -431,9 +437,9 @@ function showDivs(n) {
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
+     x[i].style.display = "none";  
   }
-  x[slideIndex-1].style.display = "block";
+  x[slideIndex-1].style.display = "block";  
 }
 
 

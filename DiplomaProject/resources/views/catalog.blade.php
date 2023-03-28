@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="icon" type="image/x-icon" href ="images/bl_logo.png" />
 
 
 
@@ -746,6 +747,27 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 .hidden {
   display: none;
 }
+.no-results-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.no-results-message h2 {
+  color: #D5D2D2;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.no-results-message img {
+  width: 80px;
+  margin-bottom: 20px;
+}
 
 
 </style>
@@ -802,8 +824,6 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
   <div class="our-culture">
             <div class="container">
-
-
                 <div class="row">
                     <div id="transparency" class="col-lg-4">
                         <div class="circle"><br>1</div>
@@ -843,7 +863,7 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
   <div class="sort">
         {{ csrf_field() }}
 
-<form method="GET" action="{{ route('filter.index') }}">
+<form method="GET" action="{{ route('catalogData.get') }}" id="filter-form">
 
     <label style="margin-left: 160px;">
       <SELECT id='filter' name='filter' onchange='filter'>
@@ -873,14 +893,42 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
         <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
       </select>
     </label>
-    <input name='search' type="text" placeholder="Search..." value="{{ $q }}">
+    <input id='search' name='search' type="text" placeholder="Search..." value="{{ $searchValue }}">
     <input type="submit" value="Go">
   </form>
   </div>
 </nav>
 <br>
 <br>
+
 <br>
+<script>
+  // Get the select element
+  const filterSelect = document.getElementById('filter');
+  
+  // Attach an event listener to it
+  filterSelect.addEventListener('change', () => {
+    // Submit the form when the select item is changed
+    document.getElementById('filter-form').submit();
+  });
+
+  const sortSelect = document.getElementById('sort');
+  
+  // Attach an event listener to it
+  sortSelect.addEventListener('change', () => {
+  // Submit the form when the select item is changed
+  document.getElementById('filter-form').submit();
+  });
+
+</script>
+
+@if($filmsData->count() == 0)
+  <div class="no-results-message">
+    <img src="images/search.png" alt="No results found icon">
+    <h2>{{__('local.Nothing_found')}}</h2>
+  </div>
+@endif
+
 
 @if(app()->getLocale() == 'en')
 <div style="text-align: center;">
