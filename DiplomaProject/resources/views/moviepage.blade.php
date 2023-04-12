@@ -282,6 +282,11 @@ div#success {
 <br>
 <br>
 <br>
+@if (session('success'))
+            <div class="alert alert-primary">
+                {{ session('success') }}
+            </div>
+@endif
 	<div class="backp">
 <a href='{{ url()->previous() }}' class="previous">&#8249;</a>
 </div>
@@ -346,19 +351,31 @@ div#success {
       <div class="modal-body">
             <div class="form-group">
                 <label>{{__('local.Name:')}} </label>
-                <input type="text" name='userName' class="form-control" placeholder="{{__('local.Enter Name')}}">
+                <input type="text" name='userName' class="form-control" placeholder="{{__('local.Enter Name')}}" value="{{ old('userName') }}">
+                @if ($errors->has('userName'))
+                    <span class="text-danger">{{ $errors->first('userName') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label>{{__('local.Email:')}} </label>
-                <input type="email" name='userEmail' class="form-control" placeholder="{{__('local.Enter Email')}}">
+                <input type="email" name='userEmail' class="form-control" placeholder="{{__('local.Enter Email')}}" value="{{ old('userEmail') }}">
+                @if ($errors->has('userEmail'))
+                    <span class="text-danger">{{ $errors->first('userEmail') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label>{{__('local.Subject:')}} </label>
-                <input type="text" name='userSubject' class="form-control" placeholder="{{__('local.Enter Subject')}}" >
+                <input type="text" name='userSubject' class="form-control" placeholder="{{__('local.Enter Subject')}}"  value="{{ old('userSubject') }}">
+                @if ($errors->has('userSubject'))
+                    <span class="text-danger">{{ $errors->first('userSubject') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <label>{{__('local.Message:')}} </label>
-                <input type="text" name='userMessage' class="form-control" placeholder="{{__('local.Enter Message')}}">
+                <input type="text" name='userMessage' class="form-control" placeholder="{{__('local.Enter Message')}}" value="{{ old('userMessage') }}">
+                @if ($errors->has('userMessage'))
+                    <span class="text-danger">{{ $errors->first('userMessage') }}</span>
+                @endif
             </div>
       </div>
       <div class="modal-footer">

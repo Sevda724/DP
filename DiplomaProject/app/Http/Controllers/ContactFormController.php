@@ -40,13 +40,13 @@ class ContactFormController extends Controller
             $message->to('190103364@stu.sdu.edu.kz', 'Admin')->subject($request->subject);
         });
 
-        \Mail::send('thanks', array(
+        /*\Mail::send('thanks', array(
             'name' => $input['name'],
             'email' => $input['email'],
         ), function($message) use ($request){
             $message->from($request->email);
             $message->to($request->input('email'))->subject('Kazakhfilm');
-        });
+        });*/
         return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', 'Contact Form Submit Successfully!');
         } else{
         return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!')->withInput();

@@ -50,7 +50,7 @@ class NewsController extends Controller
     $news->Photo3 = $request->input('photo3');
     $news->save();
 
-    return redirect()->route('news.list')->with('success', 'News record updated successfully.');
+    return redirect()->route('news.list')->with('success', 'News record updated successfully!');
 }
 
 
@@ -60,11 +60,18 @@ class NewsController extends Controller
         $news = (new News())->findOrFail($id);
         $news->delete();
 
-        return redirect()->route('news.list')->with('success_del', 'News deleted successfully!');
+        return redirect()->route('news.list')->with('success', 'News deleted successfully!');
     }
 
     public function insert(Request $request)
     {
+        $validatedData = $request->validate([
+        'title_en' => 'required',
+        'description_en' => 'required',
+        'title_ru' => 'required',
+        'description_ru' => 'required',
+        'photo1' => 'required',
+    ]);
         $news = new News;
         $news->title_en = $request->input('title_en');
         $news->description_en = $request->input('description_en');
