@@ -330,4 +330,36 @@ return [
     'Nothing_found' => 'Nothing found',
 
 
+
+
+
+
+
+
+    'Please enter the title in English.' => 'Please enter the title in English.',
+    'Please enter the description in English.' => 'Please enter the description in English.',
+    'Please enter the title in Russian.' => 'Please enter the title in Russian.',
+    'Please enter the description in Russian.' => 'Please enter the description in Russian.',
+    'Please enter the link to the photo.' => 'Please enter the link to the photo.',
+    'Please enter your name.' => 'Please enter your name.',
+    'Please enter your email address.' => 'Please enter your email address.',
+    'Please enter a valid email address.' => 'Please enter a valid email address.',
+    'Please enter a subject for your message.' => 'Please enter a subject for your message.',
+    'Please enter a message.' => 'Please enter a message.',
+    'All fields must be filled in!' => 'All fields must be filled in!',
+    'You are already subscribed!' => 'You are already subscribed!',
+    'Please fill out the field!' => 'Please fill out the field!',
+    'Subscriber deleted successfully!' => 'Subscriber deleted successfully!',
+    'Thanks for subscribing!' => 'Thanks for subscribing!',
+    'Request Form Submit Successfully!' => 'Request Form Submit Successfully!',
+    'The request form is not submitted! Please fill in all the fields!' => 'The request form is not submitted! Please fill in all the fields!',
+    'News has been added successfully!' => 'News has been added successfully!',
+    'News record updated successfully!' => 'News record updated successfully!',
+    'News deleted successfully!' => 'News deleted successfully!',
+    'The news has not been added! Please fill in the required fields!' => 'The news has not been added! Please fill in the required fields!',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 ];

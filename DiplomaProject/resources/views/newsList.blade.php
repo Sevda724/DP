@@ -29,16 +29,20 @@
     <div class="container">
 
 <!-- HTML code for popup -->
-  @if(session('success')))
+@if(session('success'))
   <div class="alert alert-success" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
     {{ session('success') }}
   </div>
+@endif
+@if(session('custom_message'))
+    <div class="alert alert-danger" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
+    {{ session('custom_message') }}</div>
 @endif
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog" role="document" >
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{__('local.Make a Request')}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Insert a movie</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -47,46 +51,46 @@
        {{ csrf_field() }}
       <div class="modal-body">
             <div class="form-group">
-                <label>Title on English: </label>
+                <label>Title on English: <i class="text-danger">*</i> </label>
                 <input type="text" name='title_en' class="form-control" placeholder="Enter title on English" value="{{ old('title_en') }}">
                 @if ($errors->has('title_en'))
                 <span class="text-danger">{{ $errors->first('title_en') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>Description on English: </label>
+                <label>Description on English: <i class="text-danger">*</i> </label>
                 <input type="text" name='description_en' class="form-control" placeholder="Enter description on English" value="{{ old('description_en') }}">
                 @if ($errors->has('description_en'))
                 <span class="text-danger">{{ $errors->first('description_en') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>Title on Russian: </label>
+                <label>Title on Russian: <i class="text-danger">*</i> </label>
                 <input type="text" name='title_ru' class="form-control" placeholder="Enter title on Russian" value="{{ old('title_ru') }}">
                 @if ($errors->has('title_ru'))
                 <span class="text-danger">{{ $errors->first('title_ru') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>Description on Russian </label>
+                <label>Description on Russian: <i class="text-danger">*</i> </label>
                 <input type="text" name='description_ru' class="form-control" placeholder="Enter description on Russian" value="{{ old('description_ru') }}">
                 @if ($errors->has('description_ru'))
                 <span class="text-danger">{{ $errors->first('description_ru') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>Photo 1 (required) </label>
+                <label>Photo 1: <i class="text-danger">*</i> </label>
                 <input type="text" name='photo1' class="form-control" placeholder="Enter link to the photo" value="{{ old('photo1') }}">
                 @if ($errors->has('photo1'))
                 <span class="text-danger">{{ $errors->first('photo1') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>Photo 2 (optional) </label>
+                <label>Photo 2: </label>
                 <input type="text" name='photo2' class="form-control" placeholder="Enter link to the photo" value="{{ old('photo2') }}">
             </div>
             <div class="form-group">
-                <label>Photo 3 (optional) </label>
+                <label>Photo 3:  </label>
                 <input type="text" name='photo3' class="form-control" placeholder="Enter link to the photo" value="{{ old('photo3') }}">
             </div>
       </div>
@@ -148,6 +152,7 @@
                     </div>
                 @endforeach
         </table>
+        {{$news -> links()}}
     </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
+use Illuminate\Support\Facades\Validator;
 
 
 class NewsController extends Controller
@@ -25,8 +26,8 @@ class NewsController extends Controller
 
     public function list()
     {
-        $news = News::all();
-        return view('newsList', ['news' => $news]);
+        $news = News::paginate(10);
+        return view('newsList', compact('news'));
     }
 
    public function update(Request $request, $id) {
@@ -50,7 +51,7 @@ class NewsController extends Controller
     $news->Photo3 = $request->input('photo3');
     $news->save();
 
-    return redirect()->route('news.list')->with('success', 'News record updated successfully!');
+    return redirect()->route('news.list')->with('success', __('local.News record updated successfully!'));
 }
 
 
@@ -60,18 +61,31 @@ class NewsController extends Controller
         $news = (new News())->findOrFail($id);
         $news->delete();
 
-        return redirect()->route('news.list')->with('success', 'News deleted successfully!');
+        return redirect()->route('news.list')->with('success', __('local.News deleted successfully!'));
     }
 
     public function insert(Request $request)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
         'title_en' => 'required',
         'description_en' => 'required',
         'title_ru' => 'required',
         'description_ru' => 'required',
-        'photo1' => 'required',
+        'photo1' => 'required'], 
+        [
+        'title_en.required' => __('local.Please enter the title in English.'),
+        'description_en.required' => __('local.Please enter the description in English.'),
+        'title_ru.required' => __('local.Please enter the title in Russian.'),
+        'description_ru.required' => __('local.Please enter the description in Russian.'),
+        'photo1.required' => __('local.Please enter the link to the photo.'),
+    
     ]);
+        if ($validator->fails()) {
+        session()->flash('custom_message', __('local.The news has not been added! Please fill in the required fields!'));
+        } 
+    
+        $validator->validate();
+       
         $news = new News;
         $news->title_en = $request->input('title_en');
         $news->description_en = $request->input('description_en');
@@ -82,6 +96,6 @@ class NewsController extends Controller
         $news->photo3 = $request->input('photo3');
         $news->save();
 
-        return redirect()->route('news.list')->with('success', 'News has been added successfully!');
+        return redirect()->route('news.list')->with('success', __('local.News has been added successfully!'));
     }   
 }

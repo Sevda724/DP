@@ -280,13 +280,19 @@ div#success {
 
 
 <br>
-<br>
-<br>
-@if (session('success'))
-            <div class="alert alert-primary">
-                {{ session('success') }}
-            </div>
+@if(session('custom_message'))
+    <div class="alert alert-danger" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
+    {{ session('custom_message') }}</div>
 @endif
+
+@if(session('status_success'))
+    <div class="alert alert-success" style="text-align: center; width: 50%; margin: auto auto 5px auto;">
+    {{ session('status_success') }}</div>
+@endif
+
+<br>
+<br>
+            
 	<div class="backp">
 <a href='{{ url()->previous() }}' class="previous">&#8249;</a>
 </div>
@@ -350,28 +356,28 @@ div#success {
        {{ csrf_field() }}
       <div class="modal-body">
             <div class="form-group">
-                <label>{{__('local.Name:')}} </label>
+                <label>{{__('local.Name:')}} <i class="text-danger">*</i> </label>
                 <input type="text" name='userName' class="form-control" placeholder="{{__('local.Enter Name')}}" value="{{ old('userName') }}">
                 @if ($errors->has('userName'))
                     <span class="text-danger">{{ $errors->first('userName') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>{{__('local.Email:')}} </label>
+                <label>{{__('local.Email:')}} <i class="text-danger">*</i></label>
                 <input type="email" name='userEmail' class="form-control" placeholder="{{__('local.Enter Email')}}" value="{{ old('userEmail') }}">
                 @if ($errors->has('userEmail'))
                     <span class="text-danger">{{ $errors->first('userEmail') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>{{__('local.Subject:')}} </label>
+                <label>{{__('local.Subject:')}} <i class="text-danger">*</i></label>
                 <input type="text" name='userSubject' class="form-control" placeholder="{{__('local.Enter Subject')}}"  value="{{ old('userSubject') }}">
                 @if ($errors->has('userSubject'))
                     <span class="text-danger">{{ $errors->first('userSubject') }}</span>
                 @endif
             </div>
             <div class="form-group">
-                <label>{{__('local.Message:')}} </label>
+                <label>{{__('local.Message:')}} <i class="text-danger">*</i></label>
                 <input type="text" name='userMessage' class="form-control" placeholder="{{__('local.Enter Message')}}" value="{{ old('userMessage') }}">
                 @if ($errors->has('userMessage'))
                     <span class="text-danger">{{ $errors->first('userMessage') }}</span>
@@ -459,7 +465,7 @@ div#success {
     <label for="tab2-1">{{__('local.Awards')}}</label>
     <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
     <div>
-      <h4 style="margin-left: 40px;">Awards</h4>
+      <h4 style="margin-left: 40px;">{{__('local.Awards')}}</h4>
         <p style="margin-left: 40px;"><?php  
     echo nl2br($filmInfo->Awards_ru);  
 ?></p>

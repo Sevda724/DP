@@ -1150,11 +1150,11 @@ advancedSearchLink.addEventListener('click', function(e) {
   <p class="subscribe__copy">{{__('local.Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!')}}</p>
   <form method="POST" action="{{ route('subscribers.store') }}">
   {{ csrf_field() }}
+  <div>
   <input name = "email" type="email" class="form__email" placeholder="{{__('local.Enter your email address')}}" value="{{ old('email') }}"/>
-  @if ($errors->has('email'))
-    <span class="text-danger">{{ $errors->first('email') }}</span>
-  @endif
   <button class="form__button">{{__('local.SEND')}}</button>
+  <br>
+  
 </form>
 </div>
 <br>

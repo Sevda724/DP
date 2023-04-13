@@ -26,46 +26,46 @@
         {{ csrf_field() }}
         {{ method_field('POST') }}
           <div class="mb-3">
-            <label>Title on English: </label>
+            <label>Title on English: <i class="text-danger">*</i></label>
             <input type="text" name='title_en' class="form-control" placeholder="Enter title on English" value="{{ $newsInfo-> Title_en }}">
             @if ($errors->has('title_en'))
                 <span class="text-danger">{{ $errors->first('title_en') }}</span>
             @endif
           </div>
           <div class="mb-3">
-            <label>Description on English: </label>
+            <label>Description on English: <i class="text-danger">*</i></label>
             <input type="text" name='description_en' class="form-control" placeholder="Enter description on English" value="{{ $newsInfo-> Description_en }}">
             @if ($errors->has('description_en'))
                 <span class="text-danger">{{ $errors->first('description_en') }}</span>
             @endif
           </div>
           <div class="mb-3">
-            <label>Title on Russian: </label>
+            <label>Title on Russian: <i class="text-danger">*</i></label>
             <input type="text" name='title_ru' class="form-control" placeholder="Enter title on Russian" value="{{ $newsInfo-> Title_ru }}">
             @if ($errors->has('title_ru'))
                 <span class="text-danger">{{ $errors->first('title_ru') }}</span>
             @endif
           </div>
           <div class="mb-3">
-            <label>Description on Russian </label>
+            <label>Description on Russian: <i class="text-danger">*</i></label>
             <input type="text" name='description_ru' class="form-control" placeholder="Enter description on Russian" value="{{ $newsInfo-> Description_ru }}">
             @if ($errors->has('description_ru'))
                 <span class="text-danger">{{ $errors->first('description_ru') }}</span>
             @endif
           </div>
           <div class="mb-3">
-            <label>Photo 1 (required) </label>
+            <label>Photo 1: <i class="text-danger">*</i> </label>
             <input type="text" name='photo1' class="form-control" placeholder="Enter link to the photo" value="{{ $newsInfo-> Photo1 }}">
             @if ($errors->has('photo1'))
                 <span class="text-danger">{{ $errors->first('photo1') }}</span>
             @endif
           </div>
           <div class="mb-3">
-            <label>Photo 2 (optional) </label>
+            <label>Photo 2: </label>
             <input type="text" name='photo2' class="form-control" placeholder="Enter link to the photo" value="{{ $newsInfo-> Photo2 }}">
           </div>
           <div class="mb-3">
-            <label>Photo 3 (optional) </label>
+            <label>Photo 3: </label>
             <input type="text" name='photo3' class="form-control" placeholder="Enter link to the photo" value="{{ $newsInfo-> Photo3 }}">
           </div>
           <div class="modal-footer">

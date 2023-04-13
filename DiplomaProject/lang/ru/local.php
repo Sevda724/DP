@@ -344,4 +344,34 @@ return [
     'Search' => 'Ищу',
     'Nothing_found' => 'Ничего не найдено',
 
+
+
+
+    'Please enter the title in English.' => 'Пожалуйста, введите название на английском языке.',
+    'Please enter the description in English.' => 'Пожалуйста, введите описание на английском языке.',
+    'Please enter the title in Russian.' => 'Пожалуйста, введите название на русском языке.',
+    'Please enter the description in Russian.' => 'Пожалуйста, введите описание на русском языке.',
+    'Please enter the link to the photo.' => 'Пожалуйста, введите ссылку на фотографию.',
+    'Please enter your name.' => 'Пожалуйста, введите свое имя.',
+    'Please enter your email address.' => 'Пожалуйста, введите свой адрес электронной почты.',
+    'Please enter a valid email address.' => 'Пожалуйста, введите действительный адрес электронной почты.',
+    'Please enter a subject for your message.' => 'Пожалуйста, введите тему вашего сообщения.',
+    'Please enter a message.' => 'Пожалуйста, введите сообщение.',
+    'All fields must be filled in!' => 'Все поля должны быть заполнены!',
+    'You are already subscribed!' => 'Вы уже подписаны!',
+    'Please fill out the field!' => 'Пожалуйста, заполните это поле!',
+    'Subscriber deleted successfully!' => 'Подписчик успешно удален!',
+    'Thanks for subscribing!' => 'Спасибо за подписку!',
+    'Request Form Submit Successfully!' => 'Форма запроса отправлена успешно!',
+    'The request form is not submitted! Please fill in all the fields!' => 'Форма запроса не отправлена! Пожалуйста, заполните все поля!',
+    'News has been added successfully!' => 'Новость была успешно добавлена!',
+    'News record updated successfully!' => 'Запись новостей успешно обновлена!',
+    'News deleted successfully!' => 'Новость успешно удалена!',
+    'The news has not been added! Please fill in the required fields!' => 'Новость не была добавлена! Пожалуйста, заполните обязательные поля!',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+
 ];
