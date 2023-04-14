@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Catalog;
 use App\Http\Filters\CatalogFilter;
 use App\Http\Requests\Catalog\FilterRequest;
+use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
@@ -35,7 +36,7 @@ class CatalogController extends Controller
         $catalogs->fill($inputs);
         $catalogs->save();
 
-        return redirect()->back()->with('status', 'Updated Successfully');
+        return redirect()->route('filmsList')->with('status', 'Updated Successfully');
     }
     public function catalogData(FilterRequest $request)
     {
@@ -56,7 +57,7 @@ class CatalogController extends Controller
             $query -> orderBy('Year',  $selectedSortOrder);
 
         $filmsData = $query->paginate(20)->withQueryString();
-        
+
         return view('catalog', compact('selectedCategory','selectedSortOrder','searchValue','filmsData'));
     }
 

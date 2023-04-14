@@ -24,7 +24,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{__('local.Kazakhfilm')}}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('local.Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -35,16 +35,16 @@
 
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('filmsList') }}">{{ __('Films List') }}</a>
+                                <a class="nav-link" href="{{ route('filmsList') }}">{{ __('local.Films List') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('add') }}">{{ __('Add film') }}</a>
+                                <a class="nav-link" href="{{ route('add') }}">{{ __('local.Add film') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('subscribers') }}">{{ __('Subscribers') }}</a>
+                                <a class="nav-link" href="{{ route('subscribers') }}">{{ __('local.Subscribers') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('news.list') }}">{{ __('News') }}</a>
+                                <a class="nav-link" href="{{ route('news.list') }}">{{ __('local.News') }}</a>
                             </li>
                         @endguest
                     </ul>
@@ -55,13 +55,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('local.Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('local.Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -74,7 +74,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('local.Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -92,6 +92,7 @@
             @yield('content')
         </main>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -3,7 +3,6 @@
 @section('head')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
-        <style>
         .table {
             table-layout: fixed;
             width: 100%;
@@ -16,11 +15,9 @@
         }
 
         .table td:hover {
-            overflow: auto; /* Показываем скрытую часть текста при наведении курсора мыши */
-            white-space: normal; /* Разрешаем перенос текста */
+            overflow: auto;
+            white-space: normal;
         }
-
-
     </style>
 
 @endsection
@@ -42,36 +39,36 @@
        {{ csrf_field() }}
       <div class="modal-body">
             <div class="form-group">
-                <label>Title on English: </label>
-                <input type="text" name='title_en' class="form-control" placeholder="Enter title on English">
+                <label>{{__('local.Title on English:')}}</label>
+                <input type="text" name='title_en' class="form-control" placeholder="{{__('local.Enter title on English')}}">
             </div>
             <div class="form-group">
-                <label>Description on English: </label>
-                <input type="text" name='description_en' class="form-control" placeholder="Enter description on English">
+                <label>{{__('local.Description on English:')}}</label>
+                <input type="text" name='description_en' class="form-control" placeholder="{{__('local.Enter description on English')}}">
             </div>
             <div class="form-group">
-                <label>Title on Russian: </label>
-                <input type="text" name='title_ru' class="form-control" placeholder="Enter title on Russian" >
+                <label>{{__('local.Title on Russian:')}}</label>
+                <input type="text" name='title_ru' class="form-control" placeholder="{{__('local.Enter title on Russian')}}" >
             </div>
             <div class="form-group">
-                <label>Description on Russian </label>
-                <input type="text" name='description_ru' class="form-control" placeholder="Enter description on Russian">
+                <label>{{__('local.Description on Russian')}}</label>
+                <input type="text" name='description_ru' class="form-control" placeholder="{{__('local.Enter description on Russian')}}">
             </div>
             <div class="form-group">
-                <label>Photo 1 (required) </label>
-                <input type="text" name='photo1' class="form-control" placeholder="Enter link to the photo">
+                <label>{{__('local.Photo 1 (required)')}}</label>
+                <input type="text" name='photo1' class="form-control" placeholder="{{__('local.Enter link to the photo')}}">
             </div>
             <div class="form-group">
-                <label>Photo 2 (optional) </label>
-                <input type="text" name='photo2' class="form-control" placeholder="Enter link to the photo">
+                <label>{{__('local.Photo 2 (optional)')}}</label>
+                <input type="text" name='photo2' class="form-control" placeholder="{{__('local.Enter link to the photo')}}">
             </div>
             <div class="form-group">
-                <label>Photo 3 (optional) </label>
-                <input type="text" name='photo3' class="form-control" placeholder="Enter link to the photo">
+                <label>{{__('local.Photo 3 (optional)')}}</label>
+                <input type="text" name='photo3' class="form-control" placeholder="{{__('local.Enter link to the photo')}}">
             </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-dark">Add</button>
+        <button type="submit" class="btn btn-dark">{{__('local.Add')}}</button>
       </div>
       </form>
     </div>
@@ -79,17 +76,17 @@
 </div>
 
 
-        <h1>All News Items</h1>
-        <button class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Add news</button>
+        <h1>{{__('local.All News Items')}}</h1>
+        <button class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">{{__('local.Add news')}}</button>
         <br>
         <br>
         <!--<table class="table table-bordered table-hover">-->
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Actions</th>
+                    <th>{{__('local.ID')}}</th>
+                    <th>{{__('local.Title')}}</th>
+                    <th>{{__('local.Actions')}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,9 +95,9 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->Title_en }}</td>
                         <td>
-                            <a href="{{ route('news.show', ['id' => $item->id]) }}" class="btn btn-info btn-sm">View</a>
-                            <a href="{{ route('news.update.form', ['id' => $item->id]) }}" class="btn btn-primary btn-sm" style="margin-left: 10px">Edit</a>
-                            <button type="button" value="{{ $item->id }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $item->id }}" style="margin-left: 10px">Delete</button>
+                            <a href="{{ route('news.show', ['id' => $item->id]) }}" class="btn btn-info btn-sm">{{__('local.View')}}</a>
+                            <a href="{{ route('news.update.form', ['id' => $item->id]) }}" class="btn btn-primary btn-sm" style="margin-left: 10px">{{__('local.Edit')}}</a>
+                            <button type="button" value="{{ $item->id }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $item->id }}" style="margin-left: 10px">{{__('local.Delete')}}</button>
                         </td>
                     </tr>
             </tbody>
@@ -110,17 +107,17 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="deleteModal{{ $item->id }}Label">Delete News Item</h5>
+                                    <h5 class="modal-title" id="deleteModal{{ $item->id }}Label">{{__('local.Delete News Item')}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    Are you sure you want to delete this news item?
+                                    {{__('local.Are you sure you want to delete this news item?')}}
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <a href="{{ route('news.delete', ['id' => $item->id]) }}" class="btn btn-danger">delete</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('local.Cancel')}}</button>
+                                    <a href="{{ route('news.delete', ['id' => $item->id]) }}" class="btn btn-danger">{{__('local.Delete')}}</a>
 
                                 </div>
                             </div>
@@ -130,14 +127,12 @@
         </table>
     </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <!-- JavaScript code for popup -->
 <script>
     function openPopup() {
         document.getElementById("popup").style.display = "block";
     }
-    
+
     function closePopup() {
         document.getElementById("popup").style.display = "none";
     }

@@ -70,58 +70,47 @@ Route::get('/news', function () {
     return view('news');
 });
 
-//Route::get('/catalog', function () {
-//    return view('catalog');
-//});
-
+//Contact form routes
 Route::get('/contact-form', [ContactFormController::class, 'contactForm'])->name('contact-form');
-
 Route::post('/contact-form', [ContactFormController::class, 'storeContactForm'])->name('contact-form.store');
-
 Route::post('/catalog/{id}/request', [RequestController::class, 'storeRequest'])->name('request.store');
 
-
+// Subscribers routes
 Route::get('/sub', [SubscribersController::class, 'subscribe'])->name('index');
-
 Route::post('/sub', [SubscribersController::class, 'storeSubscribers'])->name('subscribers.store');
+ROute::get('/subscribers', [SubscribersController::class, 'index'])->middleware('auth')->name('subscribers');
+Route::delete('/subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->middleware('auth')->name('subscribers.destroy');
 
+// Authorization routes
 Auth::routes();
 
-
-
+// Catalog routes
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
-Route::delete('/subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->name('subscribers.destroy');
-
-Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
-
 Route::get('/catalog/{id}', [CatalogController::class, 'show'])->name('film.show');
+Route::delete('/catalogs/{id}', [CatalogController::class, 'destroy'])->middleware('auth')->name('catalogs.destroy');
+Route::get('/catalogs/{id}/edit', [CatalogController::class, 'edit'])->middleware('auth')->name('catalogs.edit');
+Route::get('/search', [CatalogController::class, 'searchFilm'])->middleware('auth')->name('search.index');
 
-ROute::get('/subscribers', [SubscribersController::class, 'index'])->middleware('auth')->name('subscribers');
-
-Route::get('/add', [HomeController::class, 'index'])->middleware('auth', 'verified', 'session');
-Route::get('/insertFilm', [HomeController::class, 'add'])->middleware('auth')->name('add');
+// Adding film routes
+Route::get('/insertFilm', [HomeController::class, 'add'])->middleware('auth')->middleware('verified')->name('add');
 Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
-Route::get('/home', [HomeController::class, 'index'])->name('admin');
-Route::get('/admin', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/admin', [HomeController::class, 'index'])->middleware('auth');
 
-Route::delete('/catalogs/{id}', [CatalogController::class, 'destroy'])->name('catalogs.destroy');
-Route::get('/updatingFilm', [CatalogController::class, 'index'])->name('filmsList');
-Route::get('/catalogs/{id}/edit', [CatalogController::class, 'edit'])->name('catalogs.edit');
-Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update');
+Route::get('/updatingFilm', [CatalogController::class, 'index'])->name('filmsList')->middleware('auth');
+Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update')->middleware('auth');
 
-//Route::get('/newslist', [NewsController::class, 'list'])->middleware('auth')->name('news.list');
-Route::get('/newslist', [NewsController::class, 'list'])->name('news.list');
-Route::get('/newslist/update/{id}', [NewsController::class, 'showForEdit'])->name('news.update.form');
-Route::post('/newslist/update/{id}', [NewsController::class, 'update'])->name('news.update');
-Route::get('/newslist/{id}', [NewsController::class, 'delete'])->name('news.delete');
+Route::get('/search/filter', [CatalogController::class, 'moviesSearch'])->name('movies.search');
+
+Route::get('/', [NewsController::class, 'newsInfo'])->name('indexpage');
+Route::get('/newslist', [NewsController::class, 'list'])->name('news.list')->middleware('auth');
+Route::get('/newslist/update/{id}', [NewsController::class, 'showForEdit'])->name('news.update.form')->middleware('auth');
+Route::post('/newslist/update/{id}', [NewsController::class, 'update'])->name('news.update')->middleware('auth');
+Route::get('/newslist/{id}', [NewsController::class, 'delete'])->name('news.delete')->middleware('auth');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
-Route::get('/', [NewsController::class, 'newsInfo'])->name('indexpage'); 
-Route::post('/newslist/insert', [NewsController::class, 'insert'])->name('news.insert');
+Route::post('/newslist/insert', [NewsController::class, 'insert'])->name('news.insert')->middleware('auth');
 
-//Route::get('/catalog-', [CatalogController::class, 'catalogData'])->name('filter.index');
-
-Route::get('/search', [CatalogController::class, 'searchFilm'])->name('search.index');
 
 
 

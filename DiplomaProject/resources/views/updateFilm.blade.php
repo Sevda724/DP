@@ -14,8 +14,8 @@
         }
 
         .table td:hover {
-            overflow: auto; /* Показываем скрытую часть текста при наведении курсора мыши */
-            white-space: normal; /* Разрешаем перенос текста */
+            overflow: auto;
+            white-space: normal;
         }
 
 
@@ -26,20 +26,26 @@
 
 @section('content')
     <div class="container">
-        <h1>Films List</h1>
+        @if (session('status'))
+            <div class="alert alert-primary">
+                {{ session('status') }}
+            </div>
+        @endif
+        <h1>{{__('local.Films List')}}</h1>
             <form method="GET" action="{{ route('search.index') }}">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request()->input('search') }}">
+                    <input type="text" class="form-control" name="search" placeholder="{{__('local.Search...')}}" value="{{ request()->input('search') }}">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="submit">Go</button>
+                        <button class="btn btn-outline-primary" type="submit">{{__('local.Go')}}</button>
                     </div>
                 </div>
             </form>
+
         <table class="table">
             <thead>
             <tr>
                 <th>
-                    ID
+                    {{__('local.ID')}}
                     <a href="{{ route('filmsList', ['sort' => 'id|'.($sortColumn=='id' ? ($sortDirection=='asc' ? 'desc' : 'asc') : 'asc')]) }}">
                         @if ($sortColumn == 'id')
                             @if ($sortDirection == 'asc')
@@ -53,7 +59,7 @@
                     </a>
                 </th>
                 <th>
-                    Category
+                    {{__('local.Category')}}
                     <a href="{{ route('filmsList', ['sort' => 'category|'.($sortColumn=='category' ? ($sortDirection=='asc' ? 'desc' : 'asc') : 'asc')]) }}">
                         @if ($sortColumn == 'category')
                             @if ($sortDirection == 'asc')
@@ -67,7 +73,7 @@
                     </a>
                 </th>
                 <th>
-                    Title
+                    {{__('local.Title')}}
                     <a href="{{ route('filmsList', ['sort' => 'title|'.($sortColumn=='title' ? ($sortDirection=='asc' ? 'desc' : 'asc') : 'asc')]) }}">
                         @if ($sortColumn == 'title')
                             @if ($sortDirection == 'asc')
@@ -81,7 +87,7 @@
                     </a>
                 </th>
                 <th>
-                    Year
+                    {{__('local.Year')}}
                     <a href="{{ route('filmsList', ['sort' => 'year|'.($sortColumn=='year' ? ($sortDirection=='asc' ? 'desc' : 'asc') : 'asc')]) }}">
                         @if ($sortColumn == 'year')
                             @if ($sortDirection == 'asc')
@@ -105,12 +111,32 @@
                     <td>{{ $catalog->Title }}</td>
                     <td>{{ $catalog->Year }}</td>
                     <td>
-                        <a href="{{ route('catalogs.edit', $catalog->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        <form action="{{ route('catalogs.destroy', $catalog->id) }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 10px">Delete</button>
-                        </form>
+                        <a href="{{ route('catalogs.edit', $catalog->id) }}" class="btn btn-primary btn-sm">{{__('local.Edit')}}</a>
+                        <button type="button" value="{{ $catalog->id }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $catalog->id }}" style="margin-left: 10px">{{__('local.Delete')}}</button>
+
+                        <div class="modal fade" id="deleteModal{{ $catalog->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal{{ $catalog->id }}Label" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModal{{ $catalog->id }}Label">{{__('local.Delete Films Item')}}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{__('local.Are you sure you want to delete this films item?')}}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('local.Cancel')}}</button>
+                                        <form action="{{ route('catalogs.destroy', $catalog->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">{{__('local.Delete')}}</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach
