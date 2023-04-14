@@ -393,16 +393,16 @@ hr {
 <div class="w3-display-container mySlides">
   <img src="{{$newsInfo->Photo1}}" style="width:100%">
 </div>
-@if ($newsInfo->Photo2 !== ""):
+@if ($newsInfo->Photo2 !== "")
 <div class="w3-display-container mySlides">
   <img src="{{$newsInfo->Photo2}}" style="width:100%">
 </div>
-@endif;
-@if ($newsInfo->Photo3 !== ""):
+@endif
+@if ($newsInfo->Photo3 !== "")
 <div class="w3-display-container mySlides">
   <img src="{{$newsInfo->Photo3}}" style="width:100%">
 </div>
-@endif;
+@endif
 
 
 

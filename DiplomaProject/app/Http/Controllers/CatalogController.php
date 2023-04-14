@@ -75,6 +75,8 @@ class CatalogController extends Controller
     if ($request->filled('sort')) {
         $selectedSortOrder = $request->input('sort');
     }
+
+    if(app()->getLocale() == 'en'){
         switch ($selectedSortOrder) {
         case 'newest':
             $query->orderBy('Year', 'desc');
@@ -91,6 +93,27 @@ class CatalogController extends Controller
         default:
             $query->orderBy('Year', 'desc');
             break;
+    }
+    }
+
+    if(app()->getLocale() == 'ru'){
+        switch ($selectedSortOrder) {
+        case 'newest':
+            $query->orderBy('Year', 'desc');
+            break;
+        case 'oldest':
+            $query->orderBy('Year', 'asc');
+            break;
+        case 'a-z':
+            $query->orderBy('Title_ru', 'asc');
+            break;
+        case 'z-a':
+            $query->orderBy('Title_ru', 'desc');
+            break;
+        default:
+            $query->orderBy('Year', 'desc');
+            break;
+    }
     }
 
     $filmsData = $query->paginate(20)->withQueryString();

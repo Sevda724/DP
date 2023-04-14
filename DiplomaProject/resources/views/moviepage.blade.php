@@ -294,7 +294,7 @@ div#success {
 <br>
             
 	<div class="backp">
-<a href='{{ url()->previous() }}' class="previous">&#8249;</a>
+<a href="{{ route('catalogData.get') }}" class="previous">&#8249;</a>
 </div>
 
 	<main>

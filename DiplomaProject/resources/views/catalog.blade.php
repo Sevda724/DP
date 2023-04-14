@@ -773,74 +773,129 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 
 
-.search-bar-container {
-  /*width: 1000px;*/
-  /*display: flex;*/
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-}
+/*search*/
+.cardd {
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      background-color: #fff;
+    }
+
+    .btn-dark {
+      border-radius: 0;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+
+    .btn-dark:focus,
+    .btn-dark:active {
+      box-shadow: none;
+      background-color: #000;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      background-color: #fff;
+      padding: 0;
+    }
+
+    .dropdown-item {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f2f2f2;
+    }
 
 
-.search-bar-container input[type="text"],
-.search-bar-container button {
-  height: 30px;
-  border: 2px solid black;
-  outline: none;
-}
+    .advanced {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #000;
+      margin-bottom: 10px;
+      display: block;
+    }
 
-.search-bar-container input[type="text"] {
-  flex: 1;
-  /*padding: 0 10px;*/
-  font-size: 16px;
-}
+    .advanced i {
+      transition: transform 0.3s ease-in-out;
+    }
 
-.search-bar-container button {
-  background-color: black;
-  color: white;
-  /*padding: 0 10px;*/
-  font-size: 16px;
-  cursor: pointer;
-}
+    .advanced.collapsed i {
+      transform: rotate(-180deg);
+    }
 
-.advanced-search-toggle {
- /* margin-left: 10px;*/
-}
+    .form-group {
+      display: none;
+    }
 
-.advanced-search-link {
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-}
+    .form-group.show {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 150px;
+      margin-top: 10px;
+    }
 
-.advanced-search-content {
-  display: none;
- /*padding: 10px;*/
-  background-color: white;
-  margin-top: 10px;
-}
+    .form-group > div {
+      box-sizing: border-box;
+  width: 25%; padding: 10px;
+    }
 
-.genres,
-.sorting {
-  margin-bottom: 10px;
-}
+    .form-group > div label {
+      margin-bottom: 0;
+      margin-left: 10px;
+    }
 
-.genres label,
-.sorting label {
+.checkbox-btn {
   display: inline-block;
-  margin-bottom: 5px;
-  border: none;
+  margin: 0 5px 0 0;
+  user-select: none;
+  position: relative;
 }
-
-.genres input[type="checkbox"],
-.sorting input[type="radio"] {
-  margin-right: 5px;
-}
-
-.advanced-search-content.show {
+.checkbox-btn input[type=checkbox] {
+  z-index: -1;
+  opacity: 0;
   display: block;
+  width: 0;
+  height: 0;
 }
-
+.checkbox-btn span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 10px;
+  line-height: 30px;
+  border: 1px solid black;
+}
+ 
+/* Checked */
+.checkbox-btn input[type=checkbox]:checked + span {
+  background: #ffe0a6;
+}
+ 
+/* Focus */
+.focused span {
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover */
+.checkbox-btn:hover {
+  color: #666;
+}
+ 
+/* Active */
+.checkbox-btn input[type=checkbox]:active:not(:disabled) + span {
+  background: #d2c5ac;
+  color: #000;
+}
 
 
 </style>
@@ -931,121 +986,213 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <br>
 <br>
-
-
-<div class="search-bar-container" style="text-align: center">
+<section>
+<div class="container mt-5">
 {{ csrf_field() }}
 
 <form method="GET" action="{{ route('catalogData.get') }}" id="filter-form">
-    <input id='search' name='search' type="text" placeholder="Search..." value="{{ $searchValue }}">
-        <button type="submit">Search</button>
+        <div class="row d-flex justify-content-center">
 
-  <div class="advanced-search-toggle" >
-    <a href="#" class="advanced-search-link">Advanced Search</a>
-  </div>
-  <div class="advanced-search-content">
-    <div class="genres">
-      <h3>Genres</h3>
-          <div>
-            <label>Action<input type="checkbox" name="genre[]" value="Action" @if(in_array('Action', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Animation<input type="checkbox" name="genre[]" value="Animation" @if(in_array('Animation', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Biography<input type="checkbox" name="genre[]" value="Biography" @if(in_array('Biography', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Comedy<input type="checkbox" name="genre[]" value="Comedy" @if(in_array('Comedy', $selectedCategories)) checked @endif>
-            </label>
-          </div>  
-          <div>
-            <label>Crime<input type="checkbox" name="genre[]" value="Crime" @if(in_array('Crime', $selectedCategories)) checked @endif>
-            </label>
-          </div>        
-          <div>
-            <label>Drama<input type="checkbox" name="genre[]" value="Drama" @if(in_array('Drama', $selectedCategories)) checked @endif>
-            </label>
-          </div> 
-          <div>
-            <label>Documental<input type="checkbox" name="genre[]" value="Documental" @if(in_array('Documental', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Historical<input type="checkbox" name="genre[]" value="Historical" @if(in_array('Historical', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Music<input type="checkbox" name="genre[]" value="Music" @if(in_array('Music', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Family<input type="checkbox" name="genre[]" value="Family" @if(in_array('Family', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Sport<input type="checkbox" name="genre[]" value="Sport" @if(in_array('Sport', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>USSR <input type="checkbox" name="genre[]" value="USSR" @if(in_array('USSR', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>War <input type="checkbox" name="genre[]" value="War" @if(in_array('War', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Adventure <input type="checkbox" name="genre[]" value="Adventure" @if(in_array('Adventure', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Full-length <input type="checkbox" name="genre[]" value="Full-length" @if(in_array('Full-length', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Fantasy <input type="checkbox" name="genre[]" value="Fantasy" @if(in_array('Fantasy', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Serial <input type="checkbox" name="genre[]" value="Serial" @if(in_array('Serial', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-          <div>
-            <label>Short <input type="checkbox" name="genre[]" value="Short" @if(in_array('Short', $selectedCategories)) checked @endif>
-            </label>
-          </div>
-    </div>
-    <br>
-    <div class="sorting">
-      <h3>Sort by</h3>
-      <div style="text-align: center;">
-      <label><input type="radio" name="sort" value="newest" {{ $selectedSortOrder == 'newest' ? 'checked' : '' }}>Newest to Oldest </label>
-      <label><input type="radio" name="sort" value="oldest" {{ $selectedSortOrder == 'oldest' ? 'checked' : '' }}>Oldest to Newest </label>
-      <label><input type="radio" name="sort" value="a-z" {{ $selectedSortOrder == 'a-z' ? 'checked' : '' }}>A-Z </label>
-      <label><input type="radio" name="sort" value="z-a" {{ $selectedSortOrder == 'z-a' ? 'checked' : '' }}>Z-A </label>
-      </div>
-    </div>
-  </div>
+            <div class="col-md-10">
 
-  </form>
-</div>
+                <div class="cardd p-3  py-4">
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-3"> <!--<div class="dropdown">
+                              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                Sort by
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Oldest to Newest</a></li>
+                                <li><a class="dropdown-item" href="#">Newest to Oldest</a></li>
+                                <li><a class="dropdown-item" href="#">A-Z</a></li>
+                                <li><a class="dropdown-item" href="#">Z-A</a></li>
+                              </ul>
+                            </div>-->
+                            <label style="margin-left: 20px;">
+                            <select  id='sort' name="sort">
+                                <option value="newest" {{ $selectedSortOrder == 'newest' ? 'selected="selected"' : '' }}>{{__('local.Newest first')}}</option>
+                                <option value="oldest" {{ $selectedSortOrder == 'oldest' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
+                                <option value="a-z" {{ $selectedSortOrder == 'a-z' ? 'selected="selected"' : '' }}>{{__('local.a-z')}}</option>
+                                <option value="z-a" {{ $selectedSortOrder == 'z-a' ? 'selected="selected"' : '' }}>{{__('local.z-a')}}</option>
+                            </select>
+                            </label>
+                            
+                        </div>
+
+                        <div class="col-4"><input id='search' name='search' type="text" placeholder="Search..." value="{{ $searchValue }}"></div>
+
+                        <div class="col-md-2"> <button type="submit" class="btn btn-dark btn-block">Search</button> </div>
+                        
+                    </div>
+
+
+                    <div class="mt-3">
+                        
+  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="advanced">
+    Advance Search With Filters <i class="fa fa-angle-down"></i>
+  </a>
+ 
+
+<div class="form-group">
+  
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Action" @if(in_array('Action', $selectedCategories)) checked @endif>
+  <span>Action</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Adventure" @if(in_array('Adventure', $selectedCategories)) checked @endif>
+  <span>Adventure</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Animation" @if(in_array('Animation', $selectedCategories)) checked @endif>
+  <span>Animation</span>
+</label>
+  
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Biography" @if(in_array('Biography', $selectedCategories)) checked @endif>
+  <span>Biography</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Comedy" @if(in_array('Comedy', $selectedCategories)) checked @endif>
+  <span>Comedy</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Crime" @if(in_array('Crime', $selectedCategories)) checked @endif>
+  <span>Crime</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Detective" @if(in_array('Detective', $selectedCategories)) checked @endif>
+  <span>Detective</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Documental" @if(in_array('Documental', $selectedCategories)) checked @endif>
+  <span>Documental</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Drama" @if(in_array('Drama', $selectedCategories)) checked @endif>
+  <span>Drama</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Family" @if(in_array('Family', $selectedCategories)) checked @endif>
+  <span>Family</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Fantasy" @if(in_array('Fantasy', $selectedCategories)) checked @endif>
+  <span>Fantasy</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Full-length" @if(in_array('Full-length', $selectedCategories)) checked @endif>
+  <span>Full-length</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Historical" @if(in_array('Historical', $selectedCategories)) checked @endif>
+  <span>Historical</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Melodrama" @if(in_array('Melodrama', $selectedCategories)) checked @endif>
+  <span>Melodrama</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Music" @if(in_array('Music', $selectedCategories)) checked @endif>
+  <span>Musical</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Serial" @if(in_array('Serial', $selectedCategories)) checked @endif>
+  <span>Serial</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Short" @if(in_array('Short', $selectedCategories)) checked @endif>
+  <span>Short</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Sport" @if(in_array('Sport', $selectedCategories)) checked @endif>
+  <span>Sport</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="USSR" @if(in_array('USSR', $selectedCategories)) checked @endif>
+  <span>USSR</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="War" @if(in_array('War', $selectedCategories)) checked @endif>
+  <span>War</span>
+</label>
+
+
+
+
+                    </div>
+
+
+                    
+
+
+            
+                </div>
+                
+            </div>
+            
+        </div>
+
+        
+        
+
+</form>
+    </div>
+</section>
+
 
 
 
 
 <br>
 <script>
+// Get the button that toggles the dropdown menu
+var advancedBtn = document.querySelector(".advanced");
+
+// Get the dropdown menu
+var advancedMenu = document.querySelector(".form-group");
+
+// Add an event listener to the button
+advancedBtn.addEventListener("click", function() {
+  // Toggle the "show" class on the dropdown menu
+  advancedMenu.classList.toggle("show");
+});
+$(window).keyup(function(e){
+  var target = $('.checkbox-btn input:focus');
+  if (e.keyCode == 9 && $(target).length){
+    $(target).parent().addClass('focused');
+  }
+});
+ 
+$('.checkbox-btn input').focusout(function(){
+  $(this).parent().removeClass('focused');
+});
 
 
 
 
 
-
-const advancedSearchLink = document.querySelector('.advanced-search-link');
+/*const advancedSearchLink = document.querySelector('.advanced-search-link');
 const advancedSearchContent = document.querySelector('.advanced-search-content');
 
 advancedSearchLink.addEventListener('click', function(e) {
@@ -1053,7 +1200,7 @@ advancedSearchLink.addEventListener('click', function(e) {
   advancedSearchContent.classList.toggle('show');
 });
 
-
+*/
 
 
   // Get the select element
@@ -1063,7 +1210,7 @@ advancedSearchLink.addEventListener('click', function(e) {
   filterSelect.addEventListener('change', () => {
     // Submit the form when the select item is changed
     document.getElementById('filter-form').submit();
-  });
+  });*/
 
   const sortSelect = document.getElementById('sort');
   
@@ -1072,7 +1219,7 @@ advancedSearchLink.addEventListener('click', function(e) {
   // Submit the form when the select item is changed
   document.getElementById('filter-form').submit();
   });
-*/
+
 </script>
 
 @if($filmsData->count() == 0)

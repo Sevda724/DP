@@ -11,7 +11,7 @@
 
           <li><a href="{{ route('indexpage') }}#work" class="smoothScroll">{{__('local.HOME')}}</a></li>
           <li><a href="{{ route('indexpage') }}#about" class="smoothScroll">{{__('local.ABOUT')}}</a></li>
-          <li><a href="{{ route('indexpage') }}#portfolio" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
+          <li><a href="{{ route('catalogData.get') }}" class="smoothScroll">{{__('local.SHOWCASE')}}</a></li>
           <li><a href="{{ route('indexpage') }}#locations" class="smoothScroll">{{__('local.LOCATIONS')}}</a></li>
           <li><a href="{{ route('indexpage') }}#contact" class="smoothScroll">{{__('local.CONTACT')}}</a></li>
           <li>
