@@ -192,7 +192,7 @@
 						<p>{{__('local.Wide spectrum of film&television equipment and high quality post production services.')}}</p>
 						<br>
 
-						<a href="production" class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
+						<a href="production" id='read-more-1' class="smoothScroll btn btn-default">{{__('local.READ MORE')}}</a>
 				</div>
 
 
@@ -715,10 +715,11 @@
     align-items: center;
     justify-content: center;">
 <div class="content">
+  <br>
             <h1>EXPLORE MORE</h1>
             <a href="https://youtu.be/6PryBPSeHos">WATCH</a>
         </div>
-        <video autoplay muted>
+        <video autoplay muted loop>
   <source src="images/shc.mp4" type="video/mp4">
 </video>
 
@@ -750,10 +751,12 @@
 <div class="rows">
   <div class="rows">
   @foreach($newsInfo as $news)
-
+<br>
   <div class="column">
      <center>
-    <img src="{{$news->Photo1}}" alt="img" style="width:80%; height: 60%">
+    <img src="{{$news->Photo1}}" alt="img" style="width: 350px;
+    height: 250px;
+}">
             @if(app()->getLocale() == 'en')
             <p style="width: 50%"> {{$news->Title_en}}</p>
             @endif
@@ -832,7 +835,7 @@
       @endif
      </div>
      <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
-      <input type="submit" class="form-control" value="{{__('local.SEND MESSAGE')}}">
+      <input type="submit"  class="form-control" value="{{__('local.SEND MESSAGE')}}">
      </div>
     </form>
    </div>

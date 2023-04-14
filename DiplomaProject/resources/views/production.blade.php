@@ -369,7 +369,6 @@ hr {
 
 <!-- Navigation section
 ================================================== -->
-@include('layouts.navbar-2-type')
 
 
 <br>

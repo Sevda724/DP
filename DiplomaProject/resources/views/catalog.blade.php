@@ -770,6 +770,134 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 }
 
 
+
+
+
+/*search*/
+.cardd {
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      background-color: #fff;
+    }
+
+    .btn-dark {
+      border-radius: 0;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+
+    .btn-dark:focus,
+    .btn-dark:active {
+      box-shadow: none;
+      background-color: #000;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      background-color: #fff;
+      padding: 0;
+    }
+
+    .dropdown-item {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 10px 20px;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f2f2f2;
+    }
+
+
+    .advanced {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #000;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .advanced i {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .advanced.collapsed i {
+      transform: rotate(-180deg);
+    }
+
+    .form-group {
+      display: none;
+    }
+
+    .form-group.show {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      height: 150px;
+      margin-top: 10px;
+    }
+
+    .form-group > div {
+      box-sizing: border-box;
+  width: 25%; padding: 10px;
+    }
+
+    .form-group > div label {
+      margin-bottom: 0;
+      margin-left: 10px;
+    }
+
+.checkbox-btn {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  user-select: none;
+  position: relative;
+}
+.checkbox-btn input[type=checkbox] {
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+.checkbox-btn span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px 10px;
+  line-height: 30px;
+  border: 1px solid black;
+}
+ 
+/* Checked */
+.checkbox-btn input[type=checkbox]:checked + span {
+  background: #ffe0a6;
+}
+ 
+/* Focus */
+.focused span {
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover */
+.checkbox-btn:hover {
+  color: #666;
+}
+ 
+/* Active */
+.checkbox-btn input[type=checkbox]:active:not(:disabled) + span {
+  background: #d2c5ac;
+  color: #000;
+}
+
+
 </style>
 
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -858,59 +986,231 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <br>
 <br>
-
-<nav class="product-filter">
-  <div class="sort">
-        {{ csrf_field() }}
+<section>
+<div class="container mt-5">
+{{ csrf_field() }}
 
 <form method="GET" action="{{ route('catalogData.get') }}" id="filter-form">
+        <div class="row d-flex justify-content-center">
 
-    <label style="margin-left: 160px;">
-      <SELECT id='filter' name='filter' onchange='filter'>
-        <option value="">{{__('local.All')}}</option>
-        <option value="action" {{ $selectedCategory == 'action' ? 'selected="selected"' : '' }}>{{__('local.Action')}}</option>
-        <option value="comedy" {{ $selectedCategory == 'comedy' ? 'selected="selected"' : '' }}>{{__('local.Comedy')}}</option>
-        <option value="crime" {{ $selectedCategory == 'crime' ? 'selected="selected"' : '' }}>{{__('local.Crime')}}</option>
-        <option value="detective" {{ $selectedCategory == 'detective' ? 'selected="selected"' : '' }}>{{__('local.Detective')}}</option>
-        <option value="Documental" {{ $selectedCategory == 'Documental' ? 'selected="selected"' : '' }}>{{__('local.Documental')}}</option>
-        <option value="drama" {{ $selectedCategory == 'drama' ? 'selected="selected"' : '' }}>{{__('local.Drama')}}</option>
-        <option value="family" {{ $selectedCategory == 'family' ? 'selected="selected"' : '' }}>{{__('local.Family')}}</option>
-        <option value="Fantasy" {{ $selectedCategory == 'Fantasy' ? 'selected="selected"' : '' }}>{{__('local.Fantasy')}}</option>
-        <option value="Historical" {{ $selectedCategory == 'Historical' ? 'selected="selected"' : '' }}>{{__('local.Historical')}}</option>
-        <option value="Melodrama" {{ $selectedCategory == 'Melodrama' ? 'selected="selected"' : '' }}>{{__('local.Melodrama')}}</option>
-        <option value="Musical" {{ $selectedCategory == 'Musical' ? 'selected="selected"' : '' }}>{{__('local.Musical')}}</option>
-        <option value="Serial" {{ $selectedCategory == 'Serial' ? 'selected="selected"' : '' }}>{{__('local.Serial')}}</option>
-        <option value="Short" {{ $selectedCategory == 'Short' ? 'selected="selected"' : '' }}>{{__('local.Short')}}</option>
-        <option value="Sport" {{ $selectedCategory == 'Sport' ? 'selected="selected"' : '' }}>{{__('local.Sport')}}</option>
-        <option value="USSR" {{ $selectedCategory == 'USSR' ? 'selected="selected"' : '' }}>{{__('local.USSR')}}</option>
-        <option value="War" {{ $selectedCategory == 'War' ? 'selected="selected"' : '' }}>{{__('local.War')}}</option>
-        <option value="Full-length" {{ $selectedCategory == 'Full-length' ? 'selected="selected"' : '' }}>{{__('local.Full-length')}}</option>
-      </SELECT>
- </label>
-    <label style="margin-left: 20px;">
-      <select  id='sort' name="sort">
-        <option value="desc" {{ $selectedSortOrder == 'desc' ? 'selected="selected"' : '' }}>{{__('local.Newest first')}}</option>
-        <option value="asc" {{ $selectedSortOrder == 'asc' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
-      </select>
-    </label>
-    <input id='search' name='search' type="text" placeholder="Search..." value="{{ $searchValue }}">
-    <input type="submit" value="Go">
-  </form>
-  </div>
-</nav>
-<br>
-<br>
+            <div class="col-md-10">
+
+                <div class="cardd p-3  py-4">
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-3"> <!--<div class="dropdown">
+                              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                Sort by
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Oldest to Newest</a></li>
+                                <li><a class="dropdown-item" href="#">Newest to Oldest</a></li>
+                                <li><a class="dropdown-item" href="#">A-Z</a></li>
+                                <li><a class="dropdown-item" href="#">Z-A</a></li>
+                              </ul>
+                            </div>-->
+                            <label style="margin-left: 20px;">
+                            <select  id='sort' name="sort">
+                                <option value="newest" {{ $selectedSortOrder == 'newest' ? 'selected="selected"' : '' }}>{{__('local.Newest first')}}</option>
+                                <option value="oldest" {{ $selectedSortOrder == 'oldest' ? 'selected="selected"' : '' }}>{{__('local.Oldest first')}}</option>
+                                <option value="a-z" {{ $selectedSortOrder == 'a-z' ? 'selected="selected"' : '' }}>{{__('local.a-z')}}</option>
+                                <option value="z-a" {{ $selectedSortOrder == 'z-a' ? 'selected="selected"' : '' }}>{{__('local.z-a')}}</option>
+                            </select>
+                            </label>
+                            
+                        </div>
+
+                        <div class="col-4"><input id='search' name='search' type="text" placeholder="Search..." value="{{ $searchValue }}"></div>
+
+                        <div class="col-md-2"> <button type="submit" class="btn btn-dark btn-block">Search</button> </div>
+                        
+                    </div>
+
+
+                    <div class="mt-3">
+                        
+  <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="advanced">
+    Advance Search With Filters <i class="fa fa-angle-down"></i>
+  </a>
+ 
+
+<div class="form-group">
+  
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Action" @if(in_array('Action', $selectedCategories)) checked @endif>
+  <span>Action</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Adventure" @if(in_array('Adventure', $selectedCategories)) checked @endif>
+  <span>Adventure</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Animation" @if(in_array('Animation', $selectedCategories)) checked @endif>
+  <span>Animation</span>
+</label>
+  
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Biography" @if(in_array('Biography', $selectedCategories)) checked @endif>
+  <span>Biography</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Comedy" @if(in_array('Comedy', $selectedCategories)) checked @endif>
+  <span>Comedy</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Crime" @if(in_array('Crime', $selectedCategories)) checked @endif>
+  <span>Crime</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Detective" @if(in_array('Detective', $selectedCategories)) checked @endif>
+  <span>Detective</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Documental" @if(in_array('Documental', $selectedCategories)) checked @endif>
+  <span>Documental</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Drama" @if(in_array('Drama', $selectedCategories)) checked @endif>
+  <span>Drama</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Family" @if(in_array('Family', $selectedCategories)) checked @endif>
+  <span>Family</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Fantasy" @if(in_array('Fantasy', $selectedCategories)) checked @endif>
+  <span>Fantasy</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Full-length" @if(in_array('Full-length', $selectedCategories)) checked @endif>
+  <span>Full-length</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Historical" @if(in_array('Historical', $selectedCategories)) checked @endif>
+  <span>Historical</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Melodrama" @if(in_array('Melodrama', $selectedCategories)) checked @endif>
+  <span>Melodrama</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Music" @if(in_array('Music', $selectedCategories)) checked @endif>
+  <span>Musical</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Serial" @if(in_array('Serial', $selectedCategories)) checked @endif>
+  <span>Serial</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Short" @if(in_array('Short', $selectedCategories)) checked @endif>
+  <span>Short</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="Sport" @if(in_array('Sport', $selectedCategories)) checked @endif>
+  <span>Sport</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="USSR" @if(in_array('USSR', $selectedCategories)) checked @endif>
+  <span>USSR</span>
+</label>
+
+<label class="checkbox-btn">
+  <input type="checkbox" name="genre[]" value="War" @if(in_array('War', $selectedCategories)) checked @endif>
+  <span>War</span>
+</label>
+
+
+
+
+                    </div>
+
+
+                    
+
+
+            
+                </div>
+                
+            </div>
+            
+        </div>
+
+        
+        
+
+</form>
+    </div>
+</section>
+
+
+
+
 
 <br>
 <script>
+// Get the button that toggles the dropdown menu
+var advancedBtn = document.querySelector(".advanced");
+
+// Get the dropdown menu
+var advancedMenu = document.querySelector(".form-group");
+
+// Add an event listener to the button
+advancedBtn.addEventListener("click", function() {
+  // Toggle the "show" class on the dropdown menu
+  advancedMenu.classList.toggle("show");
+});
+$(window).keyup(function(e){
+  var target = $('.checkbox-btn input:focus');
+  if (e.keyCode == 9 && $(target).length){
+    $(target).parent().addClass('focused');
+  }
+});
+ 
+$('.checkbox-btn input').focusout(function(){
+  $(this).parent().removeClass('focused');
+});
+
+
+
+
+
+/*const advancedSearchLink = document.querySelector('.advanced-search-link');
+const advancedSearchContent = document.querySelector('.advanced-search-content');
+
+advancedSearchLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  advancedSearchContent.classList.toggle('show');
+});
+
+*/
+
+
   // Get the select element
-  const filterSelect = document.getElementById('filter');
+  /*const filterSelect = document.getElementById('filter');
   
   // Attach an event listener to it
   filterSelect.addEventListener('change', () => {
     // Submit the form when the select item is changed
     document.getElementById('filter-form').submit();
-  });
+  });*/
 
   const sortSelect = document.getElementById('sort');
   
@@ -997,11 +1297,11 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
   <p class="subscribe__copy">{{__('local.Subscribe to keep up with fresh news and exciting updates. We promise not to spam you!')}}</p>
   <form method="POST" action="{{ route('subscribers.store') }}">
   {{ csrf_field() }}
+  <div>
   <input name = "email" type="email" class="form__email" placeholder="{{__('local.Enter your email address')}}" value="{{ old('email') }}"/>
-  @if ($errors->has('email'))
-    <span class="text-danger">{{ $errors->first('email') }}</span>
-  @endif
   <button class="form__button">{{__('local.SEND')}}</button>
+  <br>
+  
 </form>
 </div>
 <br>
@@ -1016,6 +1316,19 @@ i.fa-star.rating{color: rgb(232, 217, 31);}
 
 <script type="text/javascript">
   clickAndSelect()
+
+const advancedSearchBtn = document.getElementById("advanced-search-btn");
+const advancedSearchMenu = document.getElementById("advanced-search-menu");
+const closeAdvancedSearchBtn = document.getElementById("close-advanced-search-btn");
+
+advancedSearchBtn.addEventListener("click", function() {
+  advancedSearchMenu.style.display = "block";
+});
+
+closeAdvancedSearchBtn.addEventListener("click", function() {
+  advancedSearchMenu.style.display = "none";
+});
+
  function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }

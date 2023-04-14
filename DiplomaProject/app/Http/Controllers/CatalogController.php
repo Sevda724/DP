@@ -12,6 +12,11 @@ class CatalogController extends Controller
 {
     public function insert(Request $request)
     {
+         $inputs = $request->validate([
+            'category' => 'required', 'title' => 'required', 'description'=> 'required', 'text'=> 'required', 'photo'=> 'required', 'year'=> 'required', 'director'=> 'required', 'trailer', 'awards',
+            'title_ru'=> 'required', 'text_ru'=> 'required', 'director_ru'=> 'required', 'awards_ru'
+        ]);
+
         if (Catalog::where('title', $request->input('title'))->exists()) {
             return redirect()->back()->with('status_error', 'This title already exists!')->withInput();
         }
@@ -27,10 +32,13 @@ class CatalogController extends Controller
 
     public function update(Request $request, $id)
     {
-        $inputs = $request->only([
-            'category', 'title', 'description', 'text', 'photo', 'year', 'director', 'trailer', 'awards',
-            'title_ru', 'text_ru', 'director_ru', 'awards_ru'
+        $inputs = $request->validate([
+            'category' => 'required', 'title' => 'required', 'description'=> 'required', 'text'=> 'required', 'photo'=> 'required', 'year'=> 'required', 'director'=> 'required', 'trailer', 'awards',
+            'title_ru'=> 'required', 'text_ru'=> 'required', 'director_ru'=> 'required', 'awards_ru'
         ]);
+
+
+
 
         $catalogs = Catalog::find($id);
         $catalogs->fill($inputs);
@@ -40,7 +48,80 @@ class CatalogController extends Controller
     }
     public function catalogData(FilterRequest $request)
     {
-        $query = Catalog::query();
+            $query = Catalog::query();
+    $data = $request->validated();
+    $selectedSortOrder = 'desc';
+    $searchValue = '';
+    $selectedCategories = [];
+
+    if ($request->filled('search')) {
+        $searchValue = $request->input('search');
+        $query->where(function($query) use ($searchValue) {
+            $query->where('Title','like', "%{$searchValue}%")
+                ->orWhere('Title_ru','like', "%{$searchValue}%")
+                ->orWhere('Director_ru','like', "%{$searchValue}%")
+                ->orWhere('Director','like', "%{$searchValue}%");
+        });
+    }
+
+    if ($request->filled('genre')) {
+    $selectedCategories = $request->input('genre');
+    $query->where(function ($query) use ($selectedCategories) {
+        foreach ($selectedCategories as $category) {
+            $query->orWhere('Category', 'LIKE', '%' . $category . '%');
+        }
+    });
+}
+
+    if ($request->filled('sort')) {
+        $selectedSortOrder = $request->input('sort');
+    }
+
+    if(app()->getLocale() == 'en'){
+        switch ($selectedSortOrder) {
+        case 'newest':
+            $query->orderBy('Year', 'desc');
+            break;
+        case 'oldest':
+            $query->orderBy('Year', 'asc');
+            break;
+        case 'a-z':
+            $query->orderBy('Title', 'asc');
+            break;
+        case 'z-a':
+            $query->orderBy('Title', 'desc');
+            break;
+        default:
+            $query->orderBy('Year', 'desc');
+            break;
+    }
+    }
+
+    if(app()->getLocale() == 'ru'){
+        switch ($selectedSortOrder) {
+        case 'newest':
+            $query->orderBy('Year', 'desc');
+            break;
+        case 'oldest':
+            $query->orderBy('Year', 'asc');
+            break;
+        case 'a-z':
+            $query->orderBy('Title_ru', 'asc');
+            break;
+        case 'z-a':
+            $query->orderBy('Title_ru', 'desc');
+            break;
+        default:
+            $query->orderBy('Year', 'desc');
+            break;
+    }
+    }
+
+    $filmsData = $query->paginate(20)->withQueryString();
+
+    return view('catalog', compact('selectedCategories','selectedSortOrder','searchValue','filmsData'));
+
+       /* $query = Catalog::query();
         $data = $request -> validated();
         $selectedSortOrder = 'desc';
         $searchValue = '';
@@ -58,7 +139,7 @@ class CatalogController extends Controller
 
         $filmsData = $query->paginate(20)->withQueryString();
 
-        return view('catalog', compact('selectedCategory','selectedSortOrder','searchValue','filmsData'));
+        return view('catalog', compact('selectedCategory','selectedSortOrder','searchValue','filmsData'));*/
     }
 
 
