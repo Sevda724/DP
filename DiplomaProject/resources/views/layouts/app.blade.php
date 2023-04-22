@@ -83,11 +83,29 @@
                                 </div>
                             </li>
                         @endguest
+
                     </ul>
+
+                </div>
+
+            </div>
+            <div class="dropdown" style="margin-right: 10px">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @php $current_locale = request()->cookie('locale') @endphp
+                    {{ app()->getLocale() }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <form action="{{ route('setLocale', 'en')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="dropdown-item">en</button>
+                    </form>
+                    <form action="{{ route('setLocale', 'ru')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="dropdown-item">ru</button>
+                    </form>
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>

@@ -106,10 +106,22 @@
             <tbody>
             @foreach($catalogs as $catalog)
                 <tr>
-                    <td>{{ $catalog->id }}</td>
-                    <td>{{ $catalog->Category }}</td>
-                    <td>{{ $catalog->Title }}</td>
-                    <td>{{ $catalog->Year }}</td>
+                    @if(app()->getLocale() == 'en')
+                        <div style="text-align: center;">
+                            <td>{{ $catalog->id }}</td>
+                            <td>{{ $catalog->Title }}</td>
+                            <td>{{ $catalog->Director }}</td>
+                            <td>{{ $catalog->Year }}</td>
+                        </div>
+                    @endif
+                    @if(app()->getLocale() == 'ru')
+                        <div style="text-align: center;">
+                            <td>{{ $catalog->id }}</td>
+                            <td>{{ $catalog->Title_ru }}</td>
+                            <td>{{ $catalog->Director_ru }}</td>
+                            <td>{{ $catalog->Year }}</td>
+                        </div>
+                    @endif
                     <td>
                         <a href="{{ route('catalogs.edit', $catalog->id) }}" class="btn btn-primary btn-sm">{{__('local.Edit')}}</a>
                         <button type="button" value="{{ $catalog->id }}" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{ $catalog->id }}" style="margin-left: 10px">{{__('local.Delete')}}</button>

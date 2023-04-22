@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\EmailVerificationController;
 
 
 
@@ -82,7 +83,7 @@ ROute::get('/subscribers', [SubscribersController::class, 'index'])->middleware(
 Route::delete('/subscribers/{subscriber}', [SubscribersController::class, 'destroy'])->middleware('auth')->name('subscribers.destroy');
 
 // Authorization routes
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // Catalog routes
 Route::get('/catalog', [CatalogController::class, 'catalogData'])->name('catalogData.get');
@@ -95,8 +96,8 @@ Route::get('/search', [CatalogController::class, 'searchFilm'])->middleware('aut
 Route::get('/insertFilm', [HomeController::class, 'add'])->middleware('auth')->middleware('verified')->name('add');
 Route::post('/insert-data', [CatalogController::class, 'insert'])->name('insert-data');
 
-Route::get('/home', [HomeController::class, 'index'])->name('admin')->middleware('auth');
-Route::get('/admin', [HomeController::class, 'index'])->middleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('admin')->middleware('auth')->middleware('verified');
+Route::get('/admin', [HomeController::class, 'index'])->middleware('auth')->middleware('verified');
 
 Route::get('/updatingFilm', [CatalogController::class, 'index'])->name('filmsList')->middleware('auth');
 Route::put('/updatingFilm/{id}', [CatalogController::class, 'update'])->name('catalogs.update')->middleware('auth');

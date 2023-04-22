@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
-use App\config\Mail; 
+use App\config\Mail;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -29,7 +29,7 @@ class ContactFormController extends Controller
         'email.email' => __('local.Please enter a valid email address.'),
         'subject.required' => __('local.Please enter a subject for your message.'),
         'message.required' => __('local.Please enter a message.'),
-    
+
         ]);
 
         if ($validator->fails()) {
@@ -39,8 +39,8 @@ class ContactFormController extends Controller
         ->withErrors($validator)
         ->with('status-mess-err', __('local.All fields must be filled in!'))
         ->withFragment('contact');
-        } 
-    
+        }
+
         $validator->validate();
 
         $input = $request->all();
@@ -64,9 +64,9 @@ class ContactFormController extends Controller
             $message->from($request->email);
             $message->to($request->input('email'))->subject('Kazakhfilm');
         });*/
-        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', 'Contact Form Submit Successfully!');
+        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', __('local.Contact Form Submit Successfully!'));
         } /*else{
         return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!')->withInput();
         }*/
-    
+
 }

@@ -18,14 +18,14 @@ class CatalogController extends Controller
         ]);
 
         if (Catalog::where('title', $request->input('title'))->exists()) {
-            return redirect()->back()->with('status_error', 'This title already exists!')->withInput();
+            return redirect()->back()->with('status_error', __('local.This title already exists!'))->withInput();
         }
 
         $catalog = new Catalog;
         $catalog->fill($request->all());
         $catalog->save();
 
-        return redirect()->back()->with('status_success', 'Inserted Successfully');
+        return redirect()->back()->with('status_success', __('local.Inserted Successfully'));
     }
 
 
@@ -44,7 +44,7 @@ class CatalogController extends Controller
         $catalogs->fill($inputs);
         $catalogs->save();
 
-        return redirect()->route('filmsList')->with('status', 'Updated Successfully');
+        return redirect()->route('filmsList')->with('status', __('local.Updated Successfully'));
     }
     public function catalogData(FilterRequest $request)
     {
@@ -184,7 +184,7 @@ class CatalogController extends Controller
     {
         $catalog = (new Catalog())->findOrFail($id);
         $catalog->delete();
-        return redirect()->back()->with('status', 'Deleted Successfully');
+        return redirect()->back()->with('status', __('local.Deleted Successfully'));
     }
 
     public function searchFilm(Request $request)
