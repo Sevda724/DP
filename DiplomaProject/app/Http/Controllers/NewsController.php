@@ -8,28 +8,28 @@ use Illuminate\Support\Facades\Validator;
 
 class NewsController extends Controller
 {
-    
+    //displaying 3 last added news
     public function newsInfo()
     {
         return view('index', ['newsInfo' => News::orderBy('id', 'desc')->take(3)->get()]);
     }
-
+    //displaying the selected news information.
     public function show($id)
     {
         return view('news', ['newsInfo' => News::find($id)]);
     }
-
+    //displaying the selected news information for updating in the admin part.
     public function showForEdit($id)
     {
         return view('updateNews', ['newsInfo' => News::find($id)]);
     }
-
+    //displaying list of news in the admin part of the project.
     public function list()
     {
         $news = News::paginate(10);
         return view('newsList', compact('news'));
     }
-
+   //updating selected news
    public function update(Request $request, $id) {
     // Validate the request
     $validatedData = $request->validate([
@@ -54,7 +54,7 @@ class NewsController extends Controller
     return redirect()->route('news.list')->with('success', __('local.News record updated successfully!'));
 }
 
-
+    //deleting selected news
     public function delete($id)
     {
 
@@ -63,9 +63,10 @@ class NewsController extends Controller
 
         return redirect()->route('news.list')->with('success', __('local.News deleted successfully!'));
     }
-
+    //inserting news
     public function insert(Request $request)
     {
+        //validation rules and validation messages
         $validator = Validator::make($request->all(), [
         'title_en' => 'required',
         'description_en' => 'required',
@@ -85,7 +86,7 @@ class NewsController extends Controller
         } 
     
         $validator->validate();
-       
+        //adding inputs to db.
         $news = new News;
         $news->title_en = $request->input('title_en');
         $news->description_en = $request->input('description_en');
