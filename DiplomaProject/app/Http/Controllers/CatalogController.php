@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class CatalogController extends Controller
 {
+    //This method is essential for inserting movies into the catalog (located in the project's admin section).
     public function insert(Request $request)
     {
          $inputs = $request->validate([
@@ -29,7 +30,7 @@ class CatalogController extends Controller
     }
 
 
-
+    //This method is essential for updating movies in the catalog (located in the project's admin section).
     public function update(Request $request, $id)
     {
         $inputs = $request->validate([
@@ -46,6 +47,9 @@ class CatalogController extends Controller
 
         return redirect()->route('filmsList')->with('status', __('local.Updated Successfully'));
     }
+    
+    /*This method is essential for displaying and  for performing sorting, 
+    searching, and filtering operations on the online catalog of films.*/
     public function catalogData(FilterRequest $request)
     {
             $query = Catalog::query();
@@ -53,7 +57,8 @@ class CatalogController extends Controller
     $selectedSortOrder = 'desc';
     $searchValue = '';
     $selectedCategories = [];
-
+    
+    //This code segment is crucial for searching movies on the online catalog of films.
     if ($request->filled('search')) {
         $searchValue = $request->input('search');
         $query->where(function($query) use ($searchValue) {
@@ -63,7 +68,8 @@ class CatalogController extends Controller
                 ->orWhere('Director','like', "%{$searchValue}%");
         });
     }
-
+    
+    //This code segment is crucial for sorting movies on the online catalog of films.
     if ($request->filled('genre')) {
     $selectedCategories = $request->input('genre');
     $query->where(function ($query) use ($selectedCategories) {
@@ -76,7 +82,8 @@ class CatalogController extends Controller
     if ($request->filled('sort')) {
         $selectedSortOrder = $request->input('sort');
     }
-
+        
+    //This code segment is essential for sorting the catalog in English localization.
     if(app()->getLocale() == 'en'){
         switch ($selectedSortOrder) {
         case 'newest':
@@ -97,6 +104,7 @@ class CatalogController extends Controller
     }
     }
 
+    //This code segment is essential for sorting the catalog in Russian localization.
     if(app()->getLocale() == 'ru'){
         switch ($selectedSortOrder) {
         case 'newest':
@@ -116,42 +124,24 @@ class CatalogController extends Controller
             break;
     }
     }
-
+        
+    //This code segment is essential for implementing  pagination (20 films per page).
     $filmsData = $query->paginate(20)->withQueryString();
 
     return view('catalog', compact('selectedCategories','selectedSortOrder','searchValue','filmsData'));
-
-       /* $query = Catalog::query();
-        $data = $request -> validated();
-        $selectedSortOrder = 'desc';
-        $searchValue = '';
-        if($request->filled('search')) {
-        $searchValue = $request->input('search');
-        $query->where('Title','like', "%{$request->input('search')}%")->orWhere('Title_ru','like', "%{$request->input('search')}%")
-        ->orWhere('Director_ru','like', "%{$request->input('search')}%")->orWhere('Director','like', "%{$request->input('search')}%");
-        }
-        $selectedCategory = $request->input('filter');
-        $query->where('Category','like', "%{$request->input('filter')}%");
-        if($request->filled('sort')){
-            $selectedSortOrder =  $request->input('sort');
-        }
-            $query -> orderBy('Year',  $selectedSortOrder);
-
-        $filmsData = $query->paginate(20)->withQueryString();
-
-        return view('catalog', compact('selectedCategory','selectedSortOrder','searchValue','filmsData'));*/
     }
 
-
+    //This method is crucial for displaying the selected movie's information. 
     public function show($id){
         return view('moviepage', ['filmInfo' => Catalog::find($id)]);
     }
 
-
+    //This method is essential for displaying online catalog of films in the project's admin section.
     public function index(Request $request)
     {
         $catalogs = Catalog::query();
-
+        
+        //sorting by column
         $sortOptions = [
             'id' => 'ID',
             'category' => 'Category',
@@ -173,20 +163,22 @@ class CatalogController extends Controller
         return view('updateFilm', compact('catalogs', 'sortOptions', 'sortColumn', 'sortDirection'));
     }
 
-
+    //his method is essential for updating movies in the catalog in the project's admin section.
     public function edit($id)
     {
         $catalog = (new Catalog())->findOrFail($id);
         return view('editFilm', compact('catalog'));
     }
 
+    //his method is essential for deleting movies in the catalog in the project's admin section.
     public function destroy($id)
     {
         $catalog = (new Catalog())->findOrFail($id);
         $catalog->delete();
         return redirect()->back()->with('status', __('local.Deleted Successfully'));
     }
-
+    
+    //This method is essential for searching movies in the catalog in the project's admin section.
     public function searchFilm(Request $request)
     {
         $search = $request->input('search');
