@@ -16,9 +16,10 @@ class ContactFormController extends Controller
 
 
     }
-
+    //contact form submission
     public function storeContactForm(Request $request)
     {
+        //validation rules and validation messages
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
@@ -31,7 +32,7 @@ class ContactFormController extends Controller
         'message.required' => __('local.Please enter a message.'),
 
         ]);
-
+        //This part of code is crucial for redirecting with parameters after a failed validation process.
         if ($validator->fails()) {
         return redirect()
         ->back()
@@ -44,9 +45,9 @@ class ContactFormController extends Controller
         $validator->validate();
 
         $input = $request->all();
-
+        //add inputs to db
         Contact::create($input);
-
+        //send message to company
         \Mail::send('contactMailTemplate', array(
             'name' => $input['name'],
             'email' => $input['email'],
@@ -56,17 +57,7 @@ class ContactFormController extends Controller
             $message->from($request->email);
             $message->to('190103364@stu.sdu.edu.kz', 'Admin')->subject($request->subject);
         });
-
-        /*\Mail::send('thanks', array(
-            'name' => $input['name'],
-            'email' => $input['email'],
-        ), function($message) use ($request){
-            $message->from($request->email);
-            $message->to($request->input('email'))->subject('Kazakhfilm');
-        });*/
         return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess', __('local.Contact Form Submit Successfully!'));
-        } /*else{
-        return redirect()->to(url()->previous())->withFragment('contact')->with('status-mess-err', 'All fields must be filled in!')->withInput();
-        }*/
+        } 
 
 }
