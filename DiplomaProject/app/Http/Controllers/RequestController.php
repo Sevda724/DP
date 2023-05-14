@@ -16,11 +16,12 @@ class RequestController extends Controller
 
 
     }
-
+    //sending user request to the company 
     public function storeRequest($id, Request $request)
     {
         $filmFromCatalog = Catalog::find($id);
         $film =  $filmFromCatalog -> Title;
+        //validation rules and validation messages
         $validator = Validator::make($request->all(), [
             'userName' => 'required',
             'userEmail' => 'required|email',
@@ -38,7 +39,7 @@ class RequestController extends Controller
     } 
     
     $validator->validate();
-       
+       //adding inputs to the db
         $input = new userRequest();
         $input->filmTitle = $film;
         $input->userName = $request->input('userName');
@@ -48,7 +49,7 @@ class RequestController extends Controller
 
 
         $input -> save();
-       
+       //sending request to the company
         \Mail::send('RequestMailTemplate', array(
             'filmTitle' => $film,
             'userName' => $input['userName'],
