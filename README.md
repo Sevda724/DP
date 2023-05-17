@@ -133,8 +133,28 @@ The website supports localization using Laravel's array-based localization featu
 **Admin Part:** 
 The website incorporates an admin section with login and registration forms, granting authorized administrators access to manage various aspects of the website.
 <p align="center">
-  <img src="https://drive.google.com/file/d/1AcLQp7TpZ_Qxkd2LGhBOXyR-Ox23lc6y/view?usp=share_link" alt="Image alt" width="45%" height="45%">
-  <img src="https://drive.google.com/file/d/1cacoOC3ZAQBmPeATqx3dJEQ8zk3KDXnF/view?usp=share_link" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=1AcLQp7TpZ_Qxkd2LGhBOXyR-Ox23lc6y" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=1cacoOC3ZAQBmPeATqx3dJEQ8zk3KDXnF" alt="Image alt" width="45%" height="45%">
+</p>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1_SEVCa5QlPjqEbZ5L2T1Y2FRpkn06f1V" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=11w3ZmKMn28ODYNqtZv8ueIjWvz7yQMuT" alt="Image alt" width="45%" height="45%">
+</p>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1s7sZwv_QDe8gJU7-geqdgiATILx3S3fN" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=116oB3pyobK81WA7AfuupGyEwrMi2fIjK" alt="Image alt" width="45%" height="45%">
+</p>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1He2FGwbtpRFdD7Njjq-gh3_Uq46TOItf" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=1uz8NTBMmSBlTdzj2hfkaZV-ZF-eUwHWF" alt="Image alt" width="45%" height="45%">
+</p>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1XoWpAsnJgfI1ZUaay47ea1wA0DGf-2Ku" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=1y0g32tFz5cGUGuq08qNE1PkCzvSwrjwT" alt="Image alt" width="45%" height="45%">
+</p>
+<p align="center">
+  <img src="https://drive.google.com/uc?export=view&id=1q9XWEXofkgKNmGYUsjZ7jq1MZSY5zUH5" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/uc?export=view&id=" alt="Image alt" width="45%" height="45%">
 </p>
 
 
