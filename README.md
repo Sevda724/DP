@@ -132,7 +132,10 @@ The website supports localization using Laravel's array-based localization featu
 
 **Admin Part:** 
 The website incorporates an admin section with login and registration forms, granting authorized administrators access to manage various aspects of the website.
-{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{here}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}]
+<p align="center">
+  <img src="https://drive.google.com/file/d/1AcLQp7TpZ_Qxkd2LGhBOXyR-Ox23lc6y/view?usp=share_link" alt="Image alt" width="45%" height="45%">
+  <img src="https://drive.google.com/file/d/1cacoOC3ZAQBmPeATqx3dJEQ8zk3KDXnF/view?usp=share_link" alt="Image alt" width="45%" height="45%">
+</p>
 
 
 
