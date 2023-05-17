@@ -1,5 +1,6 @@
-# DiplomaProject
-## Website for QazaqFilm
+# Advertising and informational site of JSC "Kazakhfilm" named after Shaken Aimanov
+
+## Description
 The objective of this project was to support Kazakhfilm, a prominent and long-established film distribution company in Kazakhstan, in the digital transformation of its operations to improve the global availability of their products. Our team was assigned with the responsibility of developing a website that highlights movies produced within the country, catering to the need for information regarding film distribution opportunities at Kazakhfilm. Through the design and implementation of this website, our goal was to create a platform that facilitates effortless discovery and access to Kazakh films for users across the globe.
 <div style="text-align: center;">
   <img src="https://drive.google.com/uc?export=view&id=18G_JgfMZBwIixHotiAQtSVoSPGkrxq7k" alt="Image alt" width="300" height="200">
